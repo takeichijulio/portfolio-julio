@@ -13,9 +13,18 @@ export function LocaleToggle() {
       href={pathname}
       locale={other}
       aria-label={other === "en" ? "Switch to English" : "Mudar para português"}
-      className="rounded-md border border-border px-2.5 py-1 font-mono text-xs uppercase text-muted transition-colors hover:border-accent hover:text-accent"
+      className="relative inline-flex overflow-hidden rounded-md border border-border font-mono text-xs uppercase"
     >
-      {other}
+      <span
+        className={`px-2 py-1 transition-colors ${locale === "pt" ? "bg-elevated text-chalk" : "text-muted"}`}
+      >
+        pt
+      </span>
+      <span
+        className={`px-2 py-1 transition-colors ${locale === "en" ? "bg-elevated text-chalk" : "text-muted"}`}
+      >
+        en
+      </span>
     </Link>
   );
 }

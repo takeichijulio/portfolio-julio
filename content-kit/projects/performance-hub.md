@@ -1,7 +1,7 @@
-# Case 2 — Dashboard NSP (dashboard-nsp-botafogo)
+# Case 2 — Multi-department Performance Hub
 
-- **Slug:** `nsp-dashboard`
-- **Tipo:** employer (Botafogo NSP) — demo só com mock data + badge
+- **Slug:** `performance-hub`
+- **Tipo:** employer — clube de futebol (nome não publicado, v3) — demo só com mock data + badge
 - **Código:** privado — "available on request"
 
 ## PT
@@ -11,7 +11,7 @@
 pedagogia) registravam avaliações em planilhas separadas — sem visão unificada
 por atleta e sem relatório consolidado pra comissão.
 
-**Usuário-alvo.** Staff multidisciplinar do NSP; acesso com dois perfis
+**Usuário-alvo.** Staff multidisciplinar da base; acesso com dois perfis
 (comum e admin).
 
 **Meu papel.** Único desenvolvedor, do pipeline de importação ao deploy.
@@ -54,7 +54,7 @@ medicine, physiotherapy, psychology, nutrition, social work, pedagogy) kept
 evaluations in separate spreadsheets — no unified per-athlete view, no
 consolidated report for staff.
 
-**Target user.** NSP multidisciplinary staff; two access profiles (regular
+**Target user.** Academy multidisciplinary staff; two access profiles (regular
 and admin).
 
 **My role.** Sole developer, from import pipeline to deploy.

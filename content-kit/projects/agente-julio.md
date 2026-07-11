@@ -1,4 +1,4 @@
-# Case 4 — Agente Júlio (agente-julio)
+# Case 4 — Local AI Agent, Human-in-the-Loop (interno: agente-julio)
 
 - **Slug:** `local-ai-agent`
 - **Tipo:** pessoal — demo com estado fake ok (não é dado de empregador)
@@ -12,7 +12,7 @@ segurança: um modelo local não pode ter permissão de escrever arquivo ou
 rodar comando sozinho.
 
 **Usuário-alvo.** Eu mesmo (ferramenta pessoal; escopo de dados exclui
-explicitamente qualquer coisa do trabalho — Botafogo/NSP/menores nunca
+explicitamente qualquer coisa do trabalho — clube/categorias de base/menores nunca
 entram no workspace).
 
 **Meu papel.** Único desenvolvedor: app desktop, backend Rust, integração LLM.
@@ -52,7 +52,7 @@ API, no data leaving the PC — without giving up safety: a local model must
 not be able to write files or run commands on its own.
 
 **Target user.** Myself (personal tool; the data scope explicitly excludes
-anything work-related — Botafogo/NSP/minors never enter the workspace).
+anything work-related — club/academy/minors never enter the workspace).
 
 **My role.** Sole developer: desktop app, Rust backend, LLM integration.
 

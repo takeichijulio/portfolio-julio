@@ -1,6 +1,6 @@
 # Mock Data Spec
 
-Regras para TODOS os dados exibidos nos demos dos cases Botafogo/NSP.
+Regras para TODOS os dados exibidos nos demos dos cases do domínio do futebol.
 Implementar como geradores centralizados em `lib/mock/` (seed determinística,
 pra demo ser estável entre builds). Nenhum componente de demo pode ter dado
 hardcoded fora de `lib/mock/`.
@@ -29,7 +29,7 @@ hardcoded fora de `lib/mock/`.
 | Velocidade máxima | 27,0–33,5 km/h |
 | Player load / UA | 200–650 |
 
-### Wellness (demos Catapult / Dashboard NSP)
+### Wellness (demos GPS & Load Dashboard / Performance Hub)
 | Métrica | Faixa mock |
 |---|---|
 | Sono (horas) | 6,0–9,5 |

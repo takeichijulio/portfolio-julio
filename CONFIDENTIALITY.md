@@ -1,22 +1,28 @@
-# Confidentiality Policy / Política de Confidencialidade
+# Confidentiality Policy / Política de Confidencialidade (v3)
 
 This repository powers a public portfolio site. Three of the featured case
-studies describe work done as an employee of Botafogo (NSP — Núcleo de Saúde
-e Performance). The rules below are **non-negotiable** and apply to all code,
-copy, assets, commit history, and metadata in this repository.
+studies describe systems built for a football club's youth academy as employer
+work. The rules below are **non-negotiable** and apply to all code, copy,
+assets, commit history, and metadata in this repository.
 
 ## Never allowed in this repository
 
-- Real names of athletes or staff. Age-group labels (Sub-15/Sub-17/Sub-20 /
-  U15/U17/U20) are allowed only as generic context.
-- Real GPS, wellness, or strength (VALD) metrics — no real exports, no real
-  database rows, no unblurred production screenshots.
+- **Club name, logo, or institutional brand colors — anywhere.** Case studies
+  are presented as *types of systems* ("GPS & Load Dashboard"), never tied to
+  a named employer. Generic context is fine: "a football club's academy
+  performance department".
+- Real names of athletes or staff. Age-group labels (U15/U17/U20) allowed
+  only as generic context.
+- Real GPS, wellness, or strength metrics — no real exports, no real database
+  rows, no production screenshots.
 - Internal deploy URLs, Google Drive file/folder IDs, Supabase keys or project
   URLs, service-account files or paths, passwords, API tokens.
 - Code copied from private repositories that exposes business logic.
 - Any identifiable data about minors.
+- Inflated titles in copy: no "Data Engineer" / "Engenheiro de dados" as
+  current role; no "professional football" — say "football".
 
-## Mandatory for Botafogo/NSP case studies
+## Mandatory for football-domain case studies
 
 - Every interactive demo displays a visible badge:
   **"Demo — fictional data" / "Demonstração — dados fictícios"**.
@@ -28,31 +34,35 @@ copy, assets, commit history, and metadata in this repository.
 
 ## Allowed
 
-- Naming Botafogo NSP as employer and naming the internal projects.
+- Describing the domain: football, youth academy, Catapult-style GPS,
+  wellness, strength testing.
 - Describing stack, architecture, and technical decisions at case-study level
-  (e.g. local-first processing, upsert-only sync, name-resolution strategy).
-- Linking GitHub repositories **only if they are public**. As of 2026-07-11
-  none of the five case-study repos is public — case studies say
-  *"code private — available on request"*. Two unrelated public repos
-  (`vald-dashboard`, `handball-planner`) may be linked as extras.
+  (local-first processing, upsert-only sync, name-resolution strategy).
+- *"Code private — available on request"* for private repos. Linking GitHub
+  repositories **only if public** (extras: `vald-dashboard`,
+  `handball-planner`).
 
 ## Pre-publish checklist (run before every deploy)
 
-- [ ] `git grep` for Drive IDs, Supabase URLs/keys, `service_account`, `.env` values
+- [ ] `git grep -i` for club names/brands, Drive IDs, Supabase URLs/keys,
+      `service_account`, `.env` values
 - [ ] No real athlete/staff names anywhere (code, copy, alt text, OG images)
-- [ ] All NSP demos render the fictional-data badge in both locales
-- [ ] No screenshots of production UIs without explicit prior sanitization review
+- [ ] No "Data Engineer"/"Engenheiro de dados" as current title; no
+      "professional football"
+- [ ] All football demos render the fictional-data badge in both locales
+- [ ] No production screenshots
 - [ ] Commit history clean of any of the above
 
 ---
 
 ## Resumo em português
 
-Este repositório alimenta um site público. Três cases descrevem trabalho feito
-como funcionário do Botafogo (NSP). É proibido, sem exceção: nomes reais de
-atletas/staff, métricas reais de GPS/wellness/força, screenshots de produção
-sem tratamento, URLs internas, IDs de Drive, chaves Supabase, código de repos
-privados e qualquer dado identificável de menores. Todo demo NSP usa apenas
-dados fictícios gerados em `lib/mock/`, com badge visível "Demonstração —
-dados fictícios", e nunca chama API real. Links de GitHub só para repos
-públicos (hoje: nenhum dos 5 cases é público).
+Este repositório alimenta um site público. É proibido, sem exceção: nome,
+logo ou cores de marca de clube (cases são descritos como tipos de sistema,
+com contexto genérico "clube de futebol / departamento de performance de
+base"); nomes reais de atletas/staff; métricas reais de GPS/wellness/força;
+screenshots de produção; URLs internas, IDs de Drive, chaves Supabase; código
+de repos privados; qualquer dado identificável de menores; e cargo inflado no
+copy ("engenheiro de dados" como título atual, "futebol profissional"). Todo
+demo do domínio do futebol usa apenas dados fictícios gerados em `lib/mock/`,
+com badge visível, e nunca chama API real.

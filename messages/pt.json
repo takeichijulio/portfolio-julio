@@ -6,27 +6,78 @@
     "contact": "Contato"
   },
   "hero": {
-    "role": "Engenheiro de Dados Esportivos",
-    "title": "Dados brutos de atleta viram ferramenta de decisão.",
-    "subtitle": "Sou o Júlio Takeichi. No Botafogo, transformo GPS, wellness e testes de força das categorias de base em pipelines, dashboards e relatórios que a comissão técnica usa todos os dias — local-first e com custo zero de infraestrutura.",
+    "headline": "Profissional de Sports Data no futebol",
+    "tagline": "Construindo caminho para engenharia de dados",
+    "subtitle": "Processo dados de GPS, monto dashboards de carga e wellness e desenvolvo ferramentas internas — com projetos pessoais em full-stack e IA local.",
     "ctaProjects": "Ver projetos",
-    "ctaContact": "Fale comigo"
+    "ctaContact": "Fale comigo",
+    "kpiCaption": "Números fictícios de demonstração — gerados em lib/mock/",
+    "kpiDistance": "km percorridos (mock)",
+    "kpiSessions": "sessões GPS (mock)",
+    "kpiAthletes": "atletas monitorados (mock)"
   },
   "badge": {
     "fictional": "Demonstração — dados fictícios"
   },
-  "stub": {
-    "about": "Bio completa, stack e domínio de sports data entram aqui na próxima etapa.",
-    "projects": "Os 5 case studies (Catapult, Dashboard NSP, Hub de Avaliações, Agente local de IA, Agenda pessoal) entram aqui na próxima etapa.",
-    "contact": "Enquanto o formulário não chega, me encontre por e-mail ou GitHub:"
+  "about": {
+    "title": "Sobre",
+    "intro1": "Atuo em Sports Data no futebol, com foco em categorias de base. Parte do meu dia é operacional e analítica — processar dados de GPS, montar dashboards de carga e wellness, gerar relatórios por atleta. A outra parte é construir e melhorar os sistemas que fazem isso: pipelines, bancos locais, ferramentas internas.",
+    "intro2": "Estou consolidando fundamentos de engenharia de dados através desses projetos — cada um deles está neste site como evidência do que já construo na prática, não de um cargo que ainda não tenho.",
+    "intro3": "Fora do trabalho, adoro aprender e desenvolver com agentes de IA — Cursor e Claude Code fazem parte do meu fluxo diário — e construo ferramentas pessoais com IA rodando localmente e aprovação humana obrigatória, como um bot de agenda no Telegram.",
+    "photoAlt": "Foto de Júlio Takeichi",
+    "stackTitle": "Stack que uso hoje",
+    "domainTitle": "Domínio",
+    "domain1": "GPS e carga de treino (métricas de sessão, semana a semana, metas)",
+    "domain2": "Wellness: Hooper Index, PSE pós-treino, adesão",
+    "domain3": "Testes de força e assimetria bilateral",
+    "domain4": "Pipelines: arquivos brutos → banco local → nuvem (sempre upsert)",
+    "domain5": "Relatórios em PDF por atleta"
+  },
+  "projects": {
+    "title": "Projetos",
+    "lead": "Cinco sistemas reais — três do domínio do futebol (demos apenas com dados fictícios) e dois pessoais. Case studies completos em breve.",
+    "comingSoon": "Case study completo em breve",
+    "footballGroup": "Futebol",
+    "personalGroup": "Pessoais",
+    "cases": {
+      "gps-load-dashboard": {
+        "title": "GPS & Load Dashboard",
+        "description": "Plataforma full-stack de GPS, wellness e força para categorias de base: pipeline local-first, Next.js + FastAPI + SQLite, sync upsert para a nuvem e PDF client-side."
+      },
+      "performance-hub": {
+        "title": "Multi-department Performance Hub",
+        "description": "Dashboard multidepartamental em produção (Streamlit + SQLite): fisiologia, medicina e áreas multidisciplinares num app só, com importação self-service e PDF por atleta."
+      },
+      "evaluations-hub": {
+        "title": "Academy Evaluations Hub",
+        "description": "Hub de avaliações e presenças (Next.js + Supabase): calendário por departamento, compliance semanal e leitura read-only dos dados de GPS via banco compartilhado."
+      },
+      "local-ai-agent": {
+        "title": "Local AI Agent (Human-in-the-Loop)",
+        "description": "Agente desktop (Tauri + Rust) com LLM local via Ollama: o modelo só propõe ações; tudo passa por fila de aprovação com diff, sandbox de arquivos e log de auditoria."
+      },
+      "personal-ops": {
+        "title": "Personal Ops + Telegram Bot",
+        "description": "Agenda pessoal (Flask + JSON, sem build) com bot de conversa no Telegram usando LLM local — confirmação obrigatória antes de gravar e anti-alucinação validada em código."
+      }
+    }
+  },
+  "contact": {
+    "title": "Contato",
+    "lead": "Quer conversar sobre sports data, dashboards ou os projetos daqui? Me chama por e-mail ou GitHub."
+  },
+  "notFound": {
+    "title": "Bola fora de campo",
+    "message": "Essa página não existe — ou saiu pela linha de fundo.",
+    "cta": "Voltar ao início"
   },
   "footer": {
-    "note": "Feito por Júlio Takeichi. Demos de projetos do clube usam apenas dados fictícios.",
+    "note": "Feito por Júlio Takeichi. Demos do domínio do futebol usam apenas dados fictícios.",
     "github": "GitHub",
     "email": "E-mail"
   },
   "meta": {
-    "title": "Júlio Takeichi — Engenheiro de Dados Esportivos",
-    "description": "Portfolio de Júlio Takeichi: pipelines de GPS, dashboards de performance de atletas e ferramentas com IA local. Sports data engineering no Botafogo."
+    "title": "Júlio Takeichi — Sports Data no futebol",
+    "description": "Profissional de Sports Data no futebol: processo dados de GPS, monto dashboards de carga e wellness e desenvolvo ferramentas internas — construindo caminho para engenharia de dados."
   }
 }

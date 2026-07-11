@@ -8,13 +8,15 @@
   },
   "type": "commonjs",
   "dependencies": {
+    "clsx": "^2.1.1",
     "framer-motion": "^12.42.2",
     "lucide-react": "^1.24.0",
     "next": "^15.5.20",
     "next-intl": "^4.13.2",
     "react": "^19.2.7",
     "react-dom": "^19.2.7",
-    "recharts": "^3.9.2"
+    "recharts": "^3.9.2",
+    "tailwind-merge": "^3.6.0"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4.3.2",

@@ -12,13 +12,13 @@ export function SiteFooter() {
             href="https://github.com/takeichijulio"
             target="_blank"
             rel="noopener noreferrer"
-            className="transition-colors hover:text-accent"
+            className="transition-colors hover:text-data"
           >
             {t("github")}
           </a>
           <a
             href="mailto:juliotakeichi@outlook.com"
-            className="transition-colors hover:text-accent"
+            className="transition-colors hover:text-data"
           >
             {t("email")}
           </a>

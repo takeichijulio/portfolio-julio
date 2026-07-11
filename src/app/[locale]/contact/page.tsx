@@ -2,6 +2,7 @@ import { useTranslations } from "next-intl";
 import { setRequestLocale } from "next-intl/server";
 import { use } from "react";
 import { ExternalLink, Mail } from "lucide-react";
+import { buttonClasses } from "@/components/ui/button";
 
 export default function ContactPage({
   params,
@@ -11,18 +12,18 @@ export default function ContactPage({
   const { locale } = use(params);
   setRequestLocale(locale);
   const tNav = useTranslations("nav");
-  const tStub = useTranslations("stub");
+  const t = useTranslations("contact");
 
   return (
     <section className="mx-auto w-full max-w-5xl px-6 py-24">
-      <h1 className="font-display text-4xl font-bold tracking-tight">
+      <h1 className="font-display text-4xl font-bold tracking-tight text-chalk">
         {tNav("contact")}
       </h1>
-      <p className="mt-4 max-w-2xl text-muted">{tStub("contact")}</p>
+      <p className="mt-4 max-w-2xl text-muted">{t("lead")}</p>
       <div className="mt-8 flex flex-wrap gap-4">
         <a
           href="mailto:juliotakeichi@outlook.com"
-          className="inline-flex items-center gap-2 rounded-lg border border-border px-5 py-2.5 transition-colors hover:border-accent hover:text-accent"
+          className={buttonClasses("outline")}
         >
           <Mail aria-hidden size={16} />
           juliotakeichi@outlook.com
@@ -31,7 +32,7 @@ export default function ContactPage({
           href="https://github.com/takeichijulio"
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 rounded-lg border border-border px-5 py-2.5 transition-colors hover:border-accent hover:text-accent"
+          className={buttonClasses("outline")}
         >
           <ExternalLink aria-hidden size={16} />
           github.com/takeichijulio

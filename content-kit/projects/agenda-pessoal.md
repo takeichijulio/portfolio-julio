@@ -1,6 +1,6 @@
-# Case 5 — Agenda Pessoal (agenda-pessoal)
+# Case 5 — Personal Ops + Telegram Bot (interno: agenda-pessoal)
 
-- **Slug:** `personal-agenda-bot`
+- **Slug:** `personal-ops`
 - **Tipo:** pessoal — demo com dados fictícios
 - **Código:** privado (sem repo público) — "available on request"
 

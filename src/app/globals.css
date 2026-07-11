@@ -1,16 +1,19 @@
 @import "tailwindcss";
 
+/* Tokens Pitch Tech (design-system/PORTFOLIO.md) — tech + futebol.
+   Nunca usar cores de marca institucional de clube. */
 @theme {
-  --color-bg: #0a0a0a;
-  --color-surface: #141414;
-  --color-elevated: #1c1c1f;
-  --color-border: #26262b;
-  --color-text: #f4f4f5;
-  --color-muted: #9f9fa8;
-  --color-accent: #38bdf8;
-  --color-success: #4ade80;
-  --color-warning: #fbbf24;
-  --color-danger: #f87171;
+  --color-pitch: #0a0a0a; /* fundo principal */
+  --color-line: #1a2e1a; /* grid/pattern de campo, sutil */
+  --color-surface: #141414; /* cards, seções alternadas */
+  --color-elevated: #1c1c1f; /* hover, camada acima do card */
+  --color-border: #26262b; /* bordas e divisores */
+  --color-turf: #22a855; /* sucesso, acento primário */
+  --color-data: #38bdf8; /* links, gráficos, acento tech */
+  --color-chalk: #ffffff; /* texto principal */
+  --color-muted: #c0c0c0; /* texto secundário */
+  --color-alert: #e07820; /* alertas, badge demo */
+  --color-error: #d93025; /* erros */
 
   --font-display: var(--font-space-grotesk), ui-sans-serif, sans-serif;
   --font-body: var(--font-inter), ui-sans-serif, sans-serif;
@@ -19,16 +22,61 @@
 
 html {
   color-scheme: dark;
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
 }
 
 body {
-  background-color: var(--color-bg);
-  color: var(--color-text);
+  background-color: var(--color-pitch);
+  color: var(--color-chalk);
   font-family: var(--font-body);
   -webkit-font-smoothing: antialiased;
 }
 
 ::selection {
-  background-color: var(--color-accent);
-  color: var(--color-bg);
+  background-color: var(--color-data);
+  color: var(--color-pitch);
+}
+
+/* 404: bola quicando "fora do campo" — desligada em reduced-motion */
+@keyframes ball-out {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(12deg);
+  }
+}
+.ball-out {
+  animation: ball-out 1.6s ease-in-out infinite;
+  transform-origin: 92px 52px;
+}
+@media (prefers-reduced-motion: reduce) {
+  .ball-out {
+    animation: none;
+  }
+}
+
+/* Tilt sutil dos cards de projeto — desligado em reduced-motion */
+.card-tilt {
+  transition:
+    transform 200ms ease,
+    border-color 200ms ease;
+}
+.card-tilt:hover {
+  transform: perspective(900px) rotateX(1.5deg) rotateY(-1.5deg)
+    translateY(-2px);
+}
+@media (prefers-reduced-motion: reduce) {
+  .card-tilt,
+  .card-tilt:hover {
+    transition: none;
+    transform: none;
+  }
 }

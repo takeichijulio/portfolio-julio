@@ -1,7 +1,7 @@
-# Case 3 — Hub de Avaliações (clube-avaliacoes)
+# Case 3 — Academy Evaluations Hub (interno: clube-avaliacoes)
 
 - **Slug:** `evaluations-hub`
-- **Tipo:** employer (Botafogo NSP) — demo só com mock data + badge, sem Supabase real
+- **Tipo:** employer — clube de futebol (nome não publicado, v3) — demo só com mock data + badge, sem Supabase real
 - **Código:** privado — "available on request"
 
 ## PT
@@ -11,7 +11,7 @@ departamentos viviam espalhados — e o novo hub precisava conversar com os
 dados de GPS/wellness já processados pela plataforma Catapult, sem duplicar
 pipeline nem criar segunda fonte de escrita.
 
-**Usuário-alvo.** Equipe técnica e departamentos do NSP (categorias U15/U17).
+**Usuário-alvo.** Equipe técnica e departamentos de performance da base (categorias U15/U17).
 
 **Meu papel.** Único desenvolvedor: modelagem, API, UI e integração.
 
@@ -52,7 +52,7 @@ lived scattered — and the new hub had to consume GPS/wellness data already
 processed by the Catapult platform without duplicating pipelines or creating
 a second write source.
 
-**Target user.** NSP technical staff and departments (U15/U17 categories).
+**Target user.** Academy technical staff and departments (U15/U17 categories).
 
 **My role.** Sole developer: data modeling, API, UI and integration.
 

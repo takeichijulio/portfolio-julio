@@ -13,13 +13,13 @@ export function SiteHeader() {
   const t = useTranslations("nav");
 
   return (
-    <header className="sticky top-0 z-40 border-b border-border bg-bg/85 backdrop-blur">
+    <header className="sticky top-0 z-40 border-b border-border bg-pitch/80 backdrop-blur-md">
       <div className="mx-auto flex h-16 w-full max-w-5xl items-center justify-between px-6">
         <Link
           href="/"
-          className="font-display text-lg font-bold tracking-tight"
+          className="font-display text-lg font-bold tracking-tight text-chalk"
         >
-          jt<span className="text-accent">.</span>
+          jt<span className="text-turf">.</span>
         </Link>
         <div className="flex items-center gap-6">
           <nav aria-label="Main" className="flex items-center gap-5">
@@ -27,7 +27,7 @@ export function SiteHeader() {
               <Link
                 key={item.key}
                 href={item.href}
-                className="text-sm text-muted transition-colors hover:text-text"
+                className="text-sm text-muted transition-colors hover:text-chalk"
               >
                 {t(item.key)}
               </Link>

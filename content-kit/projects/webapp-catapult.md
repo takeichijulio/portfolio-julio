@@ -1,13 +1,13 @@
-# Case 1 — Dashboard Métricas CTR (webapp-catapult)
+# Case 1 — GPS & Load Dashboard (interno: webapp-catapult)
 
-- **Slug:** `ctr-metrics-platform`
-- **Tipo:** employer (Botafogo NSP) — demo só com mock data + badge
+- **Slug:** `gps-load-dashboard`
+- **Tipo:** employer — clube de futebol (nome não publicado, v3) — demo só com mock data + badge
 - **Flagship:** sim (case mais completo, demo interativa Recharts)
 - **Código:** privado — "available on request"
 
 ## PT
 
-**Problema.** O núcleo de performance da base do Botafogo precisava transformar
+**Problema.** O departamento de performance da base de um clube de futebol precisava transformar
 exports brutos de GPS (Catapult), formulários de wellness e testes de força em
 informação diária utilizável — sem custo de nuvem e sem processar dados
 sensíveis de atletas fora da máquina do clube.
@@ -46,7 +46,7 @@ visualização (Streamlit → Next.js) não tocou o pipeline.
 
 ## EN
 
-**Problem.** Botafogo's youth-academy performance department needed to turn
+**Problem.** A football club's youth-academy performance department needed to turn
 raw GPS exports (Catapult), wellness forms and strength tests into usable
 daily information — with zero cloud cost and without processing sensitive
 athlete data outside club machines.
