@@ -1,0 +1,17 @@
+# deps / build (Next.js scaffold virá na Sessão 1)
+node_modules/
+/.next/
+/out/
+/dist/
+/build/
+
+# env — nunca commitar
+.env
+.env.*
+!.env.example
+
+# misc
+.DS_Store
+*.log
+.vercel
+*.tsbuildinfo
