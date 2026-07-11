@@ -26,12 +26,12 @@ export const PROJECTS: ProjectMeta[] = [
   },
   {
     slug: "local-ai-agent",
-    tags: ["IA local", "Desktop", "Rust"],
+    tags: ["Local AI", "Desktop", "Rust"],
     football: false,
   },
   {
     slug: "personal-ops",
-    tags: ["IA local", "Full-stack"],
+    tags: ["Local AI", "Full-stack"],
     football: false,
   },
 ];

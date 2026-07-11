@@ -35,8 +35,7 @@
   },
   "projects": {
     "title": "Projects",
-    "lead": "Five real systems — three from the football domain (demos use fictional data only) and two personal. Full case studies coming soon.",
-    "comingSoon": "Full case study coming soon",
+    "lead": "Five real systems — three from the football domain (demos use fictional data only) and two personal. Each with a full case study and an interactive demo.",
     "footballGroup": "Football",
     "personalGroup": "Personal",
     "cases": {
@@ -60,6 +59,83 @@
         "title": "Personal Ops + Telegram Bot",
         "description": "Personal agenda (Flask + JSON, no build step) with a Telegram conversation bot on a local LLM — mandatory confirmation before writes and anti-hallucination enforced in code."
       }
+    }
+  },
+  "caseStudy": {
+    "problem": "Problem",
+    "targetUser": "Target user",
+    "myRole": "My role",
+    "process": "Process",
+    "keyDecisions": "Key decisions",
+    "result": "Final result",
+    "learned": "What I learned",
+    "demoTitle": "Interactive demo",
+    "codePrivate": "Code private — available on request",
+    "backToProjects": "All projects",
+    "viewCase": "View case study"
+  },
+  "demos": {
+    "gps": {
+      "athlete": "Athlete",
+      "tabSession": "Session",
+      "tabLoad": "Load",
+      "tabWellness": "Wellness",
+      "colAthlete": "Athlete",
+      "colDistance": "Dist. (m)",
+      "colHighIntensity": "High int. (m)",
+      "colSprints": "Sprints",
+      "colTopSpeed": "Top speed (km/h)",
+      "chartDistance": "Total distance per day (m) — last 14 days",
+      "chartHooper": "Hooper Index — last 14 days",
+      "empty": "No data for this selection."
+    },
+    "hub": {
+      "section": "Section",
+      "strength": "Strength",
+      "wellness": "Wellness",
+      "colAthlete": "Athlete",
+      "colLeft": "L (N)",
+      "colRight": "R (N)",
+      "colAsym": "Asymmetry",
+      "flagged": "> 10%",
+      "radioNote": "Radio buttons on purpose — hidden tabs broke the charts in production (lesson from this case)."
+    },
+    "evals": {
+      "colArea": "Area",
+      "colCompliance": "Weekly compliance",
+      "colStatus": "Last status",
+      "status": {
+        "present": "Present",
+        "absent": "Absent",
+        "justified": "Justified",
+        "rescheduled": "Rescheduled"
+      }
+    },
+    "agent": {
+      "queue": "Approval queue",
+      "approve": "Approve",
+      "reject": "Reject",
+      "approved": "Approved",
+      "rejected": "Rejected",
+      "audit": "Audit log (audit.jsonl)",
+      "auditEmpty": "No actions recorded — approve or reject a proposal above.",
+      "queueEmpty": "Queue empty — every proposal has been reviewed.",
+      "reset": "Reset demo"
+    },
+    "ops": {
+      "tasks": "Tasks",
+      "done": "Completed",
+      "empty": "Nothing pending.",
+      "late": "Late",
+      "today": "Today",
+      "tomorrow": "Tomorrow",
+      "transcript": "Telegram conversation (simulated)",
+      "msgUser1": "complete the task \"Plan Thursday practice\"",
+      "msgBot1": "Found 1 task: \"Plan Thursday practice\" (today). Confirm completion? (yes/no)",
+      "msgUser2": "yes",
+      "msgBot2": "When did you complete it? (today / yesterday / a date)",
+      "msgUser3": "today",
+      "msgBot3": "Completed with today's date. ✅"
     }
   },
   "contact": {

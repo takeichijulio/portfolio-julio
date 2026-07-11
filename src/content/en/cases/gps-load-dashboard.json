@@ -1,0 +1,17 @@
+{
+  "title": "GPS & Load Dashboard",
+  "tagline": "Full-stack GPS, wellness and strength platform for youth academy categories",
+  "problem": "A football club's youth-academy performance department needed to turn raw GPS exports, wellness forms and strength tests into usable daily information — with zero cloud cost and without processing sensitive athlete data outside club machines.",
+  "targetUser": "Coaching and physiology staff of the youth academy (U15/U17/U20).",
+  "myRole": "Sole developer: architecture, data pipeline, backend, frontend, deploy.",
+  "process": "Started in Streamlit to validate the workflow with staff, then migrated to a monorepo: Next.js + React + Tailwind webapp, local FastAPI + pandas backend, SQLite as source of truth, Tauri desktop shell. Incremental Google Drive sync (by modified time) for GPS, wellness and strength files; optional one-way local → cloud sync (always upsert) for remote reads.",
+  "keyDecisions": [
+    "Local-first: no raw file ever processed in the cloud; zero hosting cost.",
+    "No business calculations in the database or frontend — a single Python layer.",
+    "Natural-key upserts everywhere; never plain inserts.",
+    "Athlete-name resolution via fuzzy matching against a central registry, with a manually reviewed pending queue (unresolved names never enter the DB).",
+    "Strength data local-only in v1 — smaller exposure surface."
+  ],
+  "result": "Production platform with 11 modules: daily GPS session, week-over-week reports with targets, load/RPE, live monitoring, individual athlete profile, wellness (Hooper + post-training + assessment calendar), strength (3 devices), athlete/loan management, sync admin, and client-side PDF export. Thousands of records processed per season.",
+  "learned": "The name coming from the source ecosystem beats the official registered name for matching — \"pretty name\" matching produces false positives on common surnames. And keeping all computation in one layer pays off fast: swapping the visualization layer (Streamlit → Next.js) didn't touch the pipeline."
+}

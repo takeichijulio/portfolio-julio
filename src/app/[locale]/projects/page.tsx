@@ -1,7 +1,8 @@
 import { useTranslations } from "next-intl";
 import { setRequestLocale } from "next-intl/server";
 import { use } from "react";
-import { Clock } from "lucide-react";
+import { ArrowRight } from "lucide-react";
+import { Link } from "@/i18n/navigation";
 import { PROJECTS } from "@/lib/projects";
 import { Card, CardDescription, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -15,6 +16,7 @@ export default function ProjectsPage({
   const { locale } = use(params);
   setRequestLocale(locale);
   const t = useTranslations("projects");
+  const tCase = useTranslations("caseStudy");
 
   const football = PROJECTS.filter((p) => p.football);
   const personal = PROJECTS.filter((p) => !p.football);
@@ -36,26 +38,38 @@ export default function ProjectsPage({
           </h2>
           <div className="mt-5 grid gap-5 sm:grid-cols-2">
             {group.items.map((project) => (
-              <Card key={project.slug} className="card-tilt flex flex-col gap-3">
-                <div className="flex flex-wrap items-center gap-2">
-                  {project.football && <FictionalBadge />}
-                </div>
-                <CardTitle>{t(`cases.${project.slug}.title`)}</CardTitle>
-                <CardDescription>
-                  {t(`cases.${project.slug}.description`)}
-                </CardDescription>
-                <div className="mt-auto flex flex-wrap items-center gap-2 pt-2">
-                  {project.tags.map((tag) => (
-                    <Badge key={tag} variant="data">
-                      {tag}
-                    </Badge>
-                  ))}
-                </div>
-                <p className="flex items-center gap-1.5 text-xs text-muted/80">
-                  <Clock aria-hidden size={13} />
-                  {t("comingSoon")}
-                </p>
-              </Card>
+              <Link
+                key={project.slug}
+                href={`/projects/${project.slug}`}
+                className="group focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-data"
+              >
+                <Card className="card-tilt flex h-full flex-col gap-3 group-hover:border-data/50">
+                  {project.football && (
+                    <div className="flex flex-wrap items-center gap-2">
+                      <FictionalBadge />
+                    </div>
+                  )}
+                  <CardTitle>{t(`cases.${project.slug}.title`)}</CardTitle>
+                  <CardDescription>
+                    {t(`cases.${project.slug}.description`)}
+                  </CardDescription>
+                  <div className="mt-auto flex flex-wrap items-center gap-2 pt-2">
+                    {project.tags.map((tag) => (
+                      <Badge key={tag} variant="data">
+                        {tag}
+                      </Badge>
+                    ))}
+                  </div>
+                  <p className="flex items-center gap-1.5 text-xs font-medium text-data">
+                    {tCase("viewCase")}
+                    <ArrowRight
+                      aria-hidden
+                      size={13}
+                      className="transition-transform group-hover:translate-x-0.5"
+                    />
+                  </p>
+                </Card>
+              </Link>
             ))}
           </div>
         </div>

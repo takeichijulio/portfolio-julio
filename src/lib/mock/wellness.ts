@@ -11,8 +11,8 @@ export interface MockWellnessDay {
   postTrainingRpe: number; // 1–10
 }
 
-export function mockWellnessSeries(days = 14): MockWellnessDay[] {
-  const rng = createRng(404);
+export function mockWellnessSeries(days = 14, seedOffset = 0): MockWellnessDay[] {
+  const rng = createRng(404 + seedOffset);
   return lastDays(days).map((date) => {
     const sleepQuality = randInt(rng, 1, 7);
     const fatigue = randInt(rng, 1, 7);

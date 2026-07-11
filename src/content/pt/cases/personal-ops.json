@@ -1,0 +1,17 @@
+{
+  "title": "Personal Ops + Telegram Bot",
+  "tagline": "Agenda pessoal com bot de conversa em LLM local",
+  "problem": "Organizar rotina pessoal e planejamento de treinos de handebol universitário num lugar só — com lembretes proativos e controle por conversa no Telegram, sem pagar API de LLM e sem mandar dados pessoais pra terceiros.",
+  "targetUser": "Eu mesmo (uso exclusivo, autenticado, servidor só em localhost).",
+  "myRole": "Único desenvolvedor.",
+  "process": "Servidor único Flask servindo site + API REST; frontend sem build (HTML/CSS/JS puro, Tailwind e FullCalendar via CDN); dados em JSON simples — deliberadamente sem banco. Bot de conversa no Telegram usando modelo local (Ollama): perguntas livres sobre a agenda, criar/editar/concluir/excluir tarefas e eventos, ações em lote — sempre com confirmação explícita antes de gravar. Notificações automáticas com resumo periódico e um watchdog independente que avisa se o servidor cair.",
+  "keyDecisions": [
+    "Simplicidade radical: Flask + JSON + CDN — zero build, zero infra; o app inicia com um .bat no Startup do Windows.",
+    "Toda escrita disparada por conversa pede confirmação \"sim/não\" antes de gravar — inclusive em lote (a lista real é mostrada antes de confirmar).",
+    "Quando falta informação (local do evento, data real de conclusão), o bot pergunta em vez de assumir.",
+    "Autenticação dupla: sessão de navegador pra UI, token Bearer pra automação.",
+    "Anti-alucinação em código, não em prompt: a notificação gerada pelo modelo só é aceita se citar todos os títulos reais dos itens; senão, cai pra texto determinístico."
+  ],
+  "result": "Em uso diário: CRUD completo via web e via conversa, resumos periódicos até o comando \"finaliza o dia\", data real de conclusão separada do prazo, UI agrupada por data com seção de concluídas, e vigia avisando queda/retorno do servidor.",
+  "learned": "Modelo local alucina mesmo com instrução explícita de \"nunca inventar\" — a proteção que funciona é validar a saída em código contra os dados reais, com fallback determinístico. E a stack mais simples possível (sem build, sem banco) é uma feature quando o objetivo é rodar todo dia sem manutenção."
+}

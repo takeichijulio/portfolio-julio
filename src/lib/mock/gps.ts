@@ -36,3 +36,11 @@ export function mockGpsSeries(days = 14): MockGpsRow[] {
   const [athlete] = mockAthletes(1);
   return lastDays(days).map((date) => gpsRow(rng, athlete, date));
 }
+
+/** Série de N dias por atleta (seed derivada do índice — cada atleta tem curva própria). */
+export function mockGpsSeriesFor(athleteIndex: number, days = 14): MockGpsRow[] {
+  const athletes = mockAthletes(12);
+  const athlete = athletes[athleteIndex % athletes.length];
+  const rng = createRng(300 + athleteIndex);
+  return lastDays(days).map((date) => gpsRow(rng, athlete, date));
+}

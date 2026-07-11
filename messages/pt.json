@@ -35,8 +35,7 @@
   },
   "projects": {
     "title": "Projetos",
-    "lead": "Cinco sistemas reais — três do domínio do futebol (demos apenas com dados fictícios) e dois pessoais. Case studies completos em breve.",
-    "comingSoon": "Case study completo em breve",
+    "lead": "Cinco sistemas reais — três do domínio do futebol (demos apenas com dados fictícios) e dois pessoais. Cada um com case study completo e demo interativa.",
     "footballGroup": "Futebol",
     "personalGroup": "Pessoais",
     "cases": {
@@ -60,6 +59,83 @@
         "title": "Personal Ops + Telegram Bot",
         "description": "Agenda pessoal (Flask + JSON, sem build) com bot de conversa no Telegram usando LLM local — confirmação obrigatória antes de gravar e anti-alucinação validada em código."
       }
+    }
+  },
+  "caseStudy": {
+    "problem": "Problema",
+    "targetUser": "Usuário-alvo",
+    "myRole": "Meu papel",
+    "process": "Processo",
+    "keyDecisions": "Decisões-chave",
+    "result": "Resultado",
+    "learned": "O que aprendi",
+    "demoTitle": "Demo interativa",
+    "codePrivate": "Código privado — disponível mediante solicitação",
+    "backToProjects": "Todos os projetos",
+    "viewCase": "Ver case study"
+  },
+  "demos": {
+    "gps": {
+      "athlete": "Atleta",
+      "tabSession": "Sessão",
+      "tabLoad": "Carga",
+      "tabWellness": "Wellness",
+      "colAthlete": "Atleta",
+      "colDistance": "Dist. (m)",
+      "colHighIntensity": "Alta int. (m)",
+      "colSprints": "Sprints",
+      "colTopSpeed": "Vmáx (km/h)",
+      "chartDistance": "Distância total por dia (m) — últimos 14 dias",
+      "chartHooper": "Hooper Index — últimos 14 dias",
+      "empty": "Sem dados para esta seleção."
+    },
+    "hub": {
+      "section": "Seção",
+      "strength": "Força",
+      "wellness": "Wellness",
+      "colAthlete": "Atleta",
+      "colLeft": "E (N)",
+      "colRight": "D (N)",
+      "colAsym": "Assimetria",
+      "flagged": "> 10%",
+      "radioNote": "Seletor com radio buttons de propósito — abas escondidas quebravam os gráficos em produção (lição do case)."
+    },
+    "evals": {
+      "colArea": "Área",
+      "colCompliance": "Compliance semanal",
+      "colStatus": "Último status",
+      "status": {
+        "present": "Presente",
+        "absent": "Ausente",
+        "justified": "Justificado",
+        "rescheduled": "Reagendado"
+      }
+    },
+    "agent": {
+      "queue": "Fila de aprovação",
+      "approve": "Aprovar",
+      "reject": "Rejeitar",
+      "approved": "Aprovado",
+      "rejected": "Rejeitado",
+      "audit": "Log de auditoria (audit.jsonl)",
+      "auditEmpty": "Nenhuma ação registrada — aprove ou rejeite uma proposta acima.",
+      "queueEmpty": "Fila vazia — todas as propostas foram revisadas.",
+      "reset": "Reiniciar demo"
+    },
+    "ops": {
+      "tasks": "Tarefas",
+      "done": "Concluídas",
+      "empty": "Nada pendente.",
+      "late": "Atrasada",
+      "today": "Hoje",
+      "tomorrow": "Amanhã",
+      "transcript": "Conversa no Telegram (simulada)",
+      "msgUser1": "conclui a tarefa \"Preparar treino de quinta\"",
+      "msgBot1": "Encontrei 1 tarefa: \"Preparar treino de quinta\" (hoje). Confirmar conclusão? (sim/não)",
+      "msgUser2": "sim",
+      "msgBot2": "Quando você concluiu? (hoje / ontem / uma data)",
+      "msgUser3": "hoje",
+      "msgBot3": "Concluída com data de hoje. ✅"
     }
   },
   "contact": {

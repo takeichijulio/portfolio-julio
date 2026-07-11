@@ -1,0 +1,17 @@
+{
+  "title": "GPS & Load Dashboard",
+  "tagline": "Plataforma full-stack de GPS, wellness e força para categorias de base",
+  "problem": "O departamento de performance da base de um clube de futebol precisava transformar exports brutos de GPS, formulários de wellness e testes de força em informação diária utilizável — sem custo de nuvem e sem processar dados sensíveis de atletas fora das máquinas do clube.",
+  "targetUser": "Comissão técnica e staff de fisiologia das categorias de base (U15/U17/U20).",
+  "myRole": "Único desenvolvedor: arquitetura, pipeline de dados, backend, frontend e deploy.",
+  "process": "Comecei em Streamlit, validei o fluxo com o staff e migrei para um monorepo: webapp Next.js + React + Tailwind, backend local FastAPI + pandas, SQLite como fonte de verdade, shell desktop Tauri. Sync incremental com Google Drive (por data de modificação) para GPS, wellness e testes de força; sync opcional e unidirecional local → nuvem (sempre upsert) para leitura remota.",
+  "keyDecisions": [
+    "Local-first: nenhum arquivo bruto processado na nuvem; custo de hospedagem zero.",
+    "Nenhum cálculo de negócio no banco ou no front — tudo numa camada Python.",
+    "Upsert com chave natural em toda tabela; nunca insert simples.",
+    "Resolução de nomes de atleta por fuzzy matching contra um registry central, com fila de pendências revisada manualmente (nome não resolvido não entra no banco).",
+    "Dados de força só locais na v1 — menor superfície de exposição."
+  ],
+  "result": "Plataforma em produção com 11 módulos: sessão GPS diária, relatórios semana a semana com metas, carga/PSE, acompanhamento ao vivo, perfil individual, wellness (Hooper + pós-treino + calendário de avaliações), força (3 aparelhos), gestão de atletas e empréstimos, admin de sync e export PDF client-side. Milhares de registros processados por temporada.",
+  "learned": "O nome que vem do próprio ecossistema de origem é mais confiável pra matching do que o nome oficial cadastrado — matching por nome \"bonito\" gera falsos positivos com sobrenomes comuns. E manter todo o cálculo numa camada só paga a dívida rápido: trocar a camada de visualização (Streamlit → Next.js) não tocou o pipeline."
+}

@@ -1,0 +1,17 @@
+{
+  "title": "Local AI Agent (Human-in-the-Loop)",
+  "tagline": "Agente desktop com LLM local e aprovação humana obrigatória",
+  "problem": "Eu queria um agente de IA de verdade rodando 100% na minha máquina — sem API paga, sem dado saindo do PC — mas sem abrir mão de segurança: um modelo local não pode ter permissão de escrever arquivo ou rodar comando sozinho.",
+  "targetUser": "Eu mesmo (ferramenta pessoal; o escopo de dados exclui explicitamente qualquer coisa do trabalho).",
+  "myRole": "Único desenvolvedor: app desktop, backend Rust, integração LLM.",
+  "process": "App desktop Tauri 2 (Rust) + React + TypeScript, LLM local via Ollama. Desenvolvido com TDD real no backend Rust (sandbox, agenda e auditoria têm suítes de teste). O modelo responde numa \"intenção estruturada\" (JSON com ação proposta: escrever arquivo, ler, rodar comando) que cai numa fila de aprovação com diff antes de qualquer execução.",
+  "keyDecisions": [
+    "Human-in-the-loop inegociável: o modelo só propõe; toda execução passa por Aprovar/Rejeitar. Não existe modo autônomo, nem escondido.",
+    "Tauri em vez de Electron: sandboxing declarativo real — o frontend nunca toca filesystem/processo direto, só via comandos Rust expostos.",
+    "Sandbox de arquivo com canonicalize() + verificação de prefixo do workspace (testado contra .., paths absolutos, arquivos novos).",
+    "Limite do sandbox de terminal documentado honestamente: cwd fixo no workspace, mas a defesa real é a aprovação manual do comando exato.",
+    "Log de auditoria append-only (JSONL), tolerante a linha corrompida."
+  ],
+  "result": "Agente funcional: chat com modelo local, fila de aprovação com diff, execução sandboxed de arquivo/terminal, histórico de conversas, agenda pessoal em checklist e aba de relatórios de ação — tudo offline.",
+  "learned": "Rust + Tauri pra valer (capabilities, testes, parsing defensivo — modelo local às vezes embrulha JSON em code fence e o parser tem que aguentar). E a arquitetura de segurança de um agente é decisão de produto, não detalhe: propor ≠ executar, e essa linha precisa estar no runtime, não no prompt."
+}

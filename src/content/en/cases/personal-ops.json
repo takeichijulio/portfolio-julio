@@ -1,0 +1,17 @@
+{
+  "title": "Personal Ops + Telegram Bot",
+  "tagline": "Personal agenda with a local-LLM conversation bot",
+  "problem": "Organizing my personal routine and university handball training planning in one place — with proactive reminders and conversational control through Telegram, without paying for an LLM API or sending personal data to third parties.",
+  "targetUser": "Myself (single user, authenticated, server bound to localhost only).",
+  "myRole": "Sole developer.",
+  "process": "Single Flask server for site + REST API; no-build frontend (plain HTML/CSS/JS, Tailwind and FullCalendar via CDN); data in plain JSON — deliberately no database. Telegram conversation bot backed by a local model (Ollama): free-form questions about the agenda, create/edit/complete/delete for tasks and events, batch actions — always with explicit confirmation before writing. Automatic notifications with periodic summaries and an independent watchdog that pings me if the server goes down.",
+  "keyDecisions": [
+    "Radical simplicity: Flask + JSON + CDN — zero build, zero infra; the app starts from a .bat in Windows Startup.",
+    "Every conversation-triggered write asks \"yes/no\" before saving — batch actions included (the real item list is shown before confirming).",
+    "When information is missing (event location, actual completion date), the bot asks instead of assuming.",
+    "Dual auth: browser session for the UI, Bearer token for automation.",
+    "Anti-hallucination in code, not in the prompt: model-generated notifications are only accepted if they mention every real item title; otherwise it falls back to deterministic text."
+  ],
+  "result": "In daily use: full CRUD via web and via conversation, periodic summaries until an \"end the day\" command, actual-completion date separate from the deadline, date-grouped UI with a completed section, and a watchdog reporting server down/up.",
+  "learned": "Local models hallucinate even with an explicit \"never invent\" instruction — the protection that works is validating output in code against real data, with a deterministic fallback. And the simplest possible stack (no build, no database) is a feature when the goal is running every day with zero maintenance."
+}
