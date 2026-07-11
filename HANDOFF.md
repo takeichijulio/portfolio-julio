@@ -1,7 +1,33 @@
 # HANDOFF — portfolio-julio
 
-Estado do projeto em **2026-07-11**, fim da Sessão 4. Este documento permite
+Estado do projeto em **2026-07-11**, fim da Sessão 5. Este documento permite
 que qualquer pessoa (ou modelo) continue o trabalho sem contexto anterior.
+
+## Sessão 5 — upgrade das demos + copy profissional (delta)
+
+- **Demos reconstruídas para refletir a complexidade real dos produtos**
+  (dados continuam 100% em `src/lib/mock/`, seed determinística):
+  - *GPS & Load*: 5 vistas — tabela de sessão (clique na linha seleciona o
+    atleta), grade semanal PSE × UA com bandas de carga, realizado × meta com
+    destaque <80%/>120%, máximos com escopo Temporada/90 dias, wellness
+    multi-métrica com toggles + PSE em barras. Seletor de atleta compartilhado.
+  - *Performance Hub*: strip de KPIs + 4 seções — GPS por categoria
+    (U15/U17/U20), força com scatter E×D, wellness com 3 gráficos (Hooper
+    multi-linha, PSE, dores por região) e radar multidisciplinar.
+  - *Evaluations Hub*: filtro de categoria, calendário de 14 dias com dots e
+    painel de detalhe por dia, pills de presença que alternam ao clique;
+    U20 exercita o empty state de propósito.
+  - *Local AI Agent*: 3 tipos de proposta com preview de diff expansível,
+    badge "Ollama local", botão de simular proposta, audit log e reset.
+  - *Personal Ops*: tarefas agrupadas (Atrasadas/Hoje/Próximas/Concluídas),
+    mini-calendário do mês com dots e transcript multi-turno de confirmação.
+- Mocks novos: `weekly-load.ts`, `metas.ts`, `maximos.ts`, `pain-regions.ts`,
+  `multidisciplinary.ts`, `category-gps.ts`, `assessment-calendar.ts`
+  (+ faixas documentadas em `content-kit/mock-data-spec.md`).
+- **Copy dos 10 JSONs de case reescrita em tom profissional** (voz ativa,
+  sem coloquialismos; fatos inalterados; v3 intacto; grep de clube limpo).
+- Auto-review em `IMPROVEMENTS.md` (visual/UX/copy/perf/a11y, P0–P2);
+  P0s corrigidos na própria sessão.
 
 ## O que é
 

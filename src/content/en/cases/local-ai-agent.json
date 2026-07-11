@@ -1,17 +1,17 @@
 {
   "title": "Local AI Agent (Human-in-the-Loop)",
   "tagline": "Desktop agent with a local LLM and mandatory human approval",
-  "problem": "I wanted a real AI agent running 100% on my machine — no paid API, no data leaving the PC — without giving up safety: a local model must not be able to write files or run commands on its own.",
-  "targetUser": "Myself (personal tool; the data scope explicitly excludes anything work-related).",
+  "problem": "Designed an AI agent to run 100% on the local machine — no paid API, no data leaving the computer — under one central safety constraint: a local model must never be allowed to write files or run commands on its own.",
+  "targetUser": "Personal use (the data scope explicitly excludes any work-related content).",
   "myRole": "Sole developer: desktop app, Rust backend, LLM integration.",
-  "process": "Tauri 2 (Rust) + React + TypeScript desktop app, local LLM via Ollama. Built with real TDD on the Rust backend (sandbox, agenda and audit modules have test suites). The model answers with a \"structured intent\" (JSON proposing an action: write file, read, run command) that lands in an approval queue with a diff before anything executes.",
+  "process": "Built a Tauri 2 (Rust) + React + TypeScript desktop app with a local LLM via Ollama, applying TDD on the Rust backend — sandbox, agenda and audit modules each have their own test suites. The model answers with a \"structured intent\" (JSON carrying the proposed action: write file, read, run command) that enters an approval queue with a diff before anything executes.",
   "keyDecisions": [
-    "Non-negotiable human-in-the-loop: the model only proposes; every execution goes through Approve/Reject. No autonomous mode, hidden or otherwise.",
-    "Tauri over Electron: real declarative sandboxing — the frontend never touches filesystem/processes directly, only through exposed Rust commands.",
-    "File sandbox with canonicalize() + workspace prefix check (tested against .., absolute paths, new files).",
-    "Terminal sandbox limits documented honestly: cwd pinned to the workspace, but the real defense is manual approval of the exact command.",
+    "Non-negotiable human-in-the-loop: the model only proposes; every execution goes through Approve/Reject. No autonomous mode, visible or hidden.",
+    "Tauri over Electron: real declarative sandboxing — the frontend never touches the filesystem or processes directly, only through exposed Rust commands.",
+    "File sandbox with canonicalize() and a workspace prefix check, tested against path traversal, absolute paths and new files.",
+    "Terminal sandbox limits documented honestly: cwd pinned to the workspace, but the effective defense is manual approval of the exact command.",
     "Append-only audit log (JSONL), tolerant to corrupted lines."
   ],
-  "result": "Working agent: chat with a local model, approval queue with diffs, sandboxed file/terminal execution, conversation history, personal checklist agenda and an action-reports view — all offline.",
-  "learned": "Rust + Tauri for real (capabilities, tests, defensive parsing — local models sometimes wrap JSON in code fences and the parser must survive it). And an agent's safety architecture is a product decision, not a detail: proposing ≠ executing, and that line must live in the runtime, not in the prompt."
+  "result": "Working agent: chat with a local model, approval queue with diffs, sandboxed file and terminal execution, conversation history, a personal checklist agenda and an action-reports view — fully offline.",
+  "learned": "Rust and Tauri in depth: capabilities, tests and defensive parsing — local models occasionally wrap JSON in code fences and the parser must tolerate it. An agent's safety architecture is a product decision, not an implementation detail: proposing ≠ executing, and that boundary must live in the runtime, not in the prompt."
 }

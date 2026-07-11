@@ -57,6 +57,40 @@ hardcoded fora de `lib/mock/`.
 - Fila de aprovação do agente: propostas fake (escrever arquivo, rodar comando)
   com estados Aprovar/Rejeitar simulados
 
+### Grade semanal de carga (demo GPS & Load — aba Carga)
+| Métrica | Faixa mock |
+|---|---|
+| PSE da sessão | 2–9 (dias de descanso = célula vazia) |
+| UA da sessão | 220–640 |
+| Banda de carga | baixa < 350 UA · média 350–520 · alta > 520 |
+
+### Metas semanais (demo GPS & Load — aba Metas)
+| Métrica | Meta fixa | Realizado |
+|---|---|---|
+| Distância total | 30.000 m | 62–132% da meta |
+| Alta intensidade | 3.500 m | idem |
+| Sprints | 120 | idem |
+| Destaque | < 80% (vermelho) ou > 120% (laranja) | |
+
+### Máximos (demo GPS & Load — aba Máximos)
+| Métrica | Faixa mock | Escopos |
+|---|---|---|
+| Velocidade máxima | 29,0–34,5 km/h | Temporada / Últimos 90 dias (90d ≤ temporada) |
+| Maior distância em sessão | 7.800–10.800 m | idem |
+| Maior UA em sessão | 500–780 | idem |
+
+### Dores por região (demo Performance Hub — Wellness)
+Regiões genéricas (posterior de coxa, quadríceps, tornozelo, joelho, lombar,
+adutor), 0–9 relatos por semana no grupo.
+
+### Multidisciplinar (demo Performance Hub — radar)
+4 áreas genéricas (Psicologia, Nutrição, Serviço Social, Pedagogia),
+notas 5,5–9,5 (escala 0–10).
+
+### Calendário de avaliações (demo Evaluations Hub)
+Próximos 14 dias, 0–3 avaliações/dia, categorias U15/U17 apenas —
+**U20 fica sem agenda de propósito** para exercitar o empty state.
+
 ## Estrutura sugerida
 
 ```

@@ -1,17 +1,17 @@
 {
   "title": "Multi-department Performance Hub",
   "tagline": "Dashboard multidepartamental em produção (Streamlit + SQLite)",
-  "problem": "Os departamentos de saúde e performance da base (fisiologia, medicina, fisioterapia, psicologia, nutrição, serviço social, pedagogia) registravam avaliações em planilhas separadas — sem visão unificada por atleta e sem relatório consolidado pra comissão.",
+  "problem": "Os departamentos de saúde e performance da base (fisiologia, medicina, fisioterapia, psicologia, nutrição, serviço social, pedagogia) registravam avaliações em planilhas separadas — sem visão unificada por atleta e sem relatório consolidado para a comissão.",
   "targetUser": "Staff multidisciplinar da base; acesso com dois perfis (comum e admin).",
-  "myRole": "Único desenvolvedor, do pipeline de importação ao deploy.",
-  "process": "App Streamlit monolítico com SQLite sincronizado via Google Drive (o banco nunca vai pro git), pipeline de parsers por departamento rodando local ou via página de importação. Iterei o visual em rodadas curtas de feedback direto com o usuário real. Gerador de PDF por atleta reconstruído com react-pdf (Node chamado por subprocess do Python) depois de uma primeira tentativa descartada.",
+  "myRole": "Desenvolvedor único, do pipeline de importação ao deploy.",
+  "process": "Projetei um app Streamlit monolítico com SQLite sincronizado via Google Drive (o banco nunca entra no git) e um pipeline de parsers por departamento, executável localmente ou pela página de importação. Iterei o visual em ciclos curtos de feedback direto com o usuário real. Reconstruí o gerador de PDF por atleta com react-pdf (Node acionado por subprocess do Python) após descartar a primeira abordagem, reprovada em validação visual.",
   "keyDecisions": [
-    "Streamlit Community Cloud + SQLite no Drive = produção com custo zero.",
-    "Autenticação bcrypt + rate limiting no login (janela deslizante por IP), com storage separado do banco principal (que é sobrescrito pelo sync).",
-    "Tema dark completo com regra de acessibilidade: cor de status nunca é cor de texto — só ícone ou fundo de badge/pill.",
-    "Wellness só entra no gráfico em dias com sessão GPS real do atleta — evita pontos soltos sem contexto.",
+    "Streamlit Community Cloud + SQLite no Drive: produção com custo zero.",
+    "Autenticação bcrypt + rate limiting no login (janela deslizante por IP), com storage isolado do banco principal — que é sobrescrito pelo sync.",
+    "Tema dark completo com regra de acessibilidade: cor de status nunca é cor de texto — apenas ícone ou fundo de badge/pill.",
+    "Wellness só entra no gráfico em dias com sessão GPS real do atleta — elimina pontos sem contexto.",
     "86 testes pytest cobrindo parsers, rate limiting e a ponte de PDF."
   ],
-  "result": "Em produção, uso diário: dashboards por departamento, importação self-service, PDF por atleta validado com centenas de atletas reais, backup e restauração com confirmação em 2 passos.",
-  "learned": "Três lições de produção que viraram regra: pipeline de teste automatizado aprovou um PDF visualmente quebrado — validação visual do artefato real é inegociável; um .gitignore sem âncora de raiz corrompeu pacotes vendorizados só no deploy — clone limpo virou etapa obrigatória antes do push; e componente de abas que esconde painel com display:none zera a altura de gráficos em iframe pra sempre — troquei abas por radio buttons."
+  "result": "Em produção e em uso diário: dashboards por departamento, importação self-service, PDF por atleta validado com centenas de atletas reais, backup e restauração com confirmação em duas etapas.",
+  "learned": "Três lições de produção que viraram regra: um pipeline de testes automatizados aprovou um PDF visualmente quebrado — validação visual do artefato real é inegociável; um .gitignore sem âncora de raiz corrompeu pacotes vendorizados apenas no deploy — verificação em clone limpo virou etapa obrigatória antes do push; e componentes de abas que ocultam painéis com display:none zeram permanentemente a altura de gráficos em iframe — substituí abas por radio buttons."
 }

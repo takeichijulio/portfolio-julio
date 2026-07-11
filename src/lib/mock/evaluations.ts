@@ -21,8 +21,8 @@ export interface MockComplianceRow {
   lastStatus: MockAttendance;
 }
 
-export function mockCompliance(): MockComplianceRow[] {
-  const rng = createRng(606);
+export function mockCompliance(seedOffset = 0): MockComplianceRow[] {
+  const rng = createRng(606 + seedOffset);
   return MOCK_AREAS.map((area) => ({
     area,
     weeklyCompliancePct: randInt(rng, 40, 100),

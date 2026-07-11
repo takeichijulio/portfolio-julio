@@ -4,14 +4,14 @@
   "problem": "The youth academy's health & performance departments (physiology, medicine, physiotherapy, psychology, nutrition, social work, pedagogy) kept evaluations in separate spreadsheets — no unified per-athlete view, no consolidated report for staff.",
   "targetUser": "Academy multidisciplinary staff; two access profiles (regular and admin).",
   "myRole": "Sole developer, from import pipeline to deploy.",
-  "process": "Monolithic Streamlit app with SQLite synced via Google Drive (the database never touches git), a parser pipeline per department running locally or through an import page. Iterated the visuals in short feedback rounds with the real user. Per-athlete PDF engine rebuilt with react-pdf (Node called via Python subprocess) after a first attempt was discarded.",
+  "process": "Designed a monolithic Streamlit app with SQLite synced via Google Drive (the database never enters git) and a per-department parser pipeline, runnable locally or through an import page. Iterated the visuals in short feedback cycles with the real user. Rebuilt the per-athlete PDF engine with react-pdf (Node invoked via Python subprocess) after discarding a first approach that failed visual validation.",
   "keyDecisions": [
-    "Streamlit Community Cloud + SQLite on Drive = zero-cost production.",
-    "bcrypt auth + login rate limiting (sliding window per IP), with storage kept separate from the main DB (which the sync overwrites).",
+    "Streamlit Community Cloud + SQLite on Drive: zero-cost production.",
+    "bcrypt auth + login rate limiting (sliding window per IP), with storage isolated from the main database — which the sync overwrites.",
     "Full dark theme with an accessibility rule: status color is never text color — icon or badge/pill background only.",
-    "Wellness only charts on days with a real GPS session for that athlete — no context-free floating points.",
+    "Wellness only charts on days with a real GPS session for that athlete — eliminates context-free points.",
     "86 pytest cases covering parsers, rate limiting and the PDF bridge."
   ],
-  "result": "In production, daily use: per-department dashboards, self-service imports, per-athlete PDF validated against hundreds of real athletes, 2-step-confirmed backup/restore.",
-  "learned": "Three production lessons that became rules: an automated test pipeline approved a visually broken PDF — visually validating the real artifact is non-negotiable; an unanchored .gitignore pattern corrupted vendored packages only in deploy — a clean-clone check became mandatory before pushing; and tab components that hide panels with display:none permanently zero the height of iframe-based charts — I replaced tabs with radio buttons."
+  "result": "In production and daily use: per-department dashboards, self-service imports, per-athlete PDF validated against hundreds of real athletes, two-step-confirmed backup and restore.",
+  "learned": "Three production lessons that became rules: an automated test pipeline approved a visually broken PDF — visually validating the real artifact is non-negotiable; an unanchored .gitignore pattern corrupted vendored packages only in deploy — a clean-clone check became mandatory before every push; and tab components that hide panels with display:none permanently zero the height of iframe-based charts — I replaced tabs with radio buttons."
 }
