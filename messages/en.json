@@ -1,0 +1,32 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "projects": "Projects",
+    "contact": "Contact"
+  },
+  "hero": {
+    "role": "Sports Data Engineer",
+    "title": "Raw athlete data becomes decision-making tools.",
+    "subtitle": "I'm Júlio Takeichi. At Botafogo, I turn youth-academy GPS, wellness and strength data into pipelines, dashboards and reports coaching staff use every day — local-first, at zero infrastructure cost.",
+    "ctaProjects": "View projects",
+    "ctaContact": "Get in touch"
+  },
+  "badge": {
+    "fictional": "Demo — fictional data"
+  },
+  "stub": {
+    "about": "Full bio, stack and sports-data domain details land here in the next milestone.",
+    "projects": "The 5 case studies (Catapult platform, NSP Dashboard, Evaluations Hub, local AI agent, personal agenda) land here in the next milestone.",
+    "contact": "While the form isn't here yet, reach me by e-mail or GitHub:"
+  },
+  "footer": {
+    "note": "Built by Júlio Takeichi. Club project demos use fictional data only.",
+    "github": "GitHub",
+    "email": "E-mail"
+  },
+  "meta": {
+    "title": "Júlio Takeichi — Sports Data Engineer",
+    "description": "Portfolio of Júlio Takeichi: GPS data pipelines, athlete performance dashboards and local-AI tools. Sports data engineering at Botafogo."
+  }
+}

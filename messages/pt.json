@@ -1,0 +1,32 @@
+{
+  "nav": {
+    "home": "Início",
+    "about": "Sobre",
+    "projects": "Projetos",
+    "contact": "Contato"
+  },
+  "hero": {
+    "role": "Engenheiro de Dados Esportivos",
+    "title": "Dados brutos de atleta viram ferramenta de decisão.",
+    "subtitle": "Sou o Júlio Takeichi. No Botafogo, transformo GPS, wellness e testes de força das categorias de base em pipelines, dashboards e relatórios que a comissão técnica usa todos os dias — local-first e com custo zero de infraestrutura.",
+    "ctaProjects": "Ver projetos",
+    "ctaContact": "Fale comigo"
+  },
+  "badge": {
+    "fictional": "Demonstração — dados fictícios"
+  },
+  "stub": {
+    "about": "Bio completa, stack e domínio de sports data entram aqui na próxima etapa.",
+    "projects": "Os 5 case studies (Catapult, Dashboard NSP, Hub de Avaliações, Agente local de IA, Agenda pessoal) entram aqui na próxima etapa.",
+    "contact": "Enquanto o formulário não chega, me encontre por e-mail ou GitHub:"
+  },
+  "footer": {
+    "note": "Feito por Júlio Takeichi. Demos de projetos do clube usam apenas dados fictícios.",
+    "github": "GitHub",
+    "email": "E-mail"
+  },
+  "meta": {
+    "title": "Júlio Takeichi — Engenheiro de Dados Esportivos",
+    "description": "Portfolio de Júlio Takeichi: pipelines de GPS, dashboards de performance de atletas e ferramentas com IA local. Sports data engineering no Botafogo."
+  }
+}
