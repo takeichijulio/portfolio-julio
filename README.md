@@ -4,8 +4,9 @@ Personal portfolio of **Júlio Takeichi** — Sports Data professional in
 football, building toward data engineering. Premium, bilingual (PT/EN) site
 built with Next.js.
 
-**Status:** Phase 2 — core pages live (home, about, projects grid, contact,
-custom 404); interactive case studies come next.
+**Status:** deploy-ready — all pages, 5 case studies with interactive mock
+demos, both locales. Lighthouse (local prod build): 96+/100/96/92
+(perf/a11y/bp/seo). See [HANDOFF.md](HANDOFF.md) for deploy steps.
 
 ## Stack
 
@@ -48,5 +49,13 @@ All football-domain demos use fictional data only — see
 ```bash
 npm install
 npm run dev    # http://localhost:3000
-npm run build  # production build (all routes SSG)
+npm run build  # production build (all routes SSG) — stop the dev server first
+npm run start  # serve the production build
 ```
+
+## Deploy (Vercel)
+
+Import the GitHub repo on vercel.com (Next.js preset auto-detected, no build
+config needed). Optional env var: `NEXT_PUBLIC_SITE_URL=https://<domain>` for
+OG/canonical metadata. Full steps + pre-publish confidentiality checklist in
+[HANDOFF.md](HANDOFF.md).

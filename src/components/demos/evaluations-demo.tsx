@@ -22,9 +22,9 @@ export default function EvaluationsDemo() {
       <table className="w-full min-w-[480px] text-left text-xs">
         <thead>
           <tr className="border-b border-border text-muted">
-            <th className="py-2 pr-3 font-medium">{t("colArea")}</th>
-            <th className="py-2 pr-3 font-medium">{t("colCompliance")}</th>
-            <th className="py-2 font-medium">{t("colStatus")}</th>
+            <th scope="col" className="py-2 pr-3 font-medium">{t("colArea")}</th>
+            <th scope="col" className="py-2 pr-3 font-medium">{t("colCompliance")}</th>
+            <th scope="col" className="py-2 font-medium">{t("colStatus")}</th>
           </tr>
         </thead>
         <tbody>

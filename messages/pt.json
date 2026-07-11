@@ -14,7 +14,9 @@
     "kpiCaption": "Números fictícios de demonstração — gerados em lib/mock/",
     "kpiDistance": "km percorridos (mock)",
     "kpiSessions": "sessões GPS (mock)",
-    "kpiAthletes": "atletas monitorados (mock)"
+    "kpiAthletes": "atletas monitorados (mock)",
+    "featuredTitle": "Cases em destaque",
+    "viewAll": "Ver todos os projetos"
   },
   "badge": {
     "fictional": "Demonstração — dados fictícios"

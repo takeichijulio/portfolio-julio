@@ -83,13 +83,13 @@ export default function GpsDemo() {
             <table className="w-full min-w-[540px] text-left text-xs">
               <thead>
                 <tr className="border-b border-border text-muted">
-                  <th className="py-2 pr-3 font-medium">{t("colAthlete")}</th>
-                  <th className="py-2 pr-3 font-medium">{t("colDistance")}</th>
-                  <th className="py-2 pr-3 font-medium">
+                  <th scope="col" className="py-2 pr-3 font-medium">{t("colAthlete")}</th>
+                  <th scope="col" className="py-2 pr-3 font-medium">{t("colDistance")}</th>
+                  <th scope="col" className="py-2 pr-3 font-medium">
                     {t("colHighIntensity")}
                   </th>
-                  <th className="py-2 pr-3 font-medium">{t("colSprints")}</th>
-                  <th className="py-2 font-medium">{t("colTopSpeed")}</th>
+                  <th scope="col" className="py-2 pr-3 font-medium">{t("colSprints")}</th>
+                  <th scope="col" className="py-2 font-medium">{t("colTopSpeed")}</th>
                 </tr>
               </thead>
               <tbody className="font-mono">
