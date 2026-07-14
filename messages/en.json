@@ -33,7 +33,17 @@
     "domain2": "Wellness: Hooper Index, post-training RPE, adherence",
     "domain3": "Strength tests and bilateral asymmetry",
     "domain4": "Pipelines: raw files → local database → cloud (always upsert)",
-    "domain5": "Per-athlete PDF reports"
+    "domain5": "Per-athlete PDF reports",
+    "aiTitle": "AI-Assisted Development",
+    "aiIntro": "I model and architect the systems I build, and I use AI agents — Cursor and Claude Code — as a core part of implementation. That's backed by a structured practice: reusable skills, a personal knowledge base, and multi-session planning.",
+    "aiSkillsTitle": "Skill orchestration",
+    "aiSkillsDesc": "Reusable workflows for each stage of a project — requirements interview, spec generation, issue breakdown, test-driven implementation, UI review — applied consistently across projects.",
+    "aiKnowledgeTitle": "Personal knowledge base",
+    "aiKnowledgeDesc": "I maintain a personal base with raw sources kept separate from a curated layer, with explicit rules for ingestion, querying and periodic audits — so agents work from reliable information, not loose context.",
+    "aiPlanningTitle": "Session-based planning",
+    "aiPlanningDesc": "Larger builds follow a session-based execution model, with done-criteria per stage and a handoff document between sessions — this site itself was built that way.",
+    "aiSafetyTitle": "Safety & grounding in production",
+    "aiSafetyDesc": "In my local-AI projects, every action goes through human approval, and every model output is validated in code against real data before becoming the final result (see Local AI Agent and Personal Ops)."
   },
   "projects": {
     "title": "Projects",

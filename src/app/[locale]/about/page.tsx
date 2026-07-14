@@ -2,8 +2,15 @@ import { useTranslations } from "next-intl";
 import { setRequestLocale } from "next-intl/server";
 import { use } from "react";
 import Image from "next/image";
-import { CircleCheck } from "lucide-react";
+import {
+  CircleCheck,
+  Database,
+  ListChecks,
+  ShieldCheck,
+  Workflow,
+} from "lucide-react";
 import { Badge } from "@/components/ui/badge";
+import { Card, CardDescription, CardTitle } from "@/components/ui/card";
 
 const STACK = [
   "Python (pandas, FastAPI, Streamlit)",
@@ -14,6 +21,13 @@ const STACK = [
   "Ollama (IA local)",
   "Rust / Tauri",
 ];
+
+const AI_PRACTICES = [
+  { icon: Workflow, key: "aiSkills" },
+  { icon: Database, key: "aiKnowledge" },
+  { icon: ListChecks, key: "aiPlanning" },
+  { icon: ShieldCheck, key: "aiSafety" },
+] as const;
 
 export default function AboutPage({
   params,
@@ -78,6 +92,24 @@ export default function AboutPage({
               ),
             )}
           </ul>
+        </div>
+      </div>
+
+      <div className="mt-16">
+        <h2 className="font-display text-xl font-semibold text-chalk">
+          {t("aiTitle")}
+        </h2>
+        <p className="mt-3 max-w-2xl text-sm leading-relaxed text-muted">
+          {t("aiIntro")}
+        </p>
+        <div className="mt-5 grid gap-4 sm:grid-cols-2">
+          {AI_PRACTICES.map(({ icon: Icon, key }) => (
+            <Card key={key} className="flex flex-col gap-2">
+              <Icon aria-hidden size={18} className="text-data" />
+              <CardTitle className="text-base">{t(`${key}Title`)}</CardTitle>
+              <CardDescription>{t(`${key}Desc`)}</CardDescription>
+            </Card>
+          ))}
         </div>
       </div>
     </section>

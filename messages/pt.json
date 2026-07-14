@@ -33,7 +33,17 @@
     "domain2": "Wellness: Hooper Index, PSE pós-treino, adesão",
     "domain3": "Testes de força e assimetria bilateral",
     "domain4": "Pipelines: arquivos brutos → banco local → nuvem (sempre upsert)",
-    "domain5": "Relatórios em PDF por atleta"
+    "domain5": "Relatórios em PDF por atleta",
+    "aiTitle": "Desenvolvimento assistido por IA",
+    "aiIntro": "Modelo e arquiteto os sistemas que construo, e uso agentes de IA — Cursor e Claude Code — como parte central do desenvolvimento. Isso é sustentado por uma prática estruturada: skills reutilizáveis, base de conhecimento própria e planejamento de sessões multi-etapa.",
+    "aiSkillsTitle": "Orquestração de skills",
+    "aiSkillsDesc": "Fluxos reutilizáveis para cada etapa de um projeto — entrevista de requisitos, geração de spec, quebra em issues, implementação orientada a testes, revisão de UI — aplicados de forma consistente entre projetos.",
+    "aiKnowledgeTitle": "Base de conhecimento própria",
+    "aiKnowledgeDesc": "Mantenho uma base pessoal com fonte bruta separada da camada curada, com regras explícitas de ingestão, consulta e auditoria periódica — para os agentes trabalharem sobre informação confiável, não contexto solto.",
+    "aiPlanningTitle": "Planejamento por sessões",
+    "aiPlanningDesc": "Builds maiores seguem um modelo de execução em sessões, com critério de pronto por etapa e documento de handoff entre elas — este site foi construído assim.",
+    "aiSafetyTitle": "Segurança e grounding em produção",
+    "aiSafetyDesc": "Nos meus projetos com IA local, toda ação passa por aprovação humana e toda saída do modelo é validada em código contra dados reais antes de virar resultado final (ver Local AI Agent e Personal Ops)."
   },
   "projects": {
     "title": "Projetos",
