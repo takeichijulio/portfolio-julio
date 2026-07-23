@@ -15,3 +15,7 @@ node_modules/
 *.log
 .vercel
 *.tsbuildinfo
+
+# tooling local (nao e conteudo do site)
+.claude/
+.specify/

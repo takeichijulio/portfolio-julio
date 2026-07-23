@@ -1,7 +1,9 @@
-# Bio — Júlio Takeichi (v3)
+# Bio — Júlio Takeichi (v4)
 
 Foto: `content-kit/foto-perfil.jpeg` (cópia servida pelo site em
 `public/julio.jpeg`).
+
+Fonte de posicionamento (vault): `wiki/conceitos/carreira-posicionamento.md`.
 
 ## Contato / links
 
@@ -12,46 +14,75 @@ Foto: `content-kit/foto-perfil.jpeg` (cópia servida pelo site em
 | Headline (EN) | Sports Data Professional in Football |
 | Tagline (PT) | Construindo caminho para engenharia de dados |
 | Tagline (EN) | Building toward data engineering |
+| Subheadline (PT) | Processo dados de GPS, monto dashboards de carga e wellness e desenvolvo ferramentas internas — com projetos pessoais em IA local e desenvolvimento assistido por agentes. |
+| Subheadline (EN) | I process GPS data, build load & wellness dashboards, and develop internal tools — plus personal local-AI projects and agent-assisted development. |
 | E-mail profissional | juliotakeichi@outlook.com |
 | GitHub | https://github.com/takeichijulio |
-| LinkedIn | — (não tem no momento; **omitir do site**, não criar link vazio) |
+| LinkedIn | — (ainda não criar; **omitir do site**, não criar link vazio) |
 
-## Regras v3 (prevalecem sobre versões anteriores)
+## Regras v4 (prevalecem sobre v1–v3 de cargo/copy)
 
 - **Nunca** "Engenheiro de dados"/"Data Engineer" como cargo atual.
+- **Nunca** "Engenheiro de IA" / "AI Engineer" como título atual.
 - **Nunca** "futebol profissional" — dizer **futebol**.
 - **Nunca** nome, logo ou marca de clube em hero/about/headlines; cases são
   tipos de sistema, com contexto genérico ("clube de futebol", "departamento
   de performance de base").
-- Tom honesto: mostra o que já constrói como evidência de evolução, sem
-  inflar cargo.
+- **Nunca** inflar fluência live em React/JS; UI/front = AI-assisted.
+- Tom: estágio fisiologia/performance + cobertura real de Sports Data;
+  projetos como evidência, não como título inventado.
+- Disclaimer obrigatório no About: AI-assisted development + working style.
+
+## Formação
+
+- Educação Física — UFRJ (conclusão prevista fim do ano)
+- Análise e Desenvolvimento de Sistemas — FGV (2º período)
+- Asimov Academy: Python Office (Automações + Python para Empresas),
+  Aprendendo Python: Conceitos Intermediários, CursorAI; Formação
+  Engenheiro de Agentes de IA (em andamento)
 
 ## Parágrafo pessoal — PT
 
-Sou o Júlio, profissional de Sports Data no futebol, com foco em categorias
-de base. Meu dia a dia é transformar dados brutos de GPS, wellness e força em
-ferramentas que a comissão técnica realmente usa: pipelines que sincronizam
-exports de GPS, Google Drive e bancos locais, dashboards em produção e
-relatórios em PDF por atleta. Estou consolidando fundamentos de engenharia de
-dados através desses projetos. Prefiro soluções simples que funcionam —
-local-first, custo zero de hospedagem e validação com o usuário real antes de
-qualquer refinamento. Fora do trabalho, adoro aprender e desenvolver com
-agentes de IA — Cursor e Claude Code fazem parte do meu fluxo diário — e
-construo ferramentas pessoais com IA rodando localmente e aprovação humana
-obrigatória, como um bot de agenda no Telegram.
+Sou o Júlio. Estou em estágio em fisiologia/performance com categorias de
+base e, no dia a dia, cubro a demanda de dados e tecnologia: transformar
+GPS, wellness e força em ferramentas que a comissão técnica usa —
+pipelines locais, dashboards em produção e relatórios em PDF. Prefiro
+soluções simples que funcionam (local-first, custo zero, validação com o
+usuário real). Entrego UI e camadas front com desenvolvimento assistido
+por agentes (Cursor e Claude Code); minha força é produto, domínio de
+dados e orquestração com review humano. Fora do trabalho, construo
+ferramentas pessoais com IA local e human-in-the-loop, e mantenho um
+vault (fonte bruta → wiki/log) como memória para os modelos.
 
 ## Personal paragraph — EN
 
-I'm Júlio, a Sports Data professional in football, focused on youth academy
-categories. My day-to-day is turning raw GPS, wellness and strength data into
-tools coaching staff actually use: pipelines syncing GPS exports, Google Drive
-and local databases, production dashboards, and per-athlete PDF reports. I'm
-consolidating data engineering fundamentals through these projects. I favor
-simple solutions that work — local-first, zero hosting cost, validated with
-real users before any polish. Outside work, I love learning and building with
-AI agents — Cursor and Claude Code are part of my daily workflow — and I
-build personal tools powered by locally-run AI with mandatory
-human-in-the-loop approval, like a Telegram agenda bot.
+I'm Júlio. I'm an intern in physiology/performance with youth academy
+categories, and day-to-day I cover the data and technology demand: turning
+GPS, wellness and strength data into tools coaching staff use — local
+pipelines, production dashboards and PDF reports. I favor simple solutions
+that work (local-first, zero hosting cost, validated with real users).
+I ship UI and front-end layers with AI-assisted development (Cursor and
+Claude Code); my strength is product, sports-data domain and orchestration
+with human review. Outside work, I build personal tools with local AI and
+human-in-the-loop, and I keep a vault (raw sources → wiki/log) as memory
+for the models.
+
+## Working style (About)
+
+Agent loop até a feature → revisar diff e decidir merge → skills, rules
+e CLAUDE.md → memória em vault. Não afirmar PRD formal em todo passo nem
+evals sistemáticos ainda.
+
+## Terminologia de posicionamento (2026-07-22)
+
+Auto-descrição funcional decidida: **"AI-assisted developer"** — mantenho
+ownership da arquitetura e do review, agentes aceleram implementação; isso
+distingue de "vibe coding" (sem review, sem dono do código) e de "AI
+Engineer" (que constrói o motor de IA como produto, não é o cargo atual).
+Continua sem virar título de cargo — só descrição de working style, nas
+mesmas condições da regra "nunca Engenheiro de IA" acima. Fonte:
+`wiki/conceitos/carreira-posicionamento.md` (seção "Terminologia de
+mercado").
 
 ## Repos públicos bônus (linkar no site)
 

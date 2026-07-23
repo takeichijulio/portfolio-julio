@@ -1,5 +1,5 @@
 /**
- * Fundo decorativo do hero: metade de um campo de futebol visto de cima
+ * Fundo decorativo site-wide: campo de futebol visto de cima
  * (linhas em `line`, opacidade baixa). Puramente decorativo — aria-hidden,
  * sem animação (não precisa de guard de reduced-motion).
  */
@@ -7,7 +7,7 @@ export function PitchGrid() {
   return (
     <svg
       aria-hidden
-      className="pointer-events-none absolute inset-0 h-full w-full opacity-60"
+      className="pointer-events-none fixed inset-0 z-0 h-full w-full opacity-45"
       viewBox="0 0 1200 600"
       preserveAspectRatio="xMidYMid slice"
       fill="none"

@@ -1,0 +1,17 @@
+{
+  "title": "Jarvis — Personal Voice Assistant",
+  "tagline": "Local voice assistant with a visual Second Brain and two AI engines",
+  "problem": "I wanted a personal voice assistant that centralized my agenda, email and news without depending on any paid service and without duplicating logic I had already built in other personal projects.",
+  "targetUser": "Personal use (agenda and personal life / university handball; same scope as agenda-pessoal, no work-related data whatsoever).",
+  "myRole": "Sole developer: architecture, frontend, local server and integration with both AI engines.",
+  "process": "Built in three incremental parts, always enveloping what already existed instead of rewriting it: a single HTML/CSS/JS file with an animated Second Brain graph and native browser voice, then a Node-only \"antenna\" server (zero dependencies) giving the app access to my agenda, email and news without breaking CORS, and finally a second, fully local engine via Ollama running alongside Claude in the cloud.",
+  "keyDecisions": [
+    "Agenda: instead of integrating Google Calendar (as the original plan called for), Jarvis reuses my existing agenda-pessoal app's API — this removed an entire ICS parser from scope, a real simplification, not just reuse.",
+    "Every voice-triggered create, edit or delete repeats the action out loud and only executes after explicit confirmation — the same rule the agenda-pessoal Telegram bot already follows.",
+    "The local server (\"antenna\") listens only on 127.0.0.1, with a mandatory allowlist of external domains; anything outside the list gets a 403.",
+    "Email is read via IMAP with BODY.PEEK — Jarvis never marks a message as read unless I actually read it.",
+    "Dual engine: cloud Claude models or local Ollama (qwen2.5/qwen3) selectable on the fly, with a fully offline template fallback when there's no API key or internet."
+  ],
+  "result": "A working local system: voice and text chat, a Second Brain with 22 notes across 7 areas, agenda read/write with confirmation, email triage into 3 buckets, a news radar, a spoken morning briefing, and a sync button that exports new notes to my Obsidian second brain — never writing directly into the curated pages.",
+  "learned": "Reusing a system I had already built (agenda-pessoal) instead of integrating an external service cut real complexity, not just code. And a voice assistant needs an offline fallback in every module — if the AI or the network goes down, the app says so clearly and keeps working, never goes silent."
+}

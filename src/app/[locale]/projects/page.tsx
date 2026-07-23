@@ -3,7 +3,7 @@ import { setRequestLocale } from "next-intl/server";
 import { use } from "react";
 import { ArrowRight } from "lucide-react";
 import { Link } from "@/i18n/navigation";
-import { PROJECTS } from "@/lib/projects";
+import { PROJECTS, DEMO_SLUGS } from "@/lib/projects";
 import { Card, CardDescription, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { FictionalBadge } from "@/components/fictional-badge";
@@ -22,7 +22,7 @@ export default function ProjectsPage({
   const personal = PROJECTS.filter((p) => !p.football);
 
   return (
-    <section className="mx-auto w-full max-w-5xl px-6 py-24">
+    <section className="mx-auto w-full max-w-6xl px-6 py-24">
       <h1 className="font-display text-4xl font-bold tracking-tight text-chalk">
         {t("title")}
       </h1>
@@ -44,9 +44,12 @@ export default function ProjectsPage({
                 className="group focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-data"
               >
                 <Card className="card-tilt flex h-full flex-col gap-3 group-hover:border-data/50">
-                  {project.football && (
+                  {(project.football || DEMO_SLUGS.has(project.slug)) && (
                     <div className="flex flex-wrap items-center gap-2">
-                      <FictionalBadge />
+                      {project.football && <FictionalBadge />}
+                      {DEMO_SLUGS.has(project.slug) && (
+                        <Badge variant="turf">{tCase("demoTitle")}</Badge>
+                      )}
                     </div>
                   )}
                   <CardTitle>{t(`cases.${project.slug}.title`)}</CardTitle>

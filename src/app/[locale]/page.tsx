@@ -3,13 +3,13 @@ import { setRequestLocale } from "next-intl/server";
 import { use } from "react";
 import { ArrowRight } from "lucide-react";
 import { Link } from "@/i18n/navigation";
-import { PROJECTS } from "@/lib/projects";
+import { PROJECTS, DEMO_SLUGS } from "@/lib/projects";
 import { buttonClasses } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
 import { Card, CardDescription, CardTitle } from "@/components/ui/card";
 import { FictionalBadge } from "@/components/fictional-badge";
 import { HeroHeadline } from "@/components/hero-headline";
 import { KpiCounters } from "@/components/kpi-counters";
-import { PitchGrid } from "@/components/pitch-grid";
 
 const FEATURED_SLUGS = [
   "gps-load-dashboard",
@@ -26,14 +26,14 @@ export default function HomePage({
   setRequestLocale(locale);
   const t = useTranslations("hero");
   const tProjects = useTranslations("projects");
+  const tCaseDemo = useTranslations("caseStudy")("demoTitle");
 
   const featured = PROJECTS.filter((p) => FEATURED_SLUGS.includes(p.slug));
 
   return (
     <>
       <section className="relative overflow-hidden">
-        <PitchGrid />
-        <div className="relative mx-auto flex w-full max-w-5xl flex-col items-start gap-6 px-6 py-24 sm:py-32">
+        <div className="relative mx-auto flex w-full max-w-6xl flex-col items-start gap-6 px-6 py-24 sm:py-32">
           <p className="font-mono text-sm uppercase tracking-widest text-turf">
             {t("tagline")}
           </p>
@@ -51,10 +51,24 @@ export default function HomePage({
             </Link>
           </div>
           <KpiCounters />
+          <Link
+            href="/lab"
+            className="group mt-4 inline-flex items-center gap-2 text-sm text-muted transition-colors hover:text-chalk focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-data"
+          >
+            {t("labTeaser")}
+            <span className="inline-flex items-center gap-1 text-data">
+              {t("labLink")}
+              <ArrowRight
+                aria-hidden
+                size={13}
+                className="transition-transform group-hover:translate-x-0.5"
+              />
+            </span>
+          </Link>
         </div>
       </section>
 
-      <section className="mx-auto w-full max-w-5xl px-6 pb-24">
+      <section className="mx-auto w-full max-w-6xl px-6 pb-24">
         <div className="flex items-baseline justify-between gap-4">
           <h2 className="font-display text-2xl font-semibold tracking-tight text-chalk">
             {t("featuredTitle")}
@@ -75,9 +89,12 @@ export default function HomePage({
               className="group focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-data"
             >
               <Card className="card-tilt flex h-full flex-col gap-3 group-hover:border-data/50">
-                {project.football && (
-                  <div>
-                    <FictionalBadge />
+                {(project.football || DEMO_SLUGS.has(project.slug)) && (
+                  <div className="flex flex-wrap items-center gap-2">
+                    {project.football && <FictionalBadge />}
+                    {DEMO_SLUGS.has(project.slug) && (
+                      <Badge variant="turf">{tCaseDemo}</Badge>
+                    )}
                   </div>
                 )}
                 <CardTitle className="text-base">

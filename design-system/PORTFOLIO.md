@@ -43,7 +43,7 @@ variant `alert` — obrigatório em todo demo de futebol.
 
 | Onde | Efeito | Implementação |
 |---|---|---|
-| Hero | Grid de campo sutil no fundo | SVG/CSS decorativo, `aria-hidden`, opacidade baixa |
+| Site-wide | Grid de campo sutil no fundo (todas as páginas) | `PitchGrid` fixed no layout locale, `aria-hidden`, opacidade baixa |
 | Hero | Headline com stagger por palavra | Framer Motion, `useReducedMotion` |
 | Hero | KPI counters animados (dados de `lib/mock/`, rotulados como fictícios) | Framer Motion `useInView` + contagem |
 | Projects | Tilt 3D sutil no hover dos cards | CSS `.card-tilt`, desligado em `prefers-reduced-motion` |

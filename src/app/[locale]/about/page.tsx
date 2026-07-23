@@ -5,6 +5,7 @@ import Image from "next/image";
 import {
   CircleCheck,
   Database,
+  GraduationCap,
   ListChecks,
   ShieldCheck,
   Workflow,
@@ -14,12 +15,12 @@ import { Card, CardDescription, CardTitle } from "@/components/ui/card";
 
 const STACK = [
   "Python (pandas, FastAPI, Streamlit)",
-  "TypeScript (React, Next.js)",
   "SQLite / PostgreSQL (Supabase)",
-  "Tailwind CSS",
+  "Pipelines locais + sync upsert",
+  "TypeScript / React / Next.js (AI-assisted)",
   "Recharts / ECharts",
   "Ollama (IA local)",
-  "Rust / Tauri",
+  "Rust / Tauri (AI-assisted)",
 ];
 
 const AI_PRACTICES = [
@@ -28,6 +29,8 @@ const AI_PRACTICES = [
   { icon: ListChecks, key: "aiPlanning" },
   { icon: ShieldCheck, key: "aiSafety" },
 ] as const;
+
+const FORMATION_KEYS = ["formation1", "formation2", "formation3"] as const;
 
 export default function AboutPage({
   params,
@@ -39,7 +42,7 @@ export default function AboutPage({
   const t = useTranslations("about");
 
   return (
-    <section className="mx-auto w-full max-w-5xl px-6 py-24">
+    <section className="mx-auto w-full max-w-6xl px-6 py-24">
       <div className="flex flex-col gap-10 md:flex-row md:items-start">
         <div className="max-w-2xl">
           <h1 className="font-display text-4xl font-bold tracking-tight text-chalk">
@@ -97,10 +100,31 @@ export default function AboutPage({
 
       <div className="mt-16">
         <h2 className="font-display text-xl font-semibold text-chalk">
+          {t("formationTitle")}
+        </h2>
+        <ul className="mt-4 space-y-3 text-sm text-muted">
+          {FORMATION_KEYS.map((key) => (
+            <li key={key} className="flex items-start gap-2.5">
+              <GraduationCap
+                aria-hidden
+                size={16}
+                className="mt-0.5 shrink-0 text-data"
+              />
+              {t(key)}
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <div className="mt-16">
+        <h2 className="font-display text-xl font-semibold text-chalk">
           {t("aiTitle")}
         </h2>
         <p className="mt-3 max-w-2xl text-sm leading-relaxed text-muted">
           {t("aiIntro")}
+        </p>
+        <p className="mt-3 max-w-2xl rounded-lg border border-border bg-pitch/60 px-4 py-3 text-sm leading-relaxed text-muted">
+          {t("disclaimer")}
         </p>
         <div className="mt-5 grid gap-4 sm:grid-cols-2">
           {AI_PRACTICES.map(({ icon: Icon, key }) => (

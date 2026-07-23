@@ -8,7 +8,7 @@
   "hero": {
     "headline": "Sports Data Professional in Football",
     "tagline": "Building toward data engineering",
-    "subtitle": "I process GPS data, build load & wellness dashboards, and develop internal tools — plus personal full-stack and local AI projects.",
+    "subtitle": "I process GPS data, build load & wellness dashboards, and develop internal tools — plus personal local-AI projects and agent-assisted development.",
     "ctaProjects": "View projects",
     "ctaContact": "Get in touch",
     "kpiCaption": "Fictional demo numbers — generated in lib/mock/",
@@ -16,16 +16,18 @@
     "kpiSessions": "GPS sessions (mock)",
     "kpiAthletes": "athletes monitored (mock)",
     "featuredTitle": "Featured case studies",
-    "viewAll": "View all projects"
+    "viewAll": "View all projects",
+    "labTeaser": "Outside football, I also build AI agents and personal tools.",
+    "labLink": "See personal projects"
   },
   "badge": {
     "fictional": "Demo — fictional data"
   },
   "about": {
     "title": "About",
-    "intro1": "I work in Sports Data in football, focused on youth academy categories. Part of my day is operational and analytical — processing GPS data, building load & wellness dashboards, generating per-athlete reports. The other part is building and improving the systems that do it: pipelines, local databases, internal tools.",
-    "intro2": "I'm consolidating data engineering fundamentals through these projects — each one is on this site as evidence of what I already build in practice, not of a title I don't hold yet.",
-    "intro3": "Outside work, I love learning and building with AI agents — Cursor and Claude Code are part of my daily workflow — and I build personal tools powered by locally-run AI with mandatory human-in-the-loop approval, like a Telegram agenda bot.",
+    "intro1": "I'm an intern in physiology/performance with youth academy categories, and day-to-day I cover the data and technology demand: processing GPS, building load and wellness dashboards, generating reports, and maintaining the internal tools coaching staff actually use.",
+    "intro2": "Every project on this site is evidence of what I already ship in practice — pipelines, local databases, sync and reports — on the path toward data engineering, not as a job title I don't hold yet.",
+    "intro3": "Outside work, I run Claude Code and Cursor in a loop until the feature is ready, review the diff before merge, and build personal tools with local AI and mandatory human-in-the-loop approval, like a Telegram agenda bot.",
     "photoAlt": "Photo of Júlio Takeichi",
     "stackTitle": "Stack I use today",
     "domainTitle": "Domain",
@@ -34,20 +36,25 @@
     "domain3": "Strength tests and bilateral asymmetry",
     "domain4": "Pipelines: raw files → local database → cloud (always upsert)",
     "domain5": "Per-athlete PDF reports",
+    "formationTitle": "Education",
+    "formation1": "Physical Education — UFRJ (expected graduation by year end)",
+    "formation2": "Systems Analysis and Development — FGV (2nd semester)",
+    "formation3": "Asimov Academy: Python Office (Automations + Python for Business), Intermediate Concepts, CursorAI; AI Agents Engineer track (in progress)",
     "aiTitle": "AI-Assisted Development",
-    "aiIntro": "I model and architect the systems I build, and I use AI agents — Cursor and Claude Code — as a core part of implementation. That's backed by a structured practice: reusable skills, a personal knowledge base, and multi-session planning.",
-    "aiSkillsTitle": "Skill orchestration",
-    "aiSkillsDesc": "Reusable workflows for each stage of a project — requirements interview, spec generation, issue breakdown, test-driven implementation, UI review — applied consistently across projects.",
+    "aiIntro": "I describe myself as an AI-assisted developer: I model the problem and architecture, and agents (Cursor and Claude Code) speed up implementation — architectural decisions and review stay with me, never autonomous. UI and front-end layers ship this way; my strength is product, sports-data domain, and orchestration with human review.",
+    "disclaimer": "Working style: agent loop until the feature lands → review the diff and decide merge → skills, rules and CLAUDE.md → vault memory (raw sources → wiki/log). I don't claim live React/JS fluency or an AI engineer title.",
+    "aiSkillsTitle": "Skills, rules and hooks",
+    "aiSkillsDesc": "I maintain skills, rules, CLAUDE.md and hooks so the same agent workflow repeats across projects — agent-led implementation, without claiming a formal PRD on every step.",
     "aiKnowledgeTitle": "Personal knowledge base",
-    "aiKnowledgeDesc": "I maintain a personal base with raw sources kept separate from a curated layer, with explicit rules for ingestion, querying and periodic audits — so agents work from reliable information, not loose context.",
+    "aiKnowledgeDesc": "I keep a personal base with raw sources separated from a curated layer (wiki), plus a dated change log — so agents work from reliable information, not loose context.",
     "aiPlanningTitle": "Session-based planning",
-    "aiPlanningDesc": "Larger builds follow a session-based execution model, with done-criteria per stage and a handoff document between sessions — this site itself was built that way.",
-    "aiSafetyTitle": "Safety & grounding in production",
-    "aiSafetyDesc": "In my local-AI projects, every action goes through human approval, and every model output is validated in code against real data before becoming the final result (see Local AI Agent and Personal Ops)."
+    "aiPlanningDesc": "Larger builds follow session-based execution, with done-criteria per stage and handoff between sessions — this site itself was built that way (Fable / Claude Code).",
+    "aiSafetyTitle": "Safety and grounding",
+    "aiSafetyDesc": "In local-AI projects, every action goes through human approval (human-in-the-loop). Diff review is the gate before merge; model outputs are validated before becoming the final result (see Local AI Agent and Personal Ops)."
   },
   "projects": {
     "title": "Projects",
-    "lead": "Five real systems — three from the football domain (demos use fictional data only) and two personal. Each with a full case study and an interactive demo.",
+    "lead": "Six real systems — three from the football domain (demos use fictional data only) and three personal. Each with a full case study; most with an interactive demo.",
     "footballGroup": "Football",
     "personalGroup": "Personal",
     "cases": {
@@ -70,8 +77,18 @@
       "personal-ops": {
         "title": "Personal Ops + Telegram Bot",
         "description": "Personal agenda (Flask + JSON, no build step) with a Telegram conversation bot on a local LLM — mandatory confirmation before writes and anti-hallucination enforced in code."
+      },
+      "jarvis-assistente-voz": {
+        "title": "Jarvis — Personal Voice Assistant",
+        "description": "Local voice assistant (plain HTML/JS + Node server) with a graph-based Second Brain, agenda via its own API, email triage and two AI engines — cloud or fully local."
       }
     }
+  },
+  "lab": {
+    "tagline": "Outside football",
+    "title": "Personal projects",
+    "lead": "Sports Data in football is my primary lane. Over here, personal projects where I practice AI agent orchestration and assisted development — always with human approval before any action, never in autonomous mode.",
+    "backHome": "Sports Data in football"
   },
   "caseStudy": {
     "problem": "Problem",
@@ -228,7 +245,8 @@
   "footer": {
     "note": "Built by Júlio Takeichi. Football-domain demos use fictional data only.",
     "github": "GitHub",
-    "email": "E-mail"
+    "email": "E-mail",
+    "freela": "Sites & automations (freelance)"
   },
   "meta": {
     "title": "Júlio Takeichi — Sports Data in Football",

@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { ArrowLeft, Lock } from "lucide-react";
 import { Link } from "@/i18n/navigation";
-import { PROJECTS } from "@/lib/projects";
+import { PROJECTS, DEMO_SLUGS } from "@/lib/projects";
 import { routing } from "@/i18n/routing";
 import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
@@ -76,7 +76,7 @@ export default async function CasePage({
   ];
 
   return (
-    <article className="mx-auto w-full max-w-5xl px-6 py-16 sm:py-20">
+    <article className="mx-auto w-full max-w-6xl px-6 py-16 sm:py-20">
       <Link
         href="/projects"
         className="inline-flex items-center gap-1.5 text-sm text-muted transition-colors hover:text-data"
@@ -106,15 +106,17 @@ export default async function CasePage({
         </div>
       </header>
 
-      <Card className="mt-10">
-        <div className="mb-4 flex flex-wrap items-center justify-between gap-2">
-          <h2 className="font-display text-lg font-semibold text-chalk">
-            {t("demoTitle")}
-          </h2>
-          {project.football && <FictionalBadge />}
-        </div>
-        <DemoSection slug={slug} />
-      </Card>
+      {DEMO_SLUGS.has(slug) && (
+        <Card className="mt-10">
+          <div className="mb-4 flex flex-wrap items-center justify-between gap-2">
+            <h2 className="font-display text-lg font-semibold text-chalk">
+              {t("demoTitle")}
+            </h2>
+            {project.football && <FictionalBadge />}
+          </div>
+          <DemoSection slug={slug} />
+        </Card>
+      )}
 
       <div className="mt-12 grid gap-x-12 gap-y-8 md:grid-cols-2">
         {sections.map((section) => (

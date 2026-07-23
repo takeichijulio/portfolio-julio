@@ -5,7 +5,7 @@ export function SiteFooter() {
 
   return (
     <footer className="border-t border-border">
-      <div className="mx-auto flex w-full max-w-5xl flex-col gap-3 px-6 py-8 text-sm text-muted sm:flex-row sm:items-center sm:justify-between">
+      <div className="mx-auto flex w-full max-w-6xl flex-col gap-3 px-6 py-8 text-sm text-muted sm:flex-row sm:items-center sm:justify-between">
         <p>{t("note")}</p>
         <div className="flex items-center gap-4">
           <a
@@ -21,6 +21,14 @@ export function SiteFooter() {
             className="transition-colors hover:text-data"
           >
             {t("email")}
+          </a>
+          <a
+            href="https://takeichijulio.github.io/portfolio-freela/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="transition-colors hover:text-data"
+          >
+            {t("freela")}
           </a>
         </div>
       </div>

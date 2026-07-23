@@ -15,7 +15,7 @@ export default function ContactPage({
   const t = useTranslations("contact");
 
   return (
-    <section className="mx-auto w-full max-w-5xl px-6 py-24">
+    <section className="mx-auto w-full max-w-6xl px-6 py-24">
       <h1 className="font-display text-4xl font-bold tracking-tight text-chalk">
         {tNav("contact")}
       </h1>
