@@ -62,7 +62,7 @@ export function KpiCounters() {
             <dt className="order-last mt-1 text-xs leading-snug text-muted">
               {t(kpi.labelKey)}
             </dt>
-            <dd className="font-mono text-2xl font-semibold text-turf sm:text-3xl">
+            <dd className="font-mono text-2xl font-semibold text-data sm:text-3xl">
               <Counter target={kpi.value} animate={!reduced && inView} />
             </dd>
           </div>

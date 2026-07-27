@@ -38,7 +38,7 @@ export default function ProjectsPage({
         <div key={group.label} className="mt-12">
           <h2
             data-reveal
-            className="kinetic font-mono text-sm uppercase tracking-widest text-turf"
+            className="kinetic font-mono text-sm uppercase tracking-widest text-data"
           >
             {group.label}
           </h2>
@@ -59,7 +59,7 @@ export default function ProjectsPage({
                     <div className="flex flex-wrap items-center gap-2">
                       {project.football && <FictionalBadge />}
                       {DEMO_SLUGS.has(project.slug) && (
-                        <Badge variant="turf">{tCase("demoTitle")}</Badge>
+                        <Badge variant="data">{tCase("demoTitle")}</Badge>
                       )}
                     </div>
                   )}

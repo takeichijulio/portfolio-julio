@@ -19,7 +19,7 @@ export function SiteHeader() {
           href="/"
           className="font-display text-lg font-bold tracking-tight text-chalk"
         >
-          jt<span className="text-turf">.</span>
+          jt<span className="text-data">.</span>
         </Link>
         <div className="flex items-center gap-6">
           <nav aria-label="Main" className="flex items-center gap-5">

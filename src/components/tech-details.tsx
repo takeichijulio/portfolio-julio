@@ -27,7 +27,7 @@ export function TechDetails({
         className,
       )}
     >
-      <summary className="flex cursor-pointer list-none items-center justify-between gap-2 px-5 py-4 font-mono text-xs uppercase tracking-widest text-turf transition-colors hover:text-data focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-data [&::-webkit-details-marker]:hidden">
+      <summary className="flex cursor-pointer list-none items-center justify-between gap-2 px-5 py-4 font-mono text-xs uppercase tracking-widest text-data transition-colors hover:text-data focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-data [&::-webkit-details-marker]:hidden">
         <span className="group-open:hidden">{t("show")}</span>
         <span className="hidden group-open:inline">{t("hide")}</span>
         <ChevronDown

@@ -46,7 +46,7 @@ export default function LabPage({
 
       <p
         data-reveal
-        className="mt-6 font-mono text-sm uppercase tracking-widest text-turf"
+        className="mt-6 font-mono text-sm uppercase tracking-widest text-data"
       >
         {t("tagline")}
       </p>
@@ -69,7 +69,7 @@ export default function LabPage({
           >
             <Card className="card-tilt flex h-full flex-col gap-3 group-hover:border-data/50">
               {DEMO_SLUGS.has(project.slug) && (
-                <Badge variant="turf">{tCase("demoTitle")}</Badge>
+                <Badge variant="data">{tCase("demoTitle")}</Badge>
               )}
               <CardTitle>{tProjects(`cases.${project.slug}.title`)}</CardTitle>
               <CardDescription>

@@ -43,7 +43,7 @@ export default function NotFoundPage() {
       </svg>
       <p
         data-reveal
-        className="font-mono text-sm uppercase tracking-widest text-turf"
+        className="font-mono text-sm uppercase tracking-widest text-data"
       >
         404
       </p>

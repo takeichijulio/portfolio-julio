@@ -107,7 +107,7 @@ export default function AboutPage({
                   <CircleCheck
                     aria-hidden
                     size={16}
-                    className="mt-0.5 shrink-0 text-turf"
+                    className="mt-0.5 shrink-0 text-data"
                   />
                   {t(key)}
                 </li>

@@ -58,7 +58,7 @@ export default async function HomePage({
         <div className="relative mx-auto flex w-full max-w-6xl flex-col items-start gap-6 px-6 py-24 sm:py-32">
           <p
             data-reveal
-            className="font-mono text-sm uppercase tracking-widest text-turf"
+            className="font-mono text-sm uppercase tracking-widest text-data"
           >
             {t("tagline")}
           </p>
@@ -131,7 +131,7 @@ export default async function HomePage({
                   <div className="flex flex-wrap items-center gap-2">
                     {project.football && <FictionalBadge />}
                     {DEMO_SLUGS.has(project.slug) && (
-                      <Badge variant="turf">{tCaseDemo("demoTitle")}</Badge>
+                      <Badge variant="data">{tCaseDemo("demoTitle")}</Badge>
                     )}
                   </div>
                 )}

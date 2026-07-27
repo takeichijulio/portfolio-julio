@@ -121,7 +121,7 @@ export default async function CasePage({
       <section className="mt-10">
         <h2
           data-reveal
-          className="kinetic font-mono text-xs uppercase tracking-widest text-turf"
+          className="kinetic font-mono text-xs uppercase tracking-widest text-data"
         >
           {t("simple")}
         </h2>
@@ -131,7 +131,7 @@ export default async function CasePage({
         <ul data-reveal className="mt-4 flex flex-wrap gap-2">
           {content.simple.highlights.map((highlight) => (
             <li key={highlight}>
-              <Badge variant="turf">{highlight}</Badge>
+              <Badge variant="data">{highlight}</Badge>
             </li>
           ))}
         </ul>
@@ -158,7 +158,7 @@ export default async function CasePage({
           <div className="grid gap-x-12 gap-y-8 md:grid-cols-2">
             {contextSections.map((section) => (
               <section key={section.label}>
-                <h3 className="font-mono text-xs uppercase tracking-widest text-turf">
+                <h3 className="font-mono text-xs uppercase tracking-widest text-data">
                   {section.label}
                 </h3>
                 <p className="mt-2 leading-relaxed text-muted">
@@ -171,7 +171,7 @@ export default async function CasePage({
 
         <TechDetails>
           <section>
-            <h3 className="font-mono text-xs uppercase tracking-widest text-turf">
+            <h3 className="font-mono text-xs uppercase tracking-widest text-data">
               {t("keyDecisions")}
             </h3>
             <ul className="mt-3 space-y-2.5">
@@ -190,7 +190,7 @@ export default async function CasePage({
         <TechDetails>
           <div className="grid gap-x-12 gap-y-8 md:grid-cols-2">
             <section>
-              <h3 className="font-mono text-xs uppercase tracking-widest text-turf">
+              <h3 className="font-mono text-xs uppercase tracking-widest text-data">
                 {t("result")}
               </h3>
               <p className="mt-2 leading-relaxed text-muted">
@@ -198,7 +198,7 @@ export default async function CasePage({
               </p>
             </section>
             <section>
-              <h3 className="font-mono text-xs uppercase tracking-widest text-turf">
+              <h3 className="font-mono text-xs uppercase tracking-widest text-data">
                 {t("learned")}
               </h3>
               <p className="mt-2 leading-relaxed text-muted">
