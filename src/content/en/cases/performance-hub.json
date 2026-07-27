@@ -1,6 +1,11 @@
 {
   "title": "Multi-department Performance Hub",
   "tagline": "Multi-department dashboard in production (Streamlit + SQLite)",
+  "simple": {
+    "tagline": "Seven areas of the club, one single athlete file.",
+    "summary": "Physiology, medicine, physiotherapy, psychology, nutrition, social work and education each tracked assessments in their own spreadsheet. Nobody could see an athlete's full file, and the coaching staff had no single consolidated report. I built a dashboard where each area keeps logging things its own way, but everything comes together into one file — and it generates a PDF report per athlete. It's used daily, validated with hundreds of real athletes.",
+    "highlights": ["7 areas integrated", "PDF per athlete", "Used daily"]
+  },
   "problem": "The youth academy's health & performance departments (physiology, medicine, physiotherapy, psychology, nutrition, social work, pedagogy) kept evaluations in separate spreadsheets — no unified per-athlete view, no consolidated report for staff.",
   "targetUser": "Academy multidisciplinary staff; two access profiles (regular and admin).",
   "myRole": "Sole developer, from import pipeline to deploy.",

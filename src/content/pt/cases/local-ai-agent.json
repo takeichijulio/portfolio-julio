@@ -1,6 +1,11 @@
 {
   "title": "Local AI Agent (Human-in-the-Loop)",
   "tagline": "Agente desktop com LLM local e aprovação humana obrigatória",
+  "simple": {
+    "tagline": "Uma IA que nunca age sozinha: mostra o que pretende fazer e espera eu aprovar.",
+    "summary": "Projetei um assistente de IA que roda inteiro no meu computador, sem serviço pago e sem nada saindo da máquina. A regra central do projeto é de segurança: a IA não tem permissão para mexer em arquivo nenhum por conta própria. Antes de qualquer ação, ela mostra exatamente o que pretende mudar e fica parada esperando eu aprovar ou recusar.",
+    "highlights": ["Aprovação humana obrigatória", "Funciona offline", "Nada sai do computador"]
+  },
   "problem": "Projetei um agente de IA para rodar 100% na máquina local — sem API paga e sem dados saindo do computador — com uma restrição central de segurança: um modelo local não pode ter permissão para escrever arquivos ou executar comandos por conta própria.",
   "targetUser": "Uso próprio (ferramenta pessoal; o escopo de dados exclui explicitamente qualquer conteúdo do trabalho).",
   "myRole": "Desenvolvedor único: app desktop, backend Rust, integração com o LLM.",

@@ -1,6 +1,11 @@
 {
   "title": "Jarvis — Personal Voice Assistant",
   "tagline": "Local voice assistant with a visual Second Brain and two AI engines",
+  "simple": {
+    "tagline": "A personal assistant I talk to, and it answers — running on my own computer.",
+    "summary": "I wanted an assistant that brought together my calendar, email and news in one place, without paying a subscription and without sending my personal life outside my computer. So I built one: I talk, it answers. It reads my calendar, sorts my emails into three priority buckets, and gives me a spoken summary of my day each morning. It also organizes my notes — 22 of them, across 7 areas — and sends them to my digital notebook with one click.",
+    "highlights": ["100% local", "Voice and text", "No subscription cost"]
+  },
   "problem": "I wanted a personal voice assistant that centralized my agenda, email and news without depending on any paid service and without duplicating logic I had already built in other personal projects.",
   "targetUser": "Personal use (agenda and personal life / university handball; same scope as agenda-pessoal, no work-related data whatsoever).",
   "myRole": "Sole developer: architecture, frontend, local server and integration with both AI engines.",

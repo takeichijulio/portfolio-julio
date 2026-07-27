@@ -1,6 +1,11 @@
 {
   "title": "Local AI Agent (Human-in-the-Loop)",
   "tagline": "Desktop agent with a local LLM and mandatory human approval",
+  "simple": {
+    "tagline": "An AI that never acts on its own: it shows what it plans to do and waits for my approval.",
+    "summary": "I designed an AI assistant that runs entirely on my own computer, with no paid service and nothing leaving the machine. The project's core rule is about safety: the AI is not allowed to touch any file on its own. Before any action, it shows exactly what it plans to change and waits for me to approve or reject it.",
+    "highlights": ["Mandatory human approval", "Works offline", "Nothing leaves the computer"]
+  },
   "problem": "Designed an AI agent to run 100% on the local machine — no paid API, no data leaving the computer — under one central safety constraint: a local model must never be allowed to write files or run commands on its own.",
   "targetUser": "Personal use (the data scope explicitly excludes any work-related content).",
   "myRole": "Sole developer: desktop app, Rust backend, LLM integration.",

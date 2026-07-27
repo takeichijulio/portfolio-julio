@@ -101,7 +101,14 @@
     "demoTitle": "Interactive demo",
     "codePrivate": "Code private — available on request",
     "backToProjects": "All projects",
-    "viewCase": "View case study"
+    "viewCase": "View case study",
+    "simple": "In short"
+  },
+  "techDetails": {
+    "show": "View technical details",
+    "hide": "Hide technical details",
+    "expandAll": "Expand all",
+    "collapseAll": "Collapse all"
   },
   "demos": {
     "gps": {

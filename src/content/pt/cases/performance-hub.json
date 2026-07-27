@@ -1,6 +1,11 @@
 {
   "title": "Multi-department Performance Hub",
   "tagline": "Dashboard multidepartamental em produção (Streamlit + SQLite)",
+  "simple": {
+    "tagline": "Sete áreas do clube, uma ficha só por atleta.",
+    "summary": "Fisiologia, medicina, fisioterapia, psicologia, nutrição, serviço social e pedagogia anotavam as avaliações cada uma na sua planilha. Ninguém conseguia ver a ficha completa de um atleta, e a comissão técnica não tinha um relatório consolidado. Construí um painel onde cada área continua registrando do seu jeito, mas tudo se junta numa ficha única — e de onde sai um relatório em PDF por atleta. Está em uso diário, validado com centenas de atletas reais.",
+    "highlights": ["7 áreas integradas", "PDF por atleta", "Em uso diário"]
+  },
   "problem": "Os departamentos de saúde e performance da base (fisiologia, medicina, fisioterapia, psicologia, nutrição, serviço social, pedagogia) registravam avaliações em planilhas separadas — sem visão unificada por atleta e sem relatório consolidado para a comissão.",
   "targetUser": "Staff multidisciplinar da base; acesso com dois perfis (comum e admin).",
   "myRole": "Desenvolvedor único, do pipeline de importação ao deploy.",

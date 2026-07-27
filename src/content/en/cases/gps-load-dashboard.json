@@ -1,6 +1,11 @@
 {
   "title": "GPS & Load Dashboard",
   "tagline": "Full-stack GPS, wellness and strength platform for youth academy categories",
+  "simple": {
+    "tagline": "A dashboard that turns GPS vest data into same-day training decisions.",
+    "summary": "A football club's academy performance department received GPS vest data, wellness forms and strength tests in loose spreadsheets, and it took hours to turn that into anything useful. I built a system that does this work on its own: the coaching staff opens a laptop and sees, that same day, how far each athlete ran, how they're feeling, and whether they're taking on too much load. The system runs inside the club — no cloud subscription, and athlete data never leaves the building. It's in production, processing thousands of records every season.",
+    "highlights": ["In production", "11 areas integrated", "Zero server cost"]
+  },
   "problem": "A football club's youth-academy performance department needed to turn raw GPS exports, wellness forms and strength tests into usable daily information — with zero cloud cost and without processing sensitive athlete data outside club machines.",
   "targetUser": "Coaching and physiology staff of the youth academy (U15/U17/U20).",
   "myRole": "Sole developer: architecture, data pipeline, backend, frontend, deploy.",

@@ -1,6 +1,11 @@
 {
   "title": "Academy Evaluations Hub",
   "tagline": "Hub de avaliações e presenças integrado à plataforma de GPS",
+  "simple": {
+    "tagline": "Calendário de avaliações e presença, sem ninguém digitar duas vezes.",
+    "summary": "O calendário de avaliações e o controle de presença viviam espalhados entre seis departamentos. Fiz um hub que mostra o dia, a semana e o mês num lugar só. A parte que mais economiza tempo: ele puxa automaticamente os dados que o painel de GPS já tinha processado, então ninguém precisa digitar a mesma informação duas vezes. Mais de cem atletas sincronizados.",
+    "highlights": ["6 departamentos", "Zero digitação duplicada", "100+ atletas sincronizados"]
+  },
   "problem": "Calendário de avaliações, presenças e compliance de 6 departamentos estavam dispersos — e o novo hub precisava consumir os dados de GPS e wellness já processados pela plataforma existente, sem duplicar pipeline nem criar uma segunda fonte de escrita.",
   "targetUser": "Equipe técnica e departamentos de performance da base (categorias U15/U17).",
   "myRole": "Desenvolvedor único: modelagem de dados, API, UI e integração.",

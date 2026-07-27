@@ -1,6 +1,11 @@
 {
   "title": "Academy Evaluations Hub",
   "tagline": "Evaluations and attendance hub integrated with the GPS platform",
+  "simple": {
+    "tagline": "Assessment and attendance calendar, without anyone typing the same thing twice.",
+    "summary": "The assessment calendar and attendance tracking lived scattered across six departments. I built a hub that shows the day, week and month in one place. The part that saves the most time: it automatically pulls the data the GPS dashboard already processed, so nobody has to type the same information twice. Over a hundred athletes synced.",
+    "highlights": ["6 departments", "Zero duplicate entry", "100+ athletes synced"]
+  },
   "problem": "Evaluation calendars, attendance and compliance for 6 departments were scattered — and the new hub had to consume GPS/wellness data already processed by the existing platform without duplicating pipelines or creating a second write source.",
   "targetUser": "Academy technical staff and departments (U15/U17 categories).",
   "myRole": "Sole developer: data modeling, API, UI and integration.",

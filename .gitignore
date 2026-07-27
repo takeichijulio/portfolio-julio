@@ -19,3 +19,11 @@ node_modules/
 # tooling local (nao e conteudo do site)
 .claude/
 .specify/
+
+.vercel
+
+# referencia visual de terceiro (assets bundled, GA4 de terceiro) - nao e conteudo do site
+referencia_futurista/
+
+# tooling local de agente
+.pipeline/

@@ -1,6 +1,11 @@
 {
   "title": "GPS & Load Dashboard",
   "tagline": "Plataforma full-stack de GPS, wellness e força para categorias de base",
+  "simple": {
+    "tagline": "Um painel que transforma os dados dos coletes GPS em decisão de treino no mesmo dia.",
+    "summary": "O departamento de performance da base de um clube de futebol recebia os dados dos coletes GPS dos atletas em planilhas soltas, e levava horas pra transformar isso em algo útil. Construí um sistema que faz esse trabalho sozinho: o preparador abre o computador e vê, no mesmo dia, quanto cada atleta correu, como ele está se sentindo e se está pegando carga demais. O sistema roda dentro do clube — sem mensalidade de nuvem e sem que os dados dos atletas saiam de lá. Está em produção, processando milhares de registros por temporada.",
+    "highlights": ["Em produção", "11 áreas integradas", "Custo de servidor zero"]
+  },
   "problem": "O departamento de performance da base de um clube de futebol precisava transformar exports brutos de GPS, formulários de wellness e testes de força em informação diária utilizável — sem custo de nuvem e sem processar dados sensíveis de atletas fora das máquinas do clube.",
   "targetUser": "Comissão técnica e staff de fisiologia das categorias de base (U15/U17/U20).",
   "myRole": "Desenvolvedor único: arquitetura, pipeline de dados, backend, frontend e deploy.",

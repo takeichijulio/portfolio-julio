@@ -1,6 +1,11 @@
 {
   "title": "Personal Ops + Telegram Bot",
   "tagline": "Agenda pessoal com bot de conversa em LLM local",
+  "simple": {
+    "tagline": "Minha agenda e meus treinos, controlados por conversa no Telegram.",
+    "summary": "Juntei minha rotina pessoal e o planejamento dos treinos de handebol universitário num sistema só. O diferencial é que eu não preciso abrir nada: converso com ele pelo Telegram, ele me lembra do que ainda falta ao longo do dia e, quando eu digo \"finaliza o dia\", fecha o resumo.",
+    "highlights": ["Controle por conversa", "Lembretes automáticos", "Em uso diário"]
+  },
   "problem": "Centralizar rotina pessoal e planejamento de treinos de handebol universitário num único sistema — com lembretes proativos e controle por conversa no Telegram, sem custo de API de LLM e sem enviar dados pessoais a terceiros.",
   "targetUser": "Uso próprio (usuário único, autenticado, servidor restrito a localhost).",
   "myRole": "Desenvolvedor único.",

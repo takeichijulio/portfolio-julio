@@ -1,6 +1,11 @@
 {
   "title": "Jarvis — Assistente de Voz Pessoal",
   "tagline": "Assistente de voz local com Second Brain visual e dois motores de IA",
+  "simple": {
+    "tagline": "Um assistente pessoal que eu falo e ele responde — e que roda no meu próprio computador.",
+    "summary": "Queria um assistente que juntasse agenda, e-mail e notícias num lugar só, sem pagar mensalidade e sem mandar minha vida pessoal pra fora do computador. Construí um: eu falo, ele responde. Lê minha agenda, separa os e-mails em três pilhas por prioridade, e me dá um resumo falado do dia de manhã. Também organiza minhas anotações — 22 delas, em 7 áreas — e as envia pro meu caderno digital com um clique.",
+    "highlights": ["Roda 100% local", "Voz e texto", "Sem custo de assinatura"]
+  },
   "problem": "Queria um assistente de voz pessoal que centralizasse agenda, e-mail e notícias sem depender de nenhum serviço pago e sem duplicar lógica que eu já tinha construído em outros projetos pessoais.",
   "targetUser": "Uso próprio (agenda e vida pessoal / handebol universitário; mesmo escopo do agenda-pessoal, sem qualquer dado de trabalho).",
   "myRole": "Desenvolvedor único: arquitetura, front-end, servidor local e integração com os dois motores de IA.",
