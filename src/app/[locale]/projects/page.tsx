@@ -23,17 +23,23 @@ export default function ProjectsPage({
 
   return (
     <section className="mx-auto w-full max-w-6xl px-6 py-24">
-      <h1 className="font-display text-4xl font-bold tracking-tight text-chalk">
+      <h1
+        data-reveal
+        className="kinetic font-display text-4xl font-bold tracking-tight text-chalk"
+      >
         {t("title")}
       </h1>
-      <p className="mt-4 max-w-2xl text-muted">{t("lead")}</p>
+      <p data-reveal className="mt-4 max-w-2xl text-muted">{t("lead")}</p>
 
       {[
         { label: t("footballGroup"), items: football },
         { label: t("personalGroup"), items: personal },
       ].map((group) => (
         <div key={group.label} className="mt-12">
-          <h2 className="font-mono text-sm uppercase tracking-widest text-turf">
+          <h2
+            data-reveal
+            className="kinetic font-mono text-sm uppercase tracking-widest text-turf"
+          >
             {group.label}
           </h2>
           <div className="mt-5 grid gap-5 sm:grid-cols-2">
@@ -43,7 +49,12 @@ export default function ProjectsPage({
                 href={`/projects/${project.slug}`}
                 className="group focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-data"
               >
-                <Card className="card-tilt flex h-full flex-col gap-3 group-hover:border-data/50">
+                <Card
+                  data-reveal
+                  data-magnetic
+                  data-spotlight
+                  className="card-tilt flex h-full flex-col gap-3 group-hover:border-data/50"
+                >
                   {(project.football || DEMO_SLUGS.has(project.slug)) && (
                     <div className="flex flex-wrap items-center gap-2">
                       {project.football && <FictionalBadge />}

@@ -100,13 +100,16 @@ export default async function CasePage({
             {t("codePrivate")}
           </Badge>
         </div>
-        <h1 className="mt-4 font-display text-4xl font-bold tracking-tight text-chalk sm:text-5xl">
+        <h1
+          data-reveal
+          className="kinetic mt-4 font-display text-4xl font-bold tracking-tight text-chalk sm:text-5xl"
+        >
           {content.title}
         </h1>
-        <p className="mt-3 max-w-2xl text-lg text-muted">
+        <p data-reveal className="mt-3 max-w-2xl text-lg text-muted">
           {content.simple.tagline}
         </p>
-        <div className="mt-4 flex flex-wrap gap-2">
+        <div data-reveal className="mt-4 flex flex-wrap gap-2">
           {project.tags.map((tag) => (
             <Badge key={tag} variant="data">
               {tag}
@@ -116,13 +119,16 @@ export default async function CasePage({
       </header>
 
       <section className="mt-10">
-        <h2 className="font-mono text-xs uppercase tracking-widest text-turf">
+        <h2
+          data-reveal
+          className="kinetic font-mono text-xs uppercase tracking-widest text-turf"
+        >
           {t("simple")}
         </h2>
-        <p className="mt-3 max-w-3xl leading-relaxed text-muted">
+        <p data-reveal className="mt-3 max-w-3xl leading-relaxed text-muted">
           {content.simple.summary}
         </p>
-        <ul className="mt-4 flex flex-wrap gap-2">
+        <ul data-reveal className="mt-4 flex flex-wrap gap-2">
           {content.simple.highlights.map((highlight) => (
             <li key={highlight}>
               <Badge variant="turf">{highlight}</Badge>
@@ -132,7 +138,7 @@ export default async function CasePage({
       </section>
 
       {DEMO_SLUGS.has(slug) && (
-        <Card className="mt-10">
+        <Card data-reveal className="mt-10">
           <div className="mb-4 flex flex-wrap items-center justify-between gap-2">
             <h2 className="font-display text-lg font-semibold text-chalk">
               {t("demoTitle")}

@@ -9,14 +9,20 @@ export function HeroHeadline({ text }: { text: string }) {
 
   if (reduced) {
     return (
-      <h1 className="max-w-3xl font-display text-4xl font-bold leading-tight tracking-tight text-chalk sm:text-6xl">
+      <h1
+        data-reveal
+        className="kinetic max-w-3xl font-display text-4xl font-bold leading-tight tracking-tight text-chalk sm:text-6xl"
+      >
         {text}
       </h1>
     );
   }
 
   return (
-    <h1 className="max-w-3xl font-display text-4xl font-bold leading-tight tracking-tight text-chalk sm:text-6xl">
+    <h1
+      data-reveal
+      className="kinetic max-w-3xl font-display text-4xl font-bold leading-tight tracking-tight text-chalk sm:text-6xl"
+    >
       {words.map((word, i) => (
         <motion.span
           key={`${word}-${i}`}

@@ -2,6 +2,7 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import { ArrowRight } from "lucide-react";
 import { Link } from "@/i18n/navigation";
 import { PROJECTS, DEMO_SLUGS } from "@/lib/projects";
+import { cn } from "@/lib/utils";
 import { buttonClasses } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardDescription, CardTitle } from "@/components/ui/card";
@@ -55,15 +56,21 @@ export default async function HomePage({
     <>
       <section className="relative overflow-hidden">
         <div className="relative mx-auto flex w-full max-w-6xl flex-col items-start gap-6 px-6 py-24 sm:py-32">
-          <p className="font-mono text-sm uppercase tracking-widest text-turf">
+          <p
+            data-reveal
+            className="font-mono text-sm uppercase tracking-widest text-turf"
+          >
             {t("tagline")}
           </p>
           <HeroHeadline text={t("headline")} />
-          <p className="max-w-2xl text-lg leading-relaxed text-muted">
+          <p data-reveal className="max-w-2xl text-lg leading-relaxed text-muted">
             {t("subtitle")}
           </p>
-          <div className="mt-2 flex flex-wrap items-center gap-4">
-            <Link href="/projects" className={buttonClasses("primary")}>
+          <div data-reveal className="mt-2 flex flex-wrap items-center gap-4">
+            <Link
+              href="/projects"
+              className={cn(buttonClasses("primary"), "btn-sweep")}
+            >
               {t("ctaProjects")}
               <ArrowRight aria-hidden size={16} />
             </Link>
@@ -74,6 +81,7 @@ export default async function HomePage({
           <KpiCounters />
           <Link
             href="/lab"
+            data-reveal
             className="group mt-4 inline-flex items-center gap-2 text-sm text-muted transition-colors hover:text-chalk focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-data"
           >
             {t("labTeaser")}
@@ -91,11 +99,15 @@ export default async function HomePage({
 
       <section className="mx-auto w-full max-w-6xl px-6 pb-24">
         <div className="flex items-baseline justify-between gap-4">
-          <h2 className="font-display text-2xl font-semibold tracking-tight text-chalk">
+          <h2
+            data-reveal
+            className="kinetic font-display text-2xl font-semibold tracking-tight text-chalk"
+          >
             {t("featuredTitle")}
           </h2>
           <Link
             href="/projects"
+            data-reveal
             className="inline-flex shrink-0 items-center gap-1.5 text-sm text-data hover:underline"
           >
             {t("viewAll")}
@@ -109,7 +121,12 @@ export default async function HomePage({
               href={`/projects/${project.slug}`}
               className="group focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-data"
             >
-              <Card className="card-tilt flex h-full flex-col gap-3 group-hover:border-data/50">
+              <Card
+                data-reveal
+                data-magnetic
+                data-spotlight
+                className="card-tilt flex h-full flex-col gap-3 group-hover:border-data/50"
+              >
                 {(project.football || DEMO_SLUGS.has(project.slug)) && (
                   <div className="flex flex-wrap items-center gap-2">
                     {project.football && <FictionalBadge />}

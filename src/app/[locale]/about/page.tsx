@@ -46,10 +46,13 @@ export default function AboutPage({
     <section className="mx-auto w-full max-w-6xl px-6 py-24">
       <div className="flex flex-col gap-10 md:flex-row md:items-start">
         <div className="max-w-2xl">
-          <h1 className="font-display text-4xl font-bold tracking-tight text-chalk">
+          <h1
+            data-reveal
+            className="kinetic font-display text-4xl font-bold tracking-tight text-chalk"
+          >
             {t("title")}
           </h1>
-          <div className="mt-6 space-y-4 leading-relaxed text-muted">
+          <div data-reveal className="mt-6 space-y-4 leading-relaxed text-muted">
             <p>{t("intro1")}</p>
             <p>{t("intro2")}</p>
             <p>{t("intro3")}</p>
@@ -67,7 +70,10 @@ export default function AboutPage({
 
       <div className="mt-16 grid gap-12 md:grid-cols-2">
         <div>
-          <h2 className="font-display text-xl font-semibold text-chalk">
+          <h2
+            data-reveal
+            className="kinetic font-display text-xl font-semibold text-chalk"
+          >
             {t("stackTitle")}
           </h2>
           <TechDetails className="mt-4">
@@ -81,7 +87,10 @@ export default function AboutPage({
           </TechDetails>
         </div>
         <div>
-          <h2 className="font-display text-xl font-semibold text-chalk">
+          <h2
+            data-reveal
+            className="kinetic font-display text-xl font-semibold text-chalk"
+          >
             {t("domainTitle")}
           </h2>
           {/*
@@ -110,10 +119,13 @@ export default function AboutPage({
       </div>
 
       <div className="mt-16">
-        <h2 className="font-display text-xl font-semibold text-chalk">
+        <h2
+          data-reveal
+          className="kinetic font-display text-xl font-semibold text-chalk"
+        >
           {t("formationTitle")}
         </h2>
-        <ul className="mt-4 space-y-3 text-sm text-muted">
+        <ul data-reveal className="mt-4 space-y-3 text-sm text-muted">
           {FORMATION_KEYS.map((key) => (
             <li key={key} className="flex items-start gap-2.5">
               <GraduationCap
@@ -128,10 +140,13 @@ export default function AboutPage({
       </div>
 
       <div className="mt-16">
-        <h2 className="font-display text-xl font-semibold text-chalk">
+        <h2
+          data-reveal
+          className="kinetic font-display text-xl font-semibold text-chalk"
+        >
           {t("aiTitle")}
         </h2>
-        <p className="mt-3 max-w-2xl text-sm leading-relaxed text-muted">
+        <p data-reveal className="mt-3 max-w-2xl text-sm leading-relaxed text-muted">
           {t("aiIntro")}
         </p>
         <TechDetails className="mt-5">

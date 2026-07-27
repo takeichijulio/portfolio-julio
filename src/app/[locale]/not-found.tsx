@@ -41,14 +41,26 @@ export default function NotFoundPage() {
           />
         </g>
       </svg>
-      <p className="font-mono text-sm uppercase tracking-widest text-turf">
+      <p
+        data-reveal
+        className="font-mono text-sm uppercase tracking-widest text-turf"
+      >
         404
       </p>
-      <h1 className="font-display text-4xl font-bold tracking-tight text-chalk">
+      <h1
+        data-reveal
+        className="kinetic font-display text-4xl font-bold tracking-tight text-chalk"
+      >
         {t("title")}
       </h1>
-      <p className="max-w-md text-muted">{t("message")}</p>
-      <Link href="/" className={buttonClasses("primary")}>
+      <p data-reveal className="max-w-md text-muted">
+        {t("message")}
+      </p>
+      <Link
+        href="/"
+        data-reveal
+        className={`${buttonClasses("primary")} btn-sweep`}
+      >
         {t("cta")}
       </Link>
     </section>

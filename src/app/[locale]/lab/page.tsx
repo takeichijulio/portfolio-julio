@@ -44,15 +44,23 @@ export default function LabPage({
         {t("backHome")}
       </Link>
 
-      <p className="mt-6 font-mono text-sm uppercase tracking-widest text-turf">
+      <p
+        data-reveal
+        className="mt-6 font-mono text-sm uppercase tracking-widest text-turf"
+      >
         {t("tagline")}
       </p>
-      <h1 className="mt-2 font-display text-4xl font-bold tracking-tight text-chalk">
+      <h1
+        data-reveal
+        className="kinetic mt-2 font-display text-4xl font-bold tracking-tight text-chalk"
+      >
         {t("title")}
       </h1>
-      <p className="mt-4 max-w-2xl text-muted">{t("lead")}</p>
+      <p data-reveal className="mt-4 max-w-2xl text-muted">
+        {t("lead")}
+      </p>
 
-      <div className="mt-12 grid gap-5 sm:grid-cols-2">
+      <div data-reveal className="mt-12 grid gap-5 sm:grid-cols-2">
         {labProjects.map((project) => (
           <Link
             key={project.slug}
