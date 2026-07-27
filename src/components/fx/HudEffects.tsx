@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
+import { usePathname } from "next/navigation";
 
 const REVEAL_SELECTOR = "[data-reveal]";
 const MAGNETIC_SELECTOR = "[data-magnetic]";
@@ -33,8 +34,18 @@ const MAGNETIC_RANGE_PX = 12; // ((0.5) - (-0.5)) * 12 = 6px de deslocamento má
  *   estático).
  * - Efeitos de cursor só sob `pointer: fine`.
  * - Cleanup completo no unmount.
+ *
+ * BUG CORRIGIDO (2026-07-27): este componente vive no layout, que nao
+ * remonta em navegacao client-side entre paginas (App Router). Sem o
+ * `pathname` como dependencia, o efeito rodava uma unica vez na primeira
+ * carga: o observer e a rede de seguranca so enxergavam os elementos daquele
+ * momento. Ao clicar num link do menu, o conteudo da pagina nova nascia
+ * escondido e nunca era revelado -- travado em opacity:0 pra sempre. So
+ * aparecia com reload completo, por isso passou pelos testes anteriores.
  */
 export function HudEffects() {
+  const pathname = usePathname();
+
   useEffect(() => {
     const reduceMotion = window.matchMedia(
       "(prefers-reduced-motion: reduce)",
@@ -193,7 +204,7 @@ export function HudEffects() {
       cleanupScroll();
       cleanupPointerFx();
     };
-  }, []);
+  }, [pathname]);
 
   return null;
 }
