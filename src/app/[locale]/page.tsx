@@ -1,6 +1,4 @@
-import { useTranslations } from "next-intl";
-import { setRequestLocale } from "next-intl/server";
-import { use } from "react";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import { ArrowRight } from "lucide-react";
 import { Link } from "@/i18n/navigation";
 import { PROJECTS, DEMO_SLUGS } from "@/lib/projects";
@@ -17,18 +15,41 @@ const FEATURED_SLUGS = [
   "local-ai-agent",
 ];
 
-export default function HomePage({
+/** Tagline sem jargão (campo `simple` do case), usada nos cards da home —
+ *  a descrição técnica em messages/*.json fica reservada pra página do case. */
+async function loadSimpleTagline(
+  locale: string,
+  slug: string,
+): Promise<string | null> {
+  try {
+    const content = (await import(`@/content/${locale}/cases/${slug}.json`))
+      .default;
+    return content.simple.tagline;
+  } catch {
+    return null;
+  }
+}
+
+export default async function HomePage({
   params,
 }: {
   params: Promise<{ locale: string }>;
 }) {
-  const { locale } = use(params);
+  const { locale } = await params;
   setRequestLocale(locale);
-  const t = useTranslations("hero");
-  const tProjects = useTranslations("projects");
-  const tCaseDemo = useTranslations("caseStudy")("demoTitle");
+  const t = await getTranslations({ locale, namespace: "hero" });
+  const tProjects = await getTranslations({ locale, namespace: "projects" });
+  const tCaseDemo = await getTranslations({ locale, namespace: "caseStudy" });
 
   const featured = PROJECTS.filter((p) => FEATURED_SLUGS.includes(p.slug));
+  const simpleTaglines = Object.fromEntries(
+    await Promise.all(
+      featured.map(async (project) => [
+        project.slug,
+        await loadSimpleTagline(locale, project.slug),
+      ]),
+    ),
+  );
 
   return (
     <>
@@ -93,7 +114,7 @@ export default function HomePage({
                   <div className="flex flex-wrap items-center gap-2">
                     {project.football && <FictionalBadge />}
                     {DEMO_SLUGS.has(project.slug) && (
-                      <Badge variant="turf">{tCaseDemo}</Badge>
+                      <Badge variant="turf">{tCaseDemo("demoTitle")}</Badge>
                     )}
                   </div>
                 )}
@@ -101,7 +122,8 @@ export default function HomePage({
                   {tProjects(`cases.${project.slug}.title`)}
                 </CardTitle>
                 <CardDescription className="line-clamp-3 text-xs">
-                  {tProjects(`cases.${project.slug}.description`)}
+                  {simpleTaglines[project.slug] ??
+                    tProjects(`cases.${project.slug}.description`)}
                 </CardDescription>
               </Card>
             </Link>

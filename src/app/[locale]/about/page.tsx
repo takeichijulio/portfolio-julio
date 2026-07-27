@@ -12,6 +12,7 @@ import {
 } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardDescription, CardTitle } from "@/components/ui/card";
+import { TechDetails } from "@/components/tech-details";
 
 const STACK = [
   "Python (pandas, FastAPI, Streamlit)",
@@ -69,19 +70,28 @@ export default function AboutPage({
           <h2 className="font-display text-xl font-semibold text-chalk">
             {t("stackTitle")}
           </h2>
-          <ul className="mt-4 flex flex-wrap gap-2">
-            {STACK.map((item) => (
-              <li key={item}>
-                <Badge>{item}</Badge>
-              </li>
-            ))}
-          </ul>
+          <TechDetails className="mt-4">
+            <ul className="flex flex-wrap gap-2">
+              {STACK.map((item) => (
+                <li key={item}>
+                  <Badge>{item}</Badge>
+                </li>
+              ))}
+            </ul>
+          </TechDetails>
         </div>
         <div>
           <h2 className="font-display text-xl font-semibold text-chalk">
             {t("domainTitle")}
           </h2>
-          <ul className="mt-4 space-y-3 text-sm text-muted">
+          {/*
+            Esta lista e a enumeracao tecnica do dominio (Hooper, PSE,
+            assimetria bilateral, upsert): jargao que o PRD-02 §3.1 manda tirar
+            da primeira leitura. Nada foi reescrito nem removido -- so passou
+            pra tras do clique, junto com a stack logo acima.
+          */}
+          <TechDetails className="mt-4">
+          <ul className="space-y-3 text-sm text-muted">
             {(["domain1", "domain2", "domain3", "domain4", "domain5"] as const).map(
               (key) => (
                 <li key={key} className="flex items-start gap-2.5">
@@ -95,6 +105,7 @@ export default function AboutPage({
               ),
             )}
           </ul>
+          </TechDetails>
         </div>
       </div>
 
@@ -123,18 +134,20 @@ export default function AboutPage({
         <p className="mt-3 max-w-2xl text-sm leading-relaxed text-muted">
           {t("aiIntro")}
         </p>
-        <p className="mt-3 max-w-2xl rounded-lg border border-border bg-pitch/60 px-4 py-3 text-sm leading-relaxed text-muted">
-          {t("disclaimer")}
-        </p>
-        <div className="mt-5 grid gap-4 sm:grid-cols-2">
-          {AI_PRACTICES.map(({ icon: Icon, key }) => (
-            <Card key={key} className="flex flex-col gap-2">
-              <Icon aria-hidden size={18} className="text-data" />
-              <CardTitle className="text-base">{t(`${key}Title`)}</CardTitle>
-              <CardDescription>{t(`${key}Desc`)}</CardDescription>
-            </Card>
-          ))}
-        </div>
+        <TechDetails className="mt-5">
+          <p className="rounded-lg border border-border bg-pitch/60 px-4 py-3 text-sm leading-relaxed text-muted">
+            {t("disclaimer")}
+          </p>
+          <div className="mt-5 grid gap-4 sm:grid-cols-2">
+            {AI_PRACTICES.map(({ icon: Icon, key }) => (
+              <Card key={key} className="flex flex-col gap-2">
+                <Icon aria-hidden size={18} className="text-data" />
+                <CardTitle className="text-base">{t(`${key}Title`)}</CardTitle>
+                <CardDescription>{t(`${key}Desc`)}</CardDescription>
+              </Card>
+            ))}
+          </div>
+        </TechDetails>
       </div>
     </section>
   );

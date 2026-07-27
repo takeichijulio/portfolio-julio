@@ -9,10 +9,17 @@ import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
 import { FictionalBadge } from "@/components/fictional-badge";
 import { DemoSection } from "@/components/demos/demo-section";
+import { TechDetails } from "@/components/tech-details";
+import { ExpandAll } from "@/components/expand-all";
 
 interface CaseContent {
   title: string;
   tagline: string;
+  simple: {
+    tagline: string;
+    summary: string;
+    highlights: string[];
+  };
   problem: string;
   targetUser: string;
   myRole: string;
@@ -68,7 +75,7 @@ export default async function CasePage({
 
   const t = await getTranslations({ locale, namespace: "caseStudy" });
 
-  const sections: { label: string; body: string }[] = [
+  const contextSections: { label: string; body: string }[] = [
     { label: t("problem"), body: content.problem },
     { label: t("targetUser"), body: content.targetUser },
     { label: t("myRole"), body: content.myRole },
@@ -96,7 +103,9 @@ export default async function CasePage({
         <h1 className="mt-4 font-display text-4xl font-bold tracking-tight text-chalk sm:text-5xl">
           {content.title}
         </h1>
-        <p className="mt-3 max-w-2xl text-lg text-muted">{content.tagline}</p>
+        <p className="mt-3 max-w-2xl text-lg text-muted">
+          {content.simple.tagline}
+        </p>
         <div className="mt-4 flex flex-wrap gap-2">
           {project.tags.map((tag) => (
             <Badge key={tag} variant="data">
@@ -105,6 +114,22 @@ export default async function CasePage({
           ))}
         </div>
       </header>
+
+      <section className="mt-10">
+        <h2 className="font-mono text-xs uppercase tracking-widest text-turf">
+          {t("simple")}
+        </h2>
+        <p className="mt-3 max-w-3xl leading-relaxed text-muted">
+          {content.simple.summary}
+        </p>
+        <ul className="mt-4 flex flex-wrap gap-2">
+          {content.simple.highlights.map((highlight) => (
+            <li key={highlight}>
+              <Badge variant="turf">{highlight}</Badge>
+            </li>
+          ))}
+        </ul>
+      </section>
 
       {DEMO_SLUGS.has(slug) && (
         <Card className="mt-10">
@@ -118,46 +143,64 @@ export default async function CasePage({
         </Card>
       )}
 
-      <div className="mt-12 grid gap-x-12 gap-y-8 md:grid-cols-2">
-        {sections.map((section) => (
-          <section key={section.label}>
-            <h2 className="font-mono text-xs uppercase tracking-widest text-turf">
-              {section.label}
-            </h2>
-            <p className="mt-2 leading-relaxed text-muted">{section.body}</p>
-          </section>
-        ))}
+      <div className="mt-10 flex justify-end">
+        <ExpandAll />
       </div>
 
-      <section className="mt-10">
-        <h2 className="font-mono text-xs uppercase tracking-widest text-turf">
-          {t("keyDecisions")}
-        </h2>
-        <ul className="mt-3 space-y-2.5">
-          {content.keyDecisions.map((decision) => (
-            <li
-              key={decision}
-              className="border-l-2 border-data/50 pl-4 text-sm leading-relaxed text-muted"
-            >
-              {decision}
-            </li>
-          ))}
-        </ul>
-      </section>
+      <div className="mt-4 space-y-4">
+        <TechDetails>
+          <div className="grid gap-x-12 gap-y-8 md:grid-cols-2">
+            {contextSections.map((section) => (
+              <section key={section.label}>
+                <h3 className="font-mono text-xs uppercase tracking-widest text-turf">
+                  {section.label}
+                </h3>
+                <p className="mt-2 leading-relaxed text-muted">
+                  {section.body}
+                </p>
+              </section>
+            ))}
+          </div>
+        </TechDetails>
 
-      <div className="mt-10 grid gap-x-12 gap-y-8 md:grid-cols-2">
-        <section>
-          <h2 className="font-mono text-xs uppercase tracking-widest text-turf">
-            {t("result")}
-          </h2>
-          <p className="mt-2 leading-relaxed text-muted">{content.result}</p>
-        </section>
-        <section>
-          <h2 className="font-mono text-xs uppercase tracking-widest text-turf">
-            {t("learned")}
-          </h2>
-          <p className="mt-2 leading-relaxed text-muted">{content.learned}</p>
-        </section>
+        <TechDetails>
+          <section>
+            <h3 className="font-mono text-xs uppercase tracking-widest text-turf">
+              {t("keyDecisions")}
+            </h3>
+            <ul className="mt-3 space-y-2.5">
+              {content.keyDecisions.map((decision) => (
+                <li
+                  key={decision}
+                  className="border-l-2 border-data/50 pl-4 text-sm leading-relaxed text-muted"
+                >
+                  {decision}
+                </li>
+              ))}
+            </ul>
+          </section>
+        </TechDetails>
+
+        <TechDetails>
+          <div className="grid gap-x-12 gap-y-8 md:grid-cols-2">
+            <section>
+              <h3 className="font-mono text-xs uppercase tracking-widest text-turf">
+                {t("result")}
+              </h3>
+              <p className="mt-2 leading-relaxed text-muted">
+                {content.result}
+              </p>
+            </section>
+            <section>
+              <h3 className="font-mono text-xs uppercase tracking-widest text-turf">
+                {t("learned")}
+              </h3>
+              <p className="mt-2 leading-relaxed text-muted">
+                {content.learned}
+              </p>
+            </section>
+          </div>
+        </TechDetails>
       </div>
     </article>
   );
