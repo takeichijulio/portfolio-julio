@@ -2,12 +2,19 @@
  * Fundo decorativo site-wide: campo de futebol visto de cima
  * (linhas em `line`, opacidade baixa). Puramente decorativo — aria-hidden,
  * sem animação (não precisa de guard de reduced-motion).
+ *
+ * Onda HUD (PRD-01): convive com <HudBackgrounds /> (vinheta, streaks,
+ * scanlines, grain) em vez de ser substituído por ela — é o elemento que
+ * distingue a identidade do Júlio (tech + futebol) da linguagem HUD
+ * genérica que o freela também adota. Opacidade reduzida de 45% pra 15% e
+ * mantido no z-index mais baixo (z-0, abaixo do z-[1] do HudBackgrounds)
+ * pra não empilhar textura sobre textura e virar sopa visual.
  */
 export function PitchGrid() {
   return (
     <svg
       aria-hidden
-      className="pointer-events-none fixed inset-0 z-0 h-full w-full opacity-45"
+      className="pointer-events-none fixed inset-0 z-0 h-full w-full opacity-15"
       viewBox="0 0 1200 600"
       preserveAspectRatio="xMidYMid slice"
       fill="none"

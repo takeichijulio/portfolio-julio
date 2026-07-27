@@ -22,7 +22,8 @@ export function TechDetails({
     <details
       data-tech-details
       className={cn(
-        "group rounded-xl border border-border bg-surface",
+        // Cantos retos (teto C do PRD-01 §3.2/3.3): rounded-xl saiu.
+        "group border border-border bg-surface",
         className,
       )}
     >

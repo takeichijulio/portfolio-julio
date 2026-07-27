@@ -15,7 +15,9 @@
   --color-alert: #e07820; /* alertas, badge demo */
   --color-error: #d93025; /* erros */
 
-  --font-display: var(--font-space-grotesk), ui-sans-serif, sans-serif;
+  /* Orbitron substitui Space Grotesk (decisão D5, PRD-01 §3.2/3.3): só
+     display (H1/H2, rótulos uppercase), nunca corpo de texto. */
+  --font-display: var(--font-orbitron), ui-sans-serif, sans-serif;
   --font-body: var(--font-inter), ui-sans-serif, sans-serif;
   --font-mono: var(--font-jetbrains-mono), ui-monospace, monospace;
 }
@@ -80,3 +82,345 @@ body {
     transform: none;
   }
 }
+
+/* === HUD FX === */
+/* Porte do catálogo de efeitos do portfolio-freela (PRD-01 §6), em densidade
+   ALTA (coluna "Julio" — público técnico). Ver
+   portfolio-freela/src/app/globals.css para a versão contida do freela. */
+
+/* ---------- 6.2 Reveal on scroll (com stagger) ---------- */
+/* O estado inicial escondido vale sempre, e o <noscript> no layout desfaz
+   quando o JS esta desligado. Nao e uma classe `js` no <html> escrita por
+   script: um <script> mutante na arvore do layout quebraria a hidratacao do
+   React (className divergente servidor x cliente) e derrubaria o HudEffects
+   junto — sem observer, nada nunca reaparece. */
+[data-reveal] {
+  opacity: 0;
+  transform: translate3d(0, 28px, 0);
+  transition:
+    opacity 700ms ease,
+    transform 700ms cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: var(--reveal-delay, 0ms);
+  will-change: transform, opacity;
+}
+
+[data-reveal].in-view {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+/* ---------- 6.3 Kinetic heading — usar junto com [data-reveal] ---------- */
+.kinetic {
+  filter: blur(8px);
+  transform: translate3d(0, 28px, 0) scale(0.98);
+  transition:
+    opacity 700ms ease,
+    transform 700ms cubic-bezier(0.22, 1, 0.36, 1),
+    filter 700ms ease;
+}
+
+.kinetic.in-view {
+  filter: blur(0);
+  transform: translate3d(0, 0, 0) scale(1);
+}
+
+/* ---------- 6.6 Card base ---------- */
+.hud-card {
+  position: relative;
+  border: 1px solid var(--color-border);
+  background-color: var(--color-surface);
+  border-radius: 0;
+  transition: border-color 500ms ease;
+}
+
+.hud-card:hover,
+.hud-card:focus-within {
+  border-color: rgb(56 189 248 / 0.5);
+}
+
+/* ---------- 6.15 Corner brackets (só transform + opacity) ---------- */
+.hud-brackets {
+  position: relative;
+}
+
+.hud-brackets::before,
+.hud-brackets::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0;
+  background-repeat: no-repeat;
+  transition:
+    opacity 400ms ease,
+    transform 400ms ease;
+  will-change: opacity, transform;
+}
+
+.hud-brackets::before {
+  transform: scale(0.92);
+  transform-origin: top center;
+  background-image:
+    linear-gradient(to right, rgb(56 189 248 / 0.6) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(56 189 248 / 0.6) 1px, transparent 1px),
+    linear-gradient(to left, rgb(56 189 248 / 0.6) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(56 189 248 / 0.6) 1px, transparent 1px);
+  background-position:
+    top left,
+    top left,
+    top right,
+    top right;
+  background-size:
+    16px 1px,
+    1px 16px,
+    16px 1px,
+    1px 16px;
+}
+
+.hud-brackets::after {
+  transform: scale(0.92);
+  transform-origin: bottom center;
+  background-image:
+    linear-gradient(to right, rgb(56 189 248 / 0.6) 1px, transparent 1px),
+    linear-gradient(to top, rgb(56 189 248 / 0.6) 1px, transparent 1px),
+    linear-gradient(to left, rgb(56 189 248 / 0.6) 1px, transparent 1px),
+    linear-gradient(to top, rgb(56 189 248 / 0.6) 1px, transparent 1px);
+  background-position:
+    bottom left,
+    bottom left,
+    bottom right,
+    bottom right;
+  background-size:
+    16px 1px,
+    1px 16px,
+    16px 1px,
+    1px 16px;
+}
+
+.hud-brackets:hover::before,
+.hud-brackets:hover::after,
+.hud-brackets:focus-within::before,
+.hud-brackets:focus-within::after {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* ---------- 6.7 Botão fill-sweep (CSS puro, sem JS) ---------- */
+.btn-sweep {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+.btn-sweep::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-color: var(--color-chalk);
+  transform: translate3d(0, 100%, 0);
+  transition: transform 350ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.btn-sweep:hover::before,
+.btn-sweep:focus-visible::before {
+  transform: translate3d(0, 0, 0);
+}
+
+.btn-sweep:hover,
+.btn-sweep:focus-visible {
+  color: var(--color-pitch);
+}
+
+/* ---------- 6.16 Índice mono translúcido (01 / 02 / 03) ---------- */
+.hud-index {
+  position: absolute;
+  top: -0.25rem;
+  right: 0.75rem;
+  z-index: -1;
+  font-family: var(--font-mono);
+  font-size: clamp(3rem, 8vw, 4.5rem);
+  font-weight: 500;
+  line-height: 1;
+  color: rgb(56 189 248 / 0.12);
+  pointer-events: none;
+  user-select: none;
+}
+
+/* ---------- 6.11 Scan line horizontal — densidade alta: liberado também em
+   rótulos "ativos", não só em divisor ---------- */
+@keyframes hud-scan {
+  0% {
+    transform: translate3d(-100%, 0, 0);
+  }
+  100% {
+    transform: translate3d(200%, 0, 0);
+  }
+}
+
+.scan-line {
+  position: relative;
+  overflow: hidden;
+}
+
+.scan-line::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 40%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgb(56 189 248 / 0.6),
+    transparent
+  );
+  animation: hud-scan 3s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  will-change: transform;
+}
+
+/* ---------- 6.5 Magnetic card — teto 6px, só em pointer:fine ---------- */
+@media (pointer: fine) {
+  [data-magnetic] {
+    --mx: 0px;
+    --my: 0px;
+    transform: translate3d(var(--mx), var(--my), 0);
+    transition: transform 200ms ease;
+    will-change: transform;
+  }
+}
+
+/* ---------- 6.17 Spotlight que segue o cursor — reusa o listener do
+   magnetic (--spot-x/--spot-y), zero JS extra. Recomendado nos cards de
+   case (aplicação de markup fora da fronteira desta onda). ---------- */
+@media (pointer: fine) {
+  [data-spotlight] {
+    position: relative;
+  }
+
+  [data-spotlight]::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    opacity: 0;
+    background: radial-gradient(
+      400px circle at var(--spot-x, 50%) var(--spot-y, 50%),
+      rgb(56 189 248 / 0.08),
+      transparent 70%
+    );
+    transition: opacity 300ms ease;
+  }
+
+  [data-spotlight]:hover::after,
+  [data-spotlight]:focus-within::after {
+    opacity: 1;
+  }
+}
+
+/* ---------- 6.14 Parallax de fundo (valor real aplicado via JS, teto 0.15) ---------- */
+[data-parallax-speed] {
+  will-change: transform;
+}
+
+/* ---------- Camadas decorativas de <HudBackgrounds /> ---------- */
+/* Densidade alta: scanlines em opacidade 0.4 (freela usa 0.2). */
+.hud-scanlines {
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0) 0,
+    rgba(255, 255, 255, 0) 50%,
+    rgba(0, 0, 0, 0.4) 50%,
+    rgba(0, 0, 0, 0.4) 100%
+  );
+  background-size: 100% 4px;
+}
+
+.hud-streaks {
+  background-image: linear-gradient(
+    90deg,
+    transparent 99%,
+    rgb(56 189 248 / 0.03) 100%
+  );
+  background-size: 10vw 100%;
+}
+
+.hud-vignette {
+  background: radial-gradient(
+    circle at 50% 40%,
+    rgb(56 189 248 / 0.05),
+    transparent 55%,
+    rgba(0, 0, 0, 0.6) 100%
+  );
+}
+
+.hud-grain {
+  opacity: 0.04;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='120'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+  background-size: 120px 120px;
+  mix-blend-mode: overlay;
+}
+
+/* ---------- 6.13 Scrollbar customizada ---------- */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-pitch);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(56 189 248 / 0.2);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(56 189 248 / 0.5);
+}
+
+/* ---------- Glow — teto 0.10 (julio), card em destaque + hover apenas ---------- */
+.hud-glow {
+  box-shadow: 0 0 32px 6px rgb(56 189 248 / 0.1);
+}
+
+/* ---------- Regra transversal: prefers-reduced-motion desliga tudo em bloco ---------- */
+@media (prefers-reduced-motion: reduce) {
+  [data-reveal],
+  .kinetic,
+  .hud-brackets::before,
+  .hud-brackets::after,
+  .btn-sweep::before,
+  [data-magnetic],
+  [data-spotlight]::after {
+    transition: none !important;
+  }
+
+  [data-reveal],
+  .kinetic {
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+  }
+
+  [data-magnetic] {
+    transform: none !important;
+  }
+
+  [data-spotlight]::after {
+    opacity: 0 !important;
+  }
+
+  [data-parallax-speed] {
+    transform: none !important;
+    transition: none !important;
+  }
+
+  .scan-line::after {
+    animation: none !important;
+    display: none;
+  }
+}
+
+/* === /HUD FX === */

@@ -12,7 +12,8 @@ const VARIANTS: Record<Variant, string> = {
 
 export function buttonClasses(variant: Variant = "primary") {
   return cn(
-    "inline-flex items-center justify-center gap-2 rounded-lg px-5 py-2.5 text-sm transition-colors focus-visible:outline-2 focus-visible:outline-offset-2",
+    // Cantos retos em vez de `rounded-lg`: linguagem HUD (PRD-01 §3.2).
+    "inline-flex items-center justify-center gap-2 px-5 py-2.5 text-sm transition-colors focus-visible:outline-2 focus-visible:outline-offset-2",
     VARIANTS[variant],
   );
 }
