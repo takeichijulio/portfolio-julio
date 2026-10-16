@@ -17,6 +17,14 @@ export function SiteFooter() {
             {t("github")}
           </a>
           <a
+            href="https://www.linkedin.com/in/j%C3%BAlio-murashima"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="transition-colors hover:text-data"
+          >
+            {t("linkedin")}
+          </a>
+          <a
             href="mailto:juliotakeichi@outlook.com"
             className="transition-colors hover:text-data"
           >
