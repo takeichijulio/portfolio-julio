@@ -8,7 +8,7 @@
   "hero": {
     "headline": "Sports Data Professional in Football",
     "tagline": "Building toward data engineering",
-    "subtitle": "I process GPS data, build load & wellness dashboards, and develop internal tools — plus personal local-AI projects and agent-assisted development.",
+    "subtitle": "I work with sports data and performance analysis and build software projects. The demonstrations in this portfolio use fictional data.",
     "ctaProjects": "View projects",
     "ctaContact": "Get in touch",
     "kpiCaption": "Fictional demo numbers — generated in lib/mock/",
@@ -25,10 +25,10 @@
   },
   "about": {
     "title": "About",
-    "intro1": "I'm an intern in physiology/performance with youth academy categories, and day-to-day I cover the data and technology demand: processing GPS, building load and wellness dashboards, generating reports, and maintaining the internal tools coaching staff actually use.",
-    "intro2": "Every project on this site is evidence of what I already ship in practice — pipelines, local databases, sync and reports — on the path toward data engineering, not as a job title I don't hold yet.",
-    "intro3": "Outside work, I run Claude Code and Cursor in a loop until the feature is ready, review the diff before merge, and build personal tools with local AI and mandatory human-in-the-loop approval, like a Telegram agenda bot.",
-    "photoAlt": "Photo of Júlio Takeichi",
+    "intro1": "I work with sports data and performance analysis, organizing information and creating clear ways to follow key indicators.",
+    "intro2": "This portfolio presents high-level case studies. Public demonstrations use fictional data, and source code for private systems is not included.",
+    "intro3": "I also study software development and AI tools, with human review of decisions and results.",
+    "photoAlt": "Photo of Júlio Murashima",
     "stackTitle": "Stack I use today",
     "domainTitle": "Domain",
     "domain1": "GPS and training load (session metrics, week-over-week, targets)",
@@ -39,48 +39,48 @@
     "formationTitle": "Education",
     "formation1": "Physical Education — UFRJ (expected graduation by year end)",
     "formation2": "Systems Analysis and Development — FGV (2nd semester)",
-    "formation3": "Asimov Academy: Python Office (Automations + Python for Business), Intermediate Concepts, CursorAI; AI Agents Engineer track (in progress)",
+    "formation3": "Asimov Academy: Trilha Aprendendo Python; Python Office; Análise de Dados com IA; Agentes com GPT.",
     "aiTitle": "AI-Assisted Development",
-    "aiIntro": "I describe myself as an AI-assisted developer: I model the problem and architecture, and agents (Cursor and Claude Code) speed up implementation — architectural decisions and review stay with me, never autonomous. UI and front-end layers ship this way; my strength is product, sports-data domain, and orchestration with human review.",
-    "disclaimer": "Working style: agent loop until the feature lands → review the diff and decide merge → skills, rules and CLAUDE.md → vault memory (raw sources → wiki/log). I don't claim live React/JS fluency or an AI engineer title.",
+    "aiIntro": "I use AI tools to support software development. Problem definition, decisions, and final review remain human responsibilities.",
+    "disclaimer": "Demonstrations in this portfolio use fictional content; details of private systems are not published.",
     "aiSkillsTitle": "Skills, rules and hooks",
-    "aiSkillsDesc": "I maintain skills, rules, CLAUDE.md and hooks so the same agent workflow repeats across projects — agent-led implementation, without claiming a formal PRD on every step.",
+    "aiSkillsDesc": "I explore practices and tools that help organize software development.",
     "aiKnowledgeTitle": "Personal knowledge base",
-    "aiKnowledgeDesc": "I keep a personal base with raw sources separated from a curated layer (wiki), plus a dated change log — so agents work from reliable information, not loose context.",
+    "aiKnowledgeDesc": "I organize references and study notes to support my learning process.",
     "aiPlanningTitle": "Session-based planning",
-    "aiPlanningDesc": "Larger builds follow session-based execution, with done-criteria per stage and handoff between sessions — this site itself was built that way (Fable / Claude Code).",
+    "aiPlanningDesc": "I break study projects into stages with goals and completion criteria.",
     "aiSafetyTitle": "Safety and grounding",
-    "aiSafetyDesc": "In local-AI projects, every action goes through human approval (human-in-the-loop). Diff review is the gate before merge; model outputs are validated before becoming the final result (see Local AI Agent and Personal Ops)."
+    "aiSafetyDesc": "I review AI-assisted outputs before incorporating them into a project."
   },
   "projects": {
     "title": "Projects",
-    "lead": "Six real systems — three from the football domain (demos use fictional data only) and three personal. Each with a full case study; most with an interactive demo.",
+    "lead": "Six software project case studies. Demonstrations use fictional data; source code for private systems is not published.",
     "footballGroup": "Football",
     "personalGroup": "Personal",
     "cases": {
       "gps-load-dashboard": {
         "title": "GPS & Load Dashboard",
-        "description": "Full-stack GPS, wellness and strength platform for youth academy categories: local-first pipeline, Next.js + FastAPI + SQLite, upsert sync to the cloud and client-side PDF."
+        "description": "A case study about GPS data analysis and sports performance indicators, presented with an interactive demonstration using fictional data."
       },
       "performance-hub": {
         "title": "Multi-department Performance Hub",
-        "description": "Multi-department dashboard in production (Streamlit + SQLite): physiology, medicine and multidisciplinary areas in one app, with self-service imports and per-athlete PDF."
+        "description": "A case study about organizing and visualizing sports indicators. The demonstration uses fictional data; the related system's source code is private."
       },
       "evaluations-hub": {
         "title": "Academy Evaluations Hub",
-        "description": "Evaluations and attendance hub (Next.js + Supabase): per-department calendar, weekly compliance and read-only GPS data through a shared database."
+        "description": "A case study about sports assessment workflows, accompanied by an interactive demonstration with fictional data."
       },
       "local-ai-agent": {
         "title": "Local AI Agent (Human-in-the-Loop)",
-        "description": "Desktop agent (Tauri + Rust) with a local LLM via Ollama: the model only proposes actions; everything goes through an approval queue with diffs, file sandboxing and an audit log."
+        "description": "A case study of a personal tool with an interactive demonstration. Displayed content is fictional."
       },
       "personal-ops": {
         "title": "Personal Ops + Telegram Bot",
-        "description": "Personal agenda (Flask + JSON, no build step) with a Telegram conversation bot on a local LLM — mandatory confirmation before writes and anti-hallucination enforced in code."
+        "description": "A case study of a personal organization tool, presented in a demonstration with fictional content."
       },
       "jarvis-assistente-voz": {
         "title": "Jarvis — Personal Voice Assistant",
-        "description": "Local voice assistant (plain HTML/JS + Node server) with a graph-based Second Brain, agenda via its own API, email triage and two AI engines — cloud or fully local."
+        "description": "A case study of an experimental personal assistant interface, presented with fictional content."
       }
     }
   },
@@ -175,7 +175,7 @@
       "wellnessPseTitle": "Post-training RPE (squad) — 14 days",
       "painTitle": "Pain by region — last week (reports)",
       "radarTitle": "Average score per area (0–10)",
-      "radioNote": "Radio buttons on purpose — hidden tabs broke the charts in production (lesson from this case)."
+      "radioNote": "The selector keeps one view active at a time in this demo."
     },
     "evals": {
       "category": "Category",
@@ -243,13 +243,14 @@
     "cta": "Back to home"
   },
   "footer": {
-    "note": "Built by Júlio Takeichi. Football-domain demos use fictional data only.",
+    "note": "Built by Júlio Murashima. Demonstrations use fictional data.",
     "github": "GitHub",
     "email": "E-mail",
-    "freela": "Sites & automations (freelance)"
+    "freela": "Sites & automations (freelance)",
+    "linkedin": "LinkedIn"
   },
   "meta": {
-    "title": "Júlio Takeichi — Sports Data in Football",
-    "description": "Sports Data professional in football: I process GPS data, build load & wellness dashboards and develop internal tools — building toward data engineering."
+    "title": "Júlio Murashima — Portfolio",
+    "description": "Portfolio of Júlio Murashima, featuring software case studies and demonstrations that use fictional data."
   }
 }

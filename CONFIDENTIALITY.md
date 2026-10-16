@@ -34,7 +34,7 @@ assets, commit history, and metadata in this repository.
 
 ## Allowed
 
-- Describing the domain: football, youth academy, Catapult-style GPS,
+- Describing the domain: football, youth academy, GPS data,
   wellness, strength testing.
 - Describing stack, architecture, and technical decisions at case-study level
   (local-first processing, upsert-only sync, name-resolution strategy).

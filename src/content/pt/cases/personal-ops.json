@@ -1,17 +1,14 @@
 {
   "title": "Personal Ops + Telegram Bot",
-  "tagline": "Agenda pessoal com bot de conversa em LLM local",
-  "problem": "Centralizar rotina pessoal e planejamento de treinos de handebol universitário num único sistema — com lembretes proativos e controle por conversa no Telegram, sem custo de API de LLM e sem enviar dados pessoais a terceiros.",
-  "targetUser": "Uso próprio (usuário único, autenticado, servidor restrito a localhost).",
-  "myRole": "Desenvolvedor único.",
-  "process": "Implementei um servidor Flask único servindo site e API REST; frontend sem etapa de build (HTML/CSS/JS puro, Tailwind e FullCalendar via CDN); dados em JSON simples — deliberadamente sem banco de dados. O bot de conversa no Telegram usa um modelo local (Ollama): perguntas livres sobre a agenda, criação/edição/conclusão/exclusão de tarefas e eventos e ações em lote — sempre com confirmação explícita antes de gravar. Notificações automáticas com resumo periódico e um watchdog independente que alerta se o servidor cair.",
+  "tagline": "Estudo de caso de uma ferramenta pessoal.",
+  "problem": "O projeto explora como uma interface pode apoiar uma tarefa cotidiana com uma experiência clara.",
+  "targetUser": "Pessoas que buscam ferramentas pessoais simples.",
+  "myRole": "O case é apresentado em alto nível; consulte a demonstração interativa.",
+  "process": "A demonstração pública usa conteúdo fictício e não inclui dados pessoais.",
   "keyDecisions": [
-    "Simplicidade radical: Flask + JSON + CDN — zero build, zero infraestrutura; o app inicia por um .bat no Startup do Windows.",
-    "Toda escrita disparada por conversa exige confirmação \"sim/não\" antes de gravar — inclusive em lote, com a lista real exibida antes da confirmação.",
-    "Quando falta informação (local do evento, data real de conclusão), o bot pergunta em vez de assumir — e interpreta \"hoje\", \"ontem\", dias da semana e datas explícitas.",
-    "Autenticação dupla: sessão de navegador para a UI, token Bearer para automação.",
-    "Anti-alucinação em código, não em prompt: a notificação gerada pelo modelo só é aceita se citar todos os títulos reais dos itens; caso contrário, o sistema usa texto determinístico."
+    "Manter a demonstração pública limitada a conteúdo fictício.",
+    "Apresentar o projeto sem expor detalhes de implementação."
   ],
-  "result": "Em uso diário: CRUD completo via web e via conversa, resumos periódicos até o comando \"finaliza o dia\", data real de conclusão separada do prazo, UI agrupada por data com seção de concluídas e watchdog reportando queda e retorno do servidor.",
-  "learned": "Modelos locais alucinam mesmo com instrução explícita de \"nunca inventar\" — a proteção que funciona é validar a saída em código contra os dados reais, com fallback determinístico. A stack mais simples possível (sem build, sem banco) é uma feature quando o objetivo é operar todos os dias sem manutenção."
+  "result": "O portfólio apresenta uma demonstração interativa com conteúdo fictício.",
+  "learned": "Uma demonstração pequena pode explicar a experiência do produto sem divulgar dados nem detalhes internos."
 }

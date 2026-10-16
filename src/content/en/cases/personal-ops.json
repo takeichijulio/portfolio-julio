@@ -1,17 +1,14 @@
 {
   "title": "Personal Ops + Telegram Bot",
-  "tagline": "Personal agenda with a local-LLM conversation bot",
-  "problem": "Centralize personal routine and university handball training planning in a single system — with proactive reminders and conversational control through Telegram, at zero LLM API cost and without sending personal data to third parties.",
-  "targetUser": "Personal use (single authenticated user, server bound to localhost).",
-  "myRole": "Sole developer.",
-  "process": "Implemented a single Flask server for site and REST API; no-build frontend (plain HTML/CSS/JS, Tailwind and FullCalendar via CDN); data in plain JSON — deliberately no database. The Telegram conversation bot runs on a local model (Ollama): free-form questions about the agenda, create/edit/complete/delete for tasks and events, and batch actions — always with explicit confirmation before writing. Automatic notifications with periodic summaries and an independent watchdog that alerts when the server goes down.",
+  "tagline": "Case study of a personal tool.",
+  "problem": "The project explores how an interface can support an everyday task with a clear experience.",
+  "targetUser": "People looking for simple personal tools.",
+  "myRole": "This case is presented at a high level; see the interactive demo.",
+  "process": "The public demo uses fictional content and contains no personal data.",
   "keyDecisions": [
-    "Radical simplicity: Flask + JSON + CDN — zero build, zero infrastructure; the app starts from a .bat in Windows Startup.",
-    "Every conversation-triggered write requires a \"yes/no\" confirmation before saving — batch actions included, with the real item list displayed before confirming.",
-    "When information is missing (event location, actual completion date), the bot asks instead of assuming — parsing \"today\", \"yesterday\", weekdays and explicit dates.",
-    "Dual authentication: browser session for the UI, Bearer token for automation.",
-    "Anti-hallucination in code, not in the prompt: model-generated notifications are only accepted if they mention every real item title; otherwise the system falls back to deterministic text."
+    "Keep the public demo limited to fictional content.",
+    "Present the project without exposing implementation details."
   ],
-  "result": "In daily use: full CRUD via web and via conversation, periodic summaries until an \"end the day\" command, actual-completion date separate from the deadline, date-grouped UI with a completed section, and a watchdog reporting server downtime and recovery.",
-  "learned": "Local models hallucinate even under an explicit \"never invent\" instruction — the protection that works is validating output in code against real data, with a deterministic fallback. The simplest possible stack (no build, no database) is a feature when the goal is operating every day with zero maintenance."
+  "result": "The portfolio presents an interactive demo with fictional content.",
+  "learned": "A small demo can explain the product experience without disclosing data or internal details."
 }

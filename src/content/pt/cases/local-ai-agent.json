@@ -1,17 +1,14 @@
 {
   "title": "Local AI Agent (Human-in-the-Loop)",
-  "tagline": "Agente desktop com LLM local e aprovação humana obrigatória",
-  "problem": "Projetei um agente de IA para rodar 100% na máquina local — sem API paga e sem dados saindo do computador — com uma restrição central de segurança: um modelo local não pode ter permissão para escrever arquivos ou executar comandos por conta própria.",
-  "targetUser": "Uso próprio (ferramenta pessoal; o escopo de dados exclui explicitamente qualquer conteúdo do trabalho).",
-  "myRole": "Desenvolvedor único: app desktop, backend Rust, integração com o LLM.",
-  "process": "Construí um app desktop Tauri 2 (Rust) + React + TypeScript com LLM local via Ollama, aplicando TDD no backend Rust — sandbox, agenda e auditoria têm suítes de teste próprias. O modelo responde numa \"intenção estruturada\" (JSON com a ação proposta: escrever arquivo, ler, executar comando) que entra numa fila de aprovação com diff antes de qualquer execução.",
+  "tagline": "Estudo de caso de uma ferramenta pessoal.",
+  "problem": "O projeto explora como uma interface pode apoiar uma tarefa cotidiana com uma experiência clara.",
+  "targetUser": "Pessoas que buscam ferramentas pessoais simples.",
+  "myRole": "O case é apresentado em alto nível; consulte a demonstração interativa.",
+  "process": "A demonstração pública usa conteúdo fictício e não inclui dados pessoais.",
   "keyDecisions": [
-    "Human-in-the-loop inegociável: o modelo apenas propõe; toda execução passa por Aprovar/Rejeitar. Não existe modo autônomo, visível ou oculto.",
-    "Tauri em vez de Electron: sandboxing declarativo real — o frontend nunca acessa filesystem ou processos diretamente, apenas via comandos Rust expostos.",
-    "Sandbox de arquivo com canonicalize() e verificação de prefixo do workspace, testado contra path traversal, paths absolutos e arquivos novos.",
-    "Limite do sandbox de terminal documentado com honestidade: cwd fixo no workspace, mas a defesa efetiva é a aprovação manual do comando exato.",
-    "Log de auditoria append-only (JSONL), tolerante a linhas corrompidas."
+    "Manter a demonstração pública limitada a conteúdo fictício.",
+    "Apresentar o projeto sem expor detalhes de implementação."
   ],
-  "result": "Agente funcional: chat com modelo local, fila de aprovação com diff, execução sandboxed de arquivo e terminal, histórico de conversas, agenda pessoal em checklist e aba de relatórios de ação — tudo offline.",
-  "learned": "Rust e Tauri em profundidade: capabilities, testes e parsing defensivo — modelos locais às vezes embrulham o JSON em code fences e o parser precisa tolerar isso. A arquitetura de segurança de um agente é decisão de produto, não detalhe de implementação: propor ≠ executar, e essa fronteira precisa viver no runtime, não no prompt."
+  "result": "O portfólio apresenta uma demonstração interativa com conteúdo fictício.",
+  "learned": "Uma demonstração pequena pode explicar a experiência do produto sem divulgar dados nem detalhes internos."
 }

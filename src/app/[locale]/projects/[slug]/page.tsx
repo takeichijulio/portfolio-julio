@@ -49,7 +49,7 @@ export async function generateMetadata({
   const content = await loadCase(locale, slug);
   if (!content) return {};
   return {
-    title: `${content.title} — Júlio Takeichi`,
+    title: `${content.title} — Júlio Murashima`,
     description: content.tagline,
   };
 }

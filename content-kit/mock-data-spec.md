@@ -20,7 +20,7 @@ hardcoded fora de `lib/mock/`.
 
 ## Faixas por domínio (plausíveis, fictícias)
 
-### GPS (demo Catapult)
+### GPS (fictional-data demo)
 | Métrica | Faixa mock |
 |---|---|
 | Distância total (sessão) | 3.500–8.500 m |
@@ -43,7 +43,7 @@ hardcoded fora de `lib/mock/`.
 | Força por membro (L/R) | 250–450 N |
 | Assimetria | −15% a +15% (destacar |>10%|) |
 
-### Avaliações / compliance (demo clube-avaliacoes)
+### Avaliações / compliance (evaluations demo)
 - 6 áreas genéricas (Fisiologia, Medicina, Fisioterapia, Nutrição,
   Psicologia, Pedagogia)
 - Presença: 4 estados (presente, ausente, justificado, reagendado)

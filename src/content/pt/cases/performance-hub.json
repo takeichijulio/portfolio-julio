@@ -1,17 +1,14 @@
 {
   "title": "Multi-department Performance Hub",
-  "tagline": "Dashboard multidepartamental em produção (Streamlit + SQLite)",
-  "problem": "Os departamentos de saúde e performance da base (fisiologia, medicina, fisioterapia, psicologia, nutrição, serviço social, pedagogia) registravam avaliações em planilhas separadas — sem visão unificada por atleta e sem relatório consolidado para a comissão.",
-  "targetUser": "Staff multidisciplinar da base; acesso com dois perfis (comum e admin).",
-  "myRole": "Desenvolvedor único, do pipeline de importação ao deploy.",
-  "process": "Projetei um app Streamlit monolítico com SQLite sincronizado via Google Drive (o banco nunca entra no git) e um pipeline de parsers por departamento, executável localmente ou pela página de importação. Iterei o visual em ciclos curtos de feedback direto com o usuário real. Reconstruí o gerador de PDF por atleta com react-pdf (Node acionado por subprocess do Python) após descartar a primeira abordagem, reprovada em validação visual.",
+  "tagline": "Estudo de caso de uma ferramenta para fluxos de desempenho esportivo",
+  "problem": "O projeto aborda a organização de informações de treino e avaliações em uma experiência de leitura clara.",
+  "targetUser": "Profissionais de desempenho esportivo e equipes técnicas.",
+  "myRole": "O case é apresentado em alto nível; o código do sistema subjacente é privado.",
+  "process": "A demonstração interativa deste portfólio usa dados fictícios gerados para fins de demonstração.",
   "keyDecisions": [
-    "Streamlit Community Cloud + SQLite no Drive: produção com custo zero.",
-    "Autenticação bcrypt + rate limiting no login (janela deslizante por IP), com storage isolado do banco principal — que é sobrescrito pelo sync.",
-    "Tema dark completo com regra de acessibilidade: cor de status nunca é cor de texto — apenas ícone ou fundo de badge/pill.",
-    "Wellness só entra no gráfico em dias com sessão GPS real do atleta — elimina pontos sem contexto.",
-    "86 testes pytest cobrindo parsers, rate limiting e a ponte de PDF."
+    "Usar apenas dados fictícios na demonstração pública.",
+    "Manter privado o código do sistema subjacente."
   ],
-  "result": "Em produção e em uso diário: dashboards por departamento, importação self-service, PDF por atleta validado com centenas de atletas reais, backup e restauração com confirmação em duas etapas.",
-  "learned": "Três lições de produção que viraram regra: um pipeline de testes automatizados aprovou um PDF visualmente quebrado — validação visual do artefato real é inegociável; um .gitignore sem âncora de raiz corrompeu pacotes vendorizados apenas no deploy — verificação em clone limpo virou etapa obrigatória antes do push; e componentes de abas que ocultam painéis com display:none zeram permanentemente a altura de gráficos em iframe — substituí abas por radio buttons."
+  "result": "Este repositório apresenta uma demonstração com dados fictícios. O código do sistema subjacente é privado.",
+  "learned": "Uma apresentação clara ajuda a explicar fluxos de dados sem expor dados operacionais."
 }
