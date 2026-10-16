@@ -1,16 +1,14 @@
 {
   "title": "Academy Evaluations Hub",
-  "tagline": "Hub de avaliações e presenças integrado à plataforma de GPS",
-  "problem": "Calendário de avaliações, presenças e compliance de 6 departamentos estavam dispersos — e o novo hub precisava consumir os dados de GPS e wellness já processados pela plataforma existente, sem duplicar pipeline nem criar uma segunda fonte de escrita.",
-  "targetUser": "Equipe técnica e departamentos de performance da base (categorias U15/U17).",
-  "myRole": "Desenvolvedor único: modelagem de dados, API, UI e integração.",
-  "process": "Implementei um app full-stack Next.js (App Router) + TypeScript + Tailwind com Drizzle ORM. Duas implementações de persistência atrás de facades por domínio (calendário, jogadores, avaliações, compliance): SQLite para desenvolvimento local, PostgreSQL gerenciado para produção — alternadas por uma única variável de ambiente. A integração usa banco compartilhado: o hub lê sessões e wellness em modo read-only; a plataforma de GPS permanece como única escritora desses dados.",
+  "tagline": "Estudo de caso de uma ferramenta para fluxos de desempenho esportivo",
+  "problem": "O projeto aborda a organização de informações de treino e avaliações em uma experiência de leitura clara.",
+  "targetUser": "Profissionais de desempenho esportivo e equipes técnicas.",
+  "myRole": "O case é apresentado em alto nível; o código do sistema subjacente é privado.",
+  "process": "A demonstração interativa deste portfólio usa dados fictícios gerados para fins de demonstração.",
   "keyDecisions": [
-    "Um único escritor por domínio de dados: GPS e wellness pertencem ao pipeline existente; o hub escreve apenas avaliações e calendário, em tabelas próprias com prefixo.",
-    "Facade por domínio: a mesma UI e API rodam em SQLite ou no banco gerenciado sem mudança de código.",
-    "Nome canônico de atleta compartilhado entre os sistemas — toda a integração depende dessa convenção.",
-    "Calendário com blocos encadeados (um evento por data + categoria) e presença com 4 estados."
+    "Usar apenas dados fictícios na demonstração pública.",
+    "Manter privado o código do sistema subjacente."
   ],
-  "result": "MVP e integração implementados: painel do dia, calendário mês/semana, perfil de atleta com painel GPS + wellness integrado, compliance semanal por área, import CSV por departamento e sincronização de atletas a partir do registry da plataforma de GPS — mais de uma centena de atletas sincronizados.",
-  "learned": "Integrar dois sistemas pelo mesmo banco só funciona com regras de propriedade explícitas — quem escreve o quê, e chave de identidade compartilhada definida antes do código. Fronteiras de ambiente também importam: uma variável de produção colocada no .env errado do sistema vizinho derrubou o desenvolvimento local dele — a regra passou a ser documentada no próprio arquivo."
+  "result": "Este repositório apresenta uma demonstração com dados fictícios. O código do sistema subjacente é privado.",
+  "learned": "Uma apresentação clara ajuda a explicar fluxos de dados sem expor dados operacionais."
 }
