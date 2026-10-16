@@ -26,4 +26,5 @@ The site is deployed at [portfolio-julio-theta.vercel.app](https://portfolio-jul
 ## Contact
 
 - GitHub: [takeichijulio](https://github.com/takeichijulio)
+- LinkedIn: [Júlio Murashima](https://www.linkedin.com/in/j%C3%BAlio-murashima)
 - Portfolio: [portfolio-julio-theta.vercel.app](https://portfolio-julio-theta.vercel.app)
