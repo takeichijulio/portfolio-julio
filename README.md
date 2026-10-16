@@ -1,12 +1,8 @@
-# portfolio-julio
+# Portfolio — Júlio Murashima
 
-Personal portfolio of **Júlio Takeichi** — Sports Data professional in
-football, building toward data engineering. Premium, bilingual (PT/EN) site
-built with Next.js.
+Personal bilingual (PT/EN) software portfolio built with Next.js and TypeScript.
 
-**Status:** deploy-ready — all pages, 5 case studies with interactive mock
-demos, both locales. Lighthouse (local prod build): 96+/100/96/92
-(perf/a11y/bp/seo). See [HANDOFF.md](HANDOFF.md) for deploy steps.
+The site presents six case studies with interactive demonstrations. All sports-domain demos use fictional data. Source code for the underlying private systems is not included in this repository.
 
 ## Stack
 
@@ -14,48 +10,36 @@ demos, both locales. Lighthouse (local prod build): 96+/100/96/92
 |---|---|
 | Framework | Next.js 15 (App Router) + TypeScript |
 | UI | Tailwind CSS 4 + shadcn-style components + Lucide |
-| i18n | next-intl (`/pt` and `/en` routes, header toggle) |
-| Demo charts | Recharts, mock data only (`src/lib/mock/`) |
-| Motion | Framer Motion (respects `prefers-reduced-motion`) |
-| Deploy | Vercel (free tier) |
+| i18n | next-intl (`/pt` and `/en` routes) |
+| Demo charts | Recharts and generated fictional data in `src/lib/mock/` |
+| Motion | Framer Motion |
+| Deploy | Vercel |
 
 ## Structure
 
-```
-content-kit/            Inputs for the build sessions (bio, case summaries,
-                        mock-data spec). Source of truth for copy.
-design-system/          PORTFOLIO.md — Pitch Tech tokens, motion spec,
-                        ui-ux-pro-max checklist.
-messages/               pt.json / en.json (all UI copy).
-src/app/[locale]/       Pages (home, about, projects, contact, 404).
-src/components/         Shell + motion + ui/ (shadcn-style).
-src/lib/mock/           Deterministic mock generators for all demos.
-CONFIDENTIALITY.md      Non-negotiable rules. Read before contributing.
+```text
+messages/               PT and EN interface copy
+src/app/[locale]/       Localized pages
+src/components/         Site shell, demos, and UI components
+src/content/{pt,en}/    Portfolio case study copy
+src/lib/mock/           Fictional data generators for public demos
+design-system/          Visual tokens and interface guidance
+CONFIDENTIALITY.md      Public-content and demo-data rules
 ```
 
-## Case studies (5)
+## Case studies
 
-1. **GPS & Load Dashboard** — full-stack GPS/wellness/strength platform *(football domain, mock demo)*
-2. **Multi-department Performance Hub** — Streamlit dashboard in production *(football domain, mock demo)*
-3. **Academy Evaluations Hub** — evaluations/attendance hub on shared database *(football domain, mock demo)*
-4. **Local AI Agent (Human-in-the-Loop)** — Tauri + Rust desktop agent *(personal)*
-5. **Personal Ops + Telegram Bot** — Flask agenda with local-LLM bot *(personal)*
-
-All football-domain demos use fictional data only — see
-[CONFIDENTIALITY.md](CONFIDENTIALITY.md).
+The football-domain case studies describe project goals at a high level. Their interactive demos use fictional data only; source code for the underlying systems is private. Personal projects are also presented as case studies.
 
 ## Run locally
 
 ```bash
 npm install
-npm run dev    # http://localhost:3000
-npm run build  # production build (all routes SSG) — stop the dev server first
-npm run start  # serve the production build
+npm run dev
+npm run build
+npm run start
 ```
 
-## Deploy (Vercel)
+## Deployment
 
-Import the GitHub repo on vercel.com (Next.js preset auto-detected, no build
-config needed). Optional env var: `NEXT_PUBLIC_SITE_URL=https://<domain>` for
-OG/canonical metadata. Full steps + pre-publish confidentiality checklist in
-[HANDOFF.md](HANDOFF.md).
+The portfolio is available at [portfolio-julio-theta.vercel.app](https://portfolio-julio-theta.vercel.app).
