@@ -3,7 +3,7 @@
   "tagline": "Agente desktop com LLM local e aprovação humana obrigatória",
   "problem": "Projetei um agente de IA para rodar 100% na máquina local — sem API paga e sem dados saindo do computador — com uma restrição central de segurança: um modelo local não pode ter permissão para escrever arquivos ou executar comandos por conta própria.",
   "targetUser": "Uso próprio (ferramenta pessoal; o escopo de dados exclui explicitamente qualquer conteúdo do trabalho).",
-  "myRole": "Desenvolvedor único: app desktop, backend Rust, integração com o LLM.",
+  "myRole": "The case is presented at a high level with an interactive demo.",
   "process": "Construí um app desktop Tauri 2 (Rust) + React + TypeScript com LLM local via Ollama, aplicando TDD no backend Rust — sandbox, agenda e auditoria têm suítes de teste próprias. O modelo responde numa \"intenção estruturada\" (JSON com a ação proposta: escrever arquivo, ler, executar comando) que entra numa fila de aprovação com diff antes de qualquer execução.",
   "keyDecisions": [
     "Human-in-the-loop inegociável: o modelo apenas propõe; toda execução passa por Aprovar/Rejeitar. Não existe modo autônomo, visível ou oculto.",
