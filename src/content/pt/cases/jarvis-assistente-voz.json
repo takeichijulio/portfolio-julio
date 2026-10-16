@@ -1,17 +1,14 @@
 {
   "title": "Jarvis — Assistente de Voz Pessoal",
-  "tagline": "Assistente de voz local com Second Brain visual e dois motores de IA",
-  "problem": "Queria um assistente de voz pessoal que centralizasse agenda, e-mail e notícias sem depender de nenhum serviço pago e sem duplicar lógica que eu já tinha construído em outros projetos pessoais.",
-  "targetUser": "Uso próprio (agenda e vida pessoal / handebol universitário; mesmo escopo do agenda-pessoal, sem qualquer dado de trabalho).",
-  "myRole": "Desenvolvedor único: arquitetura, front-end, servidor local e integração com os dois motores de IA.",
-  "process": "Construí em três partes incrementais, sempre envelopando o que já existia em vez de reescrever: HTML/CSS/JS único com Second Brain em grafo animado e voz nativa do navegador; depois uma \"antena\" em Node puro (zero dependências) que dá ao app acesso à minha agenda, e-mail e notícias sem violar CORS; por fim um segundo motor 100% local via Ollama, ao lado do Claude na nuvem.",
+  "tagline": "Estudo de caso de uma ferramenta pessoal.",
+  "problem": "O projeto explora como uma interface pode apoiar uma tarefa cotidiana com uma experiência clara.",
+  "targetUser": "Pessoas que buscam ferramentas pessoais simples.",
+  "myRole": "O case é apresentado em alto nível; consulte a demonstração interativa.",
+  "process": "A demonstração pública usa conteúdo fictício e não inclui dados pessoais.",
   "keyDecisions": [
-    "Agenda: em vez de integrar Google Calendar (como o plano original previa), o Jarvis reaproveita a API do meu app agenda-pessoal já existente — eliminou um parser ICS inteiro do escopo, simplificação real, não só reuso.",
-    "Toda criação, edição ou exclusão por voz repete a ação em voz alta e só executa após confirmação explícita — mesma regra do bot de Telegram do agenda-pessoal.",
-    "Servidor local (\"antena\") escuta só em 127.0.0.1, com allowlist obrigatória de domínios externos; qualquer origem fora da lista recebe 403.",
-    "E-mail lido via IMAP com BODY.PEEK — o Jarvis nunca marca uma mensagem como lida sem eu ter lido de fato.",
-    "Motor dual: modelos Claude na nuvem ou Ollama local (qwen2.5/qwen3) selecionáveis na hora, com fallback 100% offline por template quando não há chave de API ou internet."
+    "Manter a demonstração pública limitada a conteúdo fictício.",
+    "Apresentar o projeto sem expor detalhes de implementação."
   ],
-  "result": "Sistema funcional rodando local: voz + chat de texto, Second Brain com 22 notas em 7 áreas, agenda com leitura e escrita confirmada, triagem de e-mail em 3 baldes, radar de notícias, briefing matinal falado, e um botão de sincronização que exporta notas novas pro meu segundo cérebro em Obsidian — sem nunca escrever direto nas páginas curadas.",
-  "learned": "Reaproveitar um sistema que eu já tinha construído (agenda-pessoal) em vez de integrar um serviço externo cortou complexidade de verdade, não foi só economia de código. E um assistente de voz precisa de fallback offline em cada módulo — se a IA ou a rede caem, o app avisa com clareza e continua funcionando, nunca fica mudo."
+  "result": "O portfólio apresenta uma demonstração interativa com conteúdo fictício.",
+  "learned": "Uma demonstração pequena pode explicar a experiência do produto sem divulgar dados nem detalhes internos."
 }
