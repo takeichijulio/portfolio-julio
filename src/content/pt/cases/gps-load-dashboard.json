@@ -1,17 +1,14 @@
 {
   "title": "GPS & Load Dashboard",
-  "tagline": "Plataforma full-stack de GPS, wellness e força para categorias de base",
-  "problem": "O departamento de performance da base de um clube de futebol precisava transformar exports brutos de GPS, formulários de wellness e testes de força em informação diária utilizável — sem custo de nuvem e sem processar dados sensíveis de atletas fora das máquinas do clube.",
-  "targetUser": "Comissão técnica e staff de fisiologia das categorias de base (U15/U17/U20).",
-  "myRole": "Desenvolvedor único: arquitetura, pipeline de dados, backend, frontend e deploy.",
-  "process": "Prototipei o fluxo em Streamlit, validei com o staff e migrei a plataforma para um monorepo: webapp Next.js + React + Tailwind, backend local FastAPI + pandas, SQLite como fonte de verdade e shell desktop Tauri. Implementei sync incremental com Google Drive (por data de modificação) para GPS, wellness e testes de força, e sync opcional unidirecional local → nuvem (sempre upsert) para leitura remota.",
+  "tagline": "Estudo de caso de uma ferramenta para fluxos de desempenho esportivo",
+  "problem": "O projeto aborda a organização de informações de treino e avaliações em uma experiência de leitura clara.",
+  "targetUser": "Profissionais de desempenho esportivo e equipes técnicas.",
+  "myRole": "O case é apresentado em alto nível; o código do sistema subjacente é privado.",
+  "process": "A demonstração interativa deste portfólio usa dados fictícios gerados para fins de demonstração.",
   "keyDecisions": [
-    "Local-first: nenhum arquivo bruto processado na nuvem; custo de hospedagem zero.",
-    "Nenhum cálculo de negócio no banco ou no frontend — toda a lógica concentrada numa única camada Python.",
-    "Upsert com chave natural em toda tabela; nunca insert simples.",
-    "Resolução de nomes de atleta por fuzzy matching contra um registry central, com fila de pendências revisada manualmente — nome não resolvido não entra no banco.",
-    "Dados de força restritos ao ambiente local na v1 — menor superfície de exposição."
+    "Usar apenas dados fictícios na demonstração pública.",
+    "Manter privado o código do sistema subjacente."
   ],
-  "result": "Plataforma em produção com 11 módulos: sessão GPS diária, relatórios semana a semana com metas, carga/PSE, acompanhamento ao vivo, perfil individual, wellness (Hooper, pós-treino e calendário de avaliações), força (3 aparelhos), gestão de atletas e empréstimos, administração de sync e export PDF client-side. Milhares de registros processados por temporada.",
-  "learned": "O identificador vindo do próprio ecossistema de origem é mais confiável para matching do que o nome oficial cadastrado — matching por nome \"bonito\" gera falsos positivos com sobrenomes comuns. Concentrar o cálculo numa única camada também se pagou rápido: a troca da camada de visualização (Streamlit → Next.js) não exigiu nenhuma mudança no pipeline."
+  "result": "Este repositório apresenta uma demonstração com dados fictícios. O código do sistema subjacente é privado.",
+  "learned": "Uma apresentação clara ajuda a explicar fluxos de dados sem expor dados operacionais."
 }
