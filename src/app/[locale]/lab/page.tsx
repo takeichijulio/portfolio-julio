@@ -16,7 +16,7 @@ export async function generateMetadata({
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "lab" });
   return {
-    title: `${t("title")} — Júlio Takeichi`,
+    title: `${t("title")} — Júlio Murashima`,
     description: t("lead"),
   };
 }
