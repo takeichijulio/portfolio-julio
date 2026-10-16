@@ -1,17 +1,14 @@
 {
   "title": "Local AI Agent (Human-in-the-Loop)",
-  "tagline": "Desktop agent with a local LLM and mandatory human approval",
-  "problem": "Designed an AI agent to run 100% on the local machine — no paid API, no data leaving the computer — under one central safety constraint: a local model must never be allowed to write files or run commands on its own.",
-  "targetUser": "Personal use (the data scope explicitly excludes any work-related content).",
-  "myRole": "Sole developer: desktop app, Rust backend, LLM integration.",
-  "process": "Built a Tauri 2 (Rust) + React + TypeScript desktop app with a local LLM via Ollama, applying TDD on the Rust backend — sandbox, agenda and audit modules each have their own test suites. The model answers with a \"structured intent\" (JSON carrying the proposed action: write file, read, run command) that enters an approval queue with a diff before anything executes.",
+  "tagline": "Case study of a personal tool.",
+  "problem": "The project explores how an interface can support an everyday task with a clear experience.",
+  "targetUser": "People looking for simple personal tools.",
+  "myRole": "This case is presented at a high level; see the interactive demo.",
+  "process": "The public demo uses fictional content and contains no personal data.",
   "keyDecisions": [
-    "Non-negotiable human-in-the-loop: the model only proposes; every execution goes through Approve/Reject. No autonomous mode, visible or hidden.",
-    "Tauri over Electron: real declarative sandboxing — the frontend never touches the filesystem or processes directly, only through exposed Rust commands.",
-    "File sandbox with canonicalize() and a workspace prefix check, tested against path traversal, absolute paths and new files.",
-    "Terminal sandbox limits documented honestly: cwd pinned to the workspace, but the effective defense is manual approval of the exact command.",
-    "Append-only audit log (JSONL), tolerant to corrupted lines."
+    "Keep the public demo limited to fictional content.",
+    "Present the project without exposing implementation details."
   ],
-  "result": "Working agent: chat with a local model, approval queue with diffs, sandboxed file and terminal execution, conversation history, a personal checklist agenda and an action-reports view — fully offline.",
-  "learned": "Rust and Tauri in depth: capabilities, tests and defensive parsing — local models occasionally wrap JSON in code fences and the parser must tolerate it. An agent's safety architecture is a product decision, not an implementation detail: proposing ≠ executing, and that boundary must live in the runtime, not in the prompt."
+  "result": "The portfolio presents an interactive demo with fictional content.",
+  "learned": "A small demo can explain the product experience without disclosing data or internal details."
 }
