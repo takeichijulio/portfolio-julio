@@ -1,16 +1,14 @@
 {
   "title": "Academy Evaluations Hub",
-  "tagline": "Evaluations and attendance hub integrated with the GPS platform",
-  "problem": "Evaluation calendars, attendance and compliance for 6 departments were scattered — and the new hub had to consume GPS/wellness data already processed by the existing platform without duplicating pipelines or creating a second write source.",
-  "targetUser": "Academy technical staff and departments (U15/U17 categories).",
-  "myRole": "Sole developer: data modeling, API, UI and integration.",
-  "process": "Implemented a full-stack Next.js (App Router) + TypeScript + Tailwind app with Drizzle ORM. Two persistence implementations behind per-domain facades (calendar, players, evaluations, compliance): SQLite for local development, managed PostgreSQL for production — switched by a single environment variable. Integration runs through a shared database: the hub reads sessions and wellness read-only; the GPS platform remains the only writer of that data.",
+  "tagline": "Case study of a tool for sports-performance workflows",
+  "problem": "The project addresses organizing training and assessment information into a clear experience.",
+  "targetUser": "Sports-performance professionals and technical teams.",
+  "myRole": "This case is presented at a high level; the underlying system's source code is private.",
+  "process": "The interactive portfolio demo uses generated fictional data for demonstration purposes.",
   "keyDecisions": [
-    "Single writer per data domain: GPS and wellness belong to the existing pipeline; the hub only writes evaluations and calendar, in its own prefixed tables.",
-    "Per-domain facades: the same UI and API run on SQLite or the managed database with no code changes.",
-    "Canonical athlete name shared across systems — the entire integration depends on that convention.",
-    "Calendar with chained blocks (one event per date + category) and 4-state attendance."
+    "Use fictional data only in the public demo.",
+    "Keep the underlying system's source code private."
   ],
-  "result": "MVP and integration implemented: day panel, month/week calendar, athlete profile with an integrated GPS + wellness panel, weekly compliance per area, per-department CSV import, and athlete sync from the GPS platform registry — a hundred-plus athletes synced.",
-  "learned": "Integrating two systems through one database only works with explicit ownership rules — who writes what, and a shared identity key defined before any code. Environment boundaries matter as well: one production variable dropped into the neighbor system's .env broke its local development — the rule is now documented in the file itself."
+  "result": "This repository presents a demo with fictional data. The underlying system's source code is private.",
+  "learned": "A clear presentation helps explain data workflows without exposing operational data."
 }
