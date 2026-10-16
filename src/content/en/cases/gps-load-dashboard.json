@@ -1,17 +1,14 @@
 {
   "title": "GPS & Load Dashboard",
-  "tagline": "Full-stack GPS, wellness and strength platform for youth academy categories",
-  "problem": "A football club's youth-academy performance department needed to turn raw GPS exports, wellness forms and strength tests into usable daily information — with zero cloud cost and without processing sensitive athlete data outside club machines.",
-  "targetUser": "Coaching and physiology staff of the youth academy (U15/U17/U20).",
-  "myRole": "Sole developer: architecture, data pipeline, backend, frontend, deploy.",
-  "process": "Prototyped the workflow in Streamlit, validated it with staff, then migrated the platform to a monorepo: Next.js + React + Tailwind webapp, local FastAPI + pandas backend, SQLite as the source of truth and a Tauri desktop shell. Implemented incremental Google Drive sync (by modified time) for GPS, wellness and strength files, plus an optional one-way local → cloud sync (always upsert) for remote reads.",
+  "tagline": "Case study of a tool for sports-performance workflows",
+  "problem": "The project addresses organizing training and assessment information into a clear experience.",
+  "targetUser": "Sports-performance professionals and technical teams.",
+  "myRole": "This case is presented at a high level; the underlying system's source code is private.",
+  "process": "The interactive portfolio demo uses generated fictional data for demonstration purposes.",
   "keyDecisions": [
-    "Local-first: no raw file ever processed in the cloud; zero hosting cost.",
-    "No business calculations in the database or frontend — all logic concentrated in a single Python layer.",
-    "Natural-key upserts everywhere; never plain inserts.",
-    "Athlete-name resolution via fuzzy matching against a central registry, with a manually reviewed pending queue — unresolved names never enter the database.",
-    "Strength data restricted to the local environment in v1 — smaller exposure surface."
+    "Use fictional data only in the public demo.",
+    "Keep the underlying system's source code private."
   ],
-  "result": "Production platform with 11 modules: daily GPS session, week-over-week reports with targets, load/RPE, live monitoring, individual athlete profile, wellness (Hooper, post-training and assessment calendar), strength (3 devices), athlete and loan management, sync administration, and client-side PDF export. Thousands of records processed per season.",
-  "learned": "The identifier coming from the source ecosystem beats the officially registered name for matching — \"pretty name\" matching produces false positives on common surnames. Concentrating computation in one layer also paid off quickly: swapping the visualization layer (Streamlit → Next.js) required no pipeline changes."
+  "result": "This repository presents a demo with fictional data. The underlying system's source code is private.",
+  "learned": "A clear presentation helps explain data workflows without exposing operational data."
 }
